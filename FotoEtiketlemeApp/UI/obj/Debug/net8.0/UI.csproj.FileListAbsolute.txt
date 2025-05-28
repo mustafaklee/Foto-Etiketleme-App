@@ -32,3 +32,4 @@ C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.pdb
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.genruntimeconfig.cache
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\ref\UI.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.sourcelink.json
