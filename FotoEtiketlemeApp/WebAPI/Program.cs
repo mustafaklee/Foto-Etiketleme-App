@@ -20,8 +20,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 ));
 
 
-
 var app = builder.Build();
+app.UseStaticFiles(); // wwwroot klasöründen eriþim saðlar
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

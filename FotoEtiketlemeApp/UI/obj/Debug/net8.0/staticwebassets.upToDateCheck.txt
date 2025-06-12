@@ -3,7 +3,6 @@ wwwroot\css\label-images.css
 wwwroot\css\style.css
 wwwroot\css\update-info.css
 wwwroot\favicon.ico
-wwwroot\img\dusuk-isikta-fotograf-cekme.jpg
 wwwroot\js\script.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

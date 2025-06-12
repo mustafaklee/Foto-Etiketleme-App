@@ -39,7 +39,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doktor", (string)null);
+                    b.ToTable("Doktor");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Domain.Etiket", b =>
@@ -54,7 +54,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Etiket", (string)null);
+                    b.ToTable("Etiket");
 
                     b.HasData(
                         new
@@ -80,33 +80,23 @@ namespace WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("DoktorId")
-                        .HasColumnType("int");
-
-                    b.Property<DateOnly>("EtiketlenmeTarihi")
-                        .HasColumnType("date");
-
                     b.Property<string>("FotografPath")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Fotograf", (string)null);
+                    b.ToTable("Fotograf");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            DoktorId = 1,
-                            EtiketlenmeTarihi = new DateOnly(2023, 5, 30),
                             FotografPath = "fotograf.jpg"
                         },
                         new
                         {
                             Id = 2,
-                            DoktorId = 2,
-                            EtiketlenmeTarihi = new DateOnly(2023, 5, 20),
                             FotografPath = "2fotograf.jpg"
                         });
                 });
@@ -122,38 +112,45 @@ namespace WebAPI.Migrations
                     b.Property<int>("DoktorId")
                         .HasColumnType("int");
 
+                    b.Property<DateOnly>("EtiketTarihi")
+                        .HasColumnType("date");
+
                     b.HasKey("FotografId", "EtiketId");
 
                     b.HasIndex("DoktorId");
 
                     b.HasIndex("EtiketId");
 
-                    b.ToTable("FotografEtiket", (string)null);
+                    b.ToTable("FotografEtiket");
 
                     b.HasData(
                         new
                         {
                             FotografId = 1,
                             EtiketId = 1,
-                            DoktorId = 1
+                            DoktorId = 1,
+                            EtiketTarihi = new DateOnly(2028, 5, 21)
                         },
                         new
                         {
                             FotografId = 1,
                             EtiketId = 2,
-                            DoktorId = 1
+                            DoktorId = 1,
+                            EtiketTarihi = new DateOnly(2022, 2, 5)
                         },
                         new
                         {
                             FotografId = 2,
                             EtiketId = 2,
-                            DoktorId = 2
+                            DoktorId = 2,
+                            EtiketTarihi = new DateOnly(2021, 1, 2)
                         },
                         new
                         {
                             FotografId = 2,
                             EtiketId = 3,
-                            DoktorId = 2
+                            DoktorId = 2,
+                            EtiketTarihi = new DateOnly(2023, 3, 8)
                         });
                 });
 

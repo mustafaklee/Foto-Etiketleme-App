@@ -46,15 +46,12 @@ namespace WebAPI.Data
                 {
                     Id=1,
                     FotografPath="fotograf.jpg",
-                    DoktorId=1,
-                    EtiketlenmeTarihi=new DateOnly(2023, 5, 30),
+                    
                 },
                 new Fotograf()
                 {
                     Id=2,
                     FotografPath="2fotograf.jpg",
-                    DoktorId=2,
-                    EtiketlenmeTarihi=new DateOnly(2023, 5, 20),
                 }
             };
 
@@ -62,10 +59,10 @@ namespace WebAPI.Data
 
             var fotografEtiketleri = new List<FotografEtiket>()
             {
-                new FotografEtiket { Id=1,FotografId = 1, EtiketId = 1, DoktorId = 1 },
-                new FotografEtiket {  Id=2,FotografId = 1, EtiketId = 2, DoktorId = 1 },
-                new FotografEtiket {  Id=3,FotografId = 2, EtiketId = 2, DoktorId = 2 },
-                new FotografEtiket {  Id=4,FotografId = 2, EtiketId = 3, DoktorId = 2 }
+                new FotografEtiket { Id=1,FotografId = 1, EtiketId = 1, DoktorId = 1,EtiketTarihi =new DateOnly(2028, 5, 21), },
+                new FotografEtiket {  Id=2,FotografId = 1, EtiketId = 2, DoktorId = 1 ,EtiketTarihi =new DateOnly(2022, 2, 5), },
+                new FotografEtiket {  Id=3,FotografId = 2, EtiketId = 2, DoktorId = 2 ,EtiketTarihi =new DateOnly(2021, 1, 2), },
+                new FotografEtiket {  Id=4,FotografId = 2, EtiketId = 3, DoktorId = 2 ,EtiketTarihi =new DateOnly(2023, 3, 8),}
             };
 
 

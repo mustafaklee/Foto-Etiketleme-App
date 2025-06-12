@@ -58,9 +58,7 @@ namespace WebAPI.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     FotografPath = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    EtiketlenmeTarihi = table.Column<DateOnly>(type: "date", nullable: false),
-                    DoktorId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -74,7 +72,8 @@ namespace WebAPI.Migrations
                 {
                     FotografId = table.Column<int>(type: "int", nullable: false),
                     EtiketId = table.Column<int>(type: "int", nullable: false),
-                    DoktorId = table.Column<int>(type: "int", nullable: false)
+                    DoktorId = table.Column<int>(type: "int", nullable: false),
+                    EtiketTarihi = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -112,22 +111,22 @@ namespace WebAPI.Migrations
 
             migrationBuilder.InsertData(
                 table: "Fotograf",
-                columns: new[] { "Id", "DoktorId", "EtiketlenmeTarihi", "FotografPath" },
+                columns: new[] { "Id", "FotografPath" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateOnly(2023, 5, 30), "fotograf.jpg" },
-                    { 2, 2, new DateOnly(2023, 5, 20), "2fotograf.jpg" }
+                    { 1, "fotograf.jpg" },
+                    { 2, "2fotograf.jpg" }
                 });
 
             migrationBuilder.InsertData(
                 table: "FotografEtiket",
-                columns: new[] { "EtiketId", "FotografId", "DoktorId" },
+                columns: new[] { "EtiketId", "FotografId", "DoktorId", "EtiketTarihi" },
                 values: new object[,]
                 {
-                    { 1, 1, 1 },
-                    { 2, 1, 1 },
-                    { 2, 2, 2 },
-                    { 3, 2, 2 }
+                    { 1, 1, 1, new DateOnly(2028, 5, 21) },
+                    { 2, 1, 1, new DateOnly(2022, 2, 5) },
+                    { 2, 2, 2, new DateOnly(2021, 1, 2) },
+                    { 3, 2, 2, new DateOnly(2023, 3, 8) }
                 });
 
             migrationBuilder.CreateIndex(

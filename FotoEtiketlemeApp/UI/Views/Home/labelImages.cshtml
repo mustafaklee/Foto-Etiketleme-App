@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = "_Layout"; // Alternatif layout dosyası
 }
 <link rel="stylesheet" href="~/css/label-images.css">
@@ -8,7 +9,14 @@
         <button>Kaydet</button>
     </div>
     <div class="fotograf-item">
-        <img src="~/../img/dusuk-isikta-fotograf-cekme.jpg" alt="">
+        @if (Model != null)
+        {
+            <img src="@Model" alt="fotograf">
+        }
+        else
+        {
+            <p>Fotograf Bulunamadi</p>
+        }
     </div>
     <div class="foot-item">
         <div class="geribtn-item">

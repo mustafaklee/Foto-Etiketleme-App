@@ -6,11 +6,12 @@ namespace UI.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    public HomeController(IHttpClientFactory httpClientFactory)
     {
-        _logger = logger;
+        _httpClientFactory = httpClientFactory;
     }
 
     public IActionResult Index()
@@ -21,10 +22,24 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult labelImages()
+    public async Task<IActionResult> labelImages(int id=1)
     {
-        return View();
+        var client = _httpClientFactory.CreateClient();
+        var response = await client.GetAsync($"https://localhost:7252/api/fotografetiketle/{id}");
+        if (!response.IsSuccessStatusCode)
+        {
+            return View("an error occurred");
+        }
+
+        var result = await response.Content.ReadFromJsonAsync<FotoResponse>();
+        return View(model: result?.Url);
     }
+
+    public class FotoResponse
+    {
+        public string Url { get; set; }
+    }
+
     public IActionResult updateInfo()
     {
         return View();

@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "WebAPI.Controllers.FotografEtiketle",
+    "Method": "GetFoto",
+    "RelativePath": "api/FotografEtiketle/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

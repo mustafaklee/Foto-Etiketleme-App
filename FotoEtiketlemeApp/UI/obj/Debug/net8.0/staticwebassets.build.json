@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+LdQXzipVT0PXHPwsyuXGTmFd+9X+v8znOJ35uReG3w=",
+  "Hash": "yLMNjpCfMYuPvDosjKva3M3bltsoVxSRTuPfqfj7GXs=",
   "Source": "UI",
   "BasePath": "_content/UI",
   "Mode": "Default",
@@ -162,27 +162,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\img\\dusuk-isikta-fotograf-cekme.jpg",
-      "SourceId": "UI",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\",
-      "BasePath": "_content/UI",
-      "RelativePath": "img/dusuk-isikta-fotograf-cekme#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "0tphctjme0",
-      "Integrity": "HJMVHTugxh2ksTcq9C/rEbAmHI9ZUHsqzNlIoC9ogYI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\dusuk-isikta-fotograf-cekme.jpg"
     },
     {
       "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\script.js",
@@ -1811,88 +1790,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
-        }
-      ]
-    },
-    {
-      "Route": "img/dusuk-isikta-fotograf-cekme.0tphctjme0.jpg",
-      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\img\\dusuk-isikta-fotograf-cekme.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "160696"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"HJMVHTugxh2ksTcq9C/rEbAmHI9ZUHsqzNlIoC9ogYI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 21:29:19 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0tphctjme0"
-        },
-        {
-          "Name": "label",
-          "Value": "img/dusuk-isikta-fotograf-cekme.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-HJMVHTugxh2ksTcq9C/rEbAmHI9ZUHsqzNlIoC9ogYI="
-        }
-      ]
-    },
-    {
-      "Route": "img/dusuk-isikta-fotograf-cekme.jpg",
-      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\img\\dusuk-isikta-fotograf-cekme.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "160696"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"HJMVHTugxh2ksTcq9C/rEbAmHI9ZUHsqzNlIoC9ogYI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 21:29:19 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-HJMVHTugxh2ksTcq9C/rEbAmHI9ZUHsqzNlIoC9ogYI="
         }
       ]
     },

@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "tDqGxdq0A4zT6y/tDdlw1NRTJSa30/3YTmJbD0pRBwc=",
+  "Hash": "G03isos7Sh1fZPYrcOC842QyxQXBADlGmFBbbnIiW7A=",
   "Source": "WebAPI",
   "BasePath": "_content/WebAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebAPI\\wwwroot",
+      "Source": "WebAPI",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }

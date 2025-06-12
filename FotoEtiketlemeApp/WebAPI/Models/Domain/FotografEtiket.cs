@@ -11,5 +11,7 @@
 
         public int DoktorId { get; set; }
         public Doktor Doktor { get; set; }
+
+        public DateOnly EtiketTarihi { get; set; }
     }
 }

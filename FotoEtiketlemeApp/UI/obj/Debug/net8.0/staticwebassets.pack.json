@@ -25,10 +25,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\img\\dusuk-isikta-fotograf-cekme.jpg",
-      "PackagePath": "staticwebassets\\img\\dusuk-isikta-fotograf-cekme.jpg"
-    },
-    {
       "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
     },

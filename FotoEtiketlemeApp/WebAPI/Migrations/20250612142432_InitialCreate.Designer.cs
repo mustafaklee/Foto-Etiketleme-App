@@ -11,7 +11,7 @@ using WebAPI.Data;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250528233921_InitialCreate")]
+    [Migration("20250612142432_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -83,12 +83,6 @@ namespace WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("DoktorId")
-                        .HasColumnType("int");
-
-                    b.Property<DateOnly>("EtiketlenmeTarihi")
-                        .HasColumnType("date");
-
                     b.Property<string>("FotografPath")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -101,15 +95,11 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            DoktorId = 1,
-                            EtiketlenmeTarihi = new DateOnly(2023, 5, 30),
                             FotografPath = "fotograf.jpg"
                         },
                         new
                         {
                             Id = 2,
-                            DoktorId = 2,
-                            EtiketlenmeTarihi = new DateOnly(2023, 5, 20),
                             FotografPath = "2fotograf.jpg"
                         });
                 });
@@ -125,6 +115,9 @@ namespace WebAPI.Migrations
                     b.Property<int>("DoktorId")
                         .HasColumnType("int");
 
+                    b.Property<DateOnly>("EtiketTarihi")
+                        .HasColumnType("date");
+
                     b.HasKey("FotografId", "EtiketId");
 
                     b.HasIndex("DoktorId");
@@ -138,25 +131,29 @@ namespace WebAPI.Migrations
                         {
                             FotografId = 1,
                             EtiketId = 1,
-                            DoktorId = 1
+                            DoktorId = 1,
+                            EtiketTarihi = new DateOnly(2028, 5, 21)
                         },
                         new
                         {
                             FotografId = 1,
                             EtiketId = 2,
-                            DoktorId = 1
+                            DoktorId = 1,
+                            EtiketTarihi = new DateOnly(2022, 2, 5)
                         },
                         new
                         {
                             FotografId = 2,
                             EtiketId = 2,
-                            DoktorId = 2
+                            DoktorId = 2,
+                            EtiketTarihi = new DateOnly(2021, 1, 2)
                         },
                         new
                         {
                             FotografId = 2,
                             EtiketId = 3,
-                            DoktorId = 2
+                            DoktorId = 2,
+                            EtiketTarihi = new DateOnly(2023, 3, 8)
                         });
                 });
 
