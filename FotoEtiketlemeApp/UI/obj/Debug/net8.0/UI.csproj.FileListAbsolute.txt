@@ -14,6 +14,7 @@ C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.RazorAssemblyInfo.cache
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.RazorAssemblyInfo.cs
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.sourcelink.json
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\scopedcss\bundle\UI.styles.css
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\scopedcss\projectbundle\UI.bundle.scp.css
@@ -32,4 +33,3 @@ C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.pdb
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.genruntimeconfig.cache
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\ref\UI.dll
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.sourcelink.json

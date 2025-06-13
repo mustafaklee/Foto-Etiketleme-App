@@ -44,23 +44,6 @@ namespace WebAPI.Data
             builder.Entity<Etiket>().HasData(etiketler);
 
 
-            var fotograflar = new List<Fotograf>()
-            {
-                new Fotograf()
-                {
-                    Id=1,
-                    FotografPath="fotograf.jpg",
-                    
-                },
-                new Fotograf()
-                {
-                    Id=2,
-                    FotografPath="2fotograf.jpg",
-                }
-            };
-
-            builder.Entity<Fotograf>().HasData(fotograflar);
-
             var fotografEtiketleri = new List<FotografEtiket>()
             {
                 new FotografEtiket { Id=1,FotografId = 1, EtiketId = 1, DoktorId = 1,EtiketTarihi =new DateOnly(2028, 5, 21), },
@@ -72,24 +55,24 @@ namespace WebAPI.Data
 
             builder.Entity<FotografEtiket>().HasData(fotografEtiketleri);
 
-            // Relationship configuration for Many-to-Many
-            builder.Entity<FotografEtiket>()
-                .HasKey(fe => new { fe.FotografId, fe.EtiketId });
+                // Relationship configuration for Many-to-Many
+                builder.Entity<FotografEtiket>()
+                    .HasKey(fe => new { fe.Id});
 
-            builder.Entity<FotografEtiket>()
-                .HasOne(fe => fe.Fotograf)
-                .WithMany(f => f.FotografEtiketleri)
-                .HasForeignKey(fe => fe.FotografId);
+                builder.Entity<FotografEtiket>()
+                    .HasOne(fe => fe.Fotograf)
+                    .WithMany(f => f.FotografEtiketleri)
+                    .HasForeignKey(fe => fe.FotografId);
 
-            builder.Entity<FotografEtiket>()
-                .HasOne(fe => fe.Etiket)
-                .WithMany(e => e.FotografEtiketleri)
-                .HasForeignKey(fe => fe.EtiketId);
+                builder.Entity<FotografEtiket>()
+                    .HasOne(fe => fe.Etiket)
+                    .WithMany(e => e.FotografEtiketleri)
+                    .HasForeignKey(fe => fe.EtiketId);
 
-            builder.Entity<FotografEtiket>()
-                .HasOne(fe => fe.Doktor)
-                .WithMany(d => d.FotografEtiketleri)
-                .HasForeignKey(fe => fe.DoktorId);
+                builder.Entity<FotografEtiket>()
+                    .HasOne(fe => fe.Doktor)
+                    .WithMany(d => d.FotografEtiketleri)
+                    .HasForeignKey(fe => fe.DoktorId);
         }
 
     }

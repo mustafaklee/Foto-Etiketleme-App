@@ -87,70 +87,68 @@ namespace WebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Fotograf");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            FotografPath = "fotograf.jpg"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            FotografPath = "2fotograf.jpg"
-                        });
                 });
 
             modelBuilder.Entity("WebAPI.Models.Domain.FotografEtiket", b =>
                 {
-                    b.Property<int>("FotografId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EtiketId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("DoktorId")
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("EtiketTarihi")
+                    b.Property<int?>("EtiketId")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly?>("EtiketTarihi")
                         .HasColumnType("date");
 
-                    b.HasKey("FotografId", "EtiketId");
+                    b.Property<int>("FotografId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("DoktorId");
 
                     b.HasIndex("EtiketId");
+
+                    b.HasIndex("FotografId");
 
                     b.ToTable("FotografEtiket");
 
                     b.HasData(
                         new
                         {
-                            FotografId = 1,
+                            Id = 1,
+                            DoktorId = 1,
                             EtiketId = 1,
-                            DoktorId = 1,
-                            EtiketTarihi = new DateOnly(2028, 5, 21)
+                            EtiketTarihi = new DateOnly(2028, 5, 21),
+                            FotografId = 1
                         },
                         new
                         {
-                            FotografId = 1,
-                            EtiketId = 2,
+                            Id = 2,
                             DoktorId = 1,
-                            EtiketTarihi = new DateOnly(2022, 2, 5)
+                            EtiketId = 2,
+                            EtiketTarihi = new DateOnly(2022, 2, 5),
+                            FotografId = 1
                         },
                         new
                         {
-                            FotografId = 2,
-                            EtiketId = 2,
+                            Id = 3,
                             DoktorId = 2,
-                            EtiketTarihi = new DateOnly(2021, 1, 2)
+                            EtiketId = 2,
+                            EtiketTarihi = new DateOnly(2021, 1, 2),
+                            FotografId = 2
                         },
                         new
                         {
-                            FotografId = 2,
+                            Id = 4,
+                            DoktorId = 2,
                             EtiketId = 3,
-                            DoktorId = 2,
-                            EtiketTarihi = new DateOnly(2023, 3, 8)
+                            EtiketTarihi = new DateOnly(2023, 3, 8),
+                            FotografId = 2
                         });
                 });
 
@@ -164,9 +162,7 @@ namespace WebAPI.Migrations
 
                     b.HasOne("WebAPI.Models.Domain.Etiket", "Etiket")
                         .WithMany("FotografEtiketleri")
-                        .HasForeignKey("EtiketId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EtiketId");
 
                     b.HasOne("WebAPI.Models.Domain.Fotograf", "Fotograf")
                         .WithMany("FotografEtiketleri")

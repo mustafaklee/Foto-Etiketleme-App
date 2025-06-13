@@ -5,6 +5,46 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/FotografEtiketle/PostFoto": {
+      "post": {
+        "tags": [
+          "FotografEtiketle"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EtiketSecimDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EtiketSecimDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EtiketSecimDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/FotografEtiketle": {
       "get": {
         "tags": [
@@ -59,6 +99,20 @@
   },
   "components": {
     "schemas": {
+      "EtiketSecimDto": {
+        "type": "object",
+        "properties": {
+          "fotografId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "etiketId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "WeatherForecast": {
         "type": "object",
         "properties": {

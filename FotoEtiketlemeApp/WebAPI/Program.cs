@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using WebAPI.Data;
+using WebAPI.Logic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowUI", policy =>
+    {
+        policy.WithOrigins("https://localhost:7224") // UI projesinin adresi
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 //dependency injection
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -18,7 +28,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         builder.Configuration.GetConnectionString("FotografAppDb"),
         new MySqlServerVersion(new Version(8,0,0))
 ));
-
 
 var app = builder.Build();
 app.UseStaticFiles(); // wwwroot klasöründen eriþim saðlar
@@ -29,9 +38,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("AllowUI");
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();

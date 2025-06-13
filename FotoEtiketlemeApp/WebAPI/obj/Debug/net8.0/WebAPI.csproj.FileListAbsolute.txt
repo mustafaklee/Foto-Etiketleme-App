@@ -1,13 +1,6 @@
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.csproj.AssemblyReference.cache
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfoInputs.cache
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfo.cs
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.sourcelink.json
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\appsettings.json
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\WebAPI.staticwebassets.runtime.json
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\WebAPI.staticwebassets.endpoints.json
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\WebAPI.exe
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\WebAPI.deps.json
@@ -90,6 +83,14 @@ C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.csproj.AssemblyReference.cache
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfoInputs.cache
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfo.cs
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.sourcelink.json
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\scopedcss\bundle\WebAPI.styles.css
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\staticwebassets.development.json
@@ -107,4 +108,3 @@ C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\WebAPI.genruntimeconfig.cache
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\ref\WebAPI.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\WebAPI.staticwebassets.runtime.json

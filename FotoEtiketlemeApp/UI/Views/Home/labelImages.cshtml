@@ -3,27 +3,29 @@
     Layout = "_Layout";
 }
 
+<script>
+    const fotograflar = @Html.Raw(Json.Serialize(Model.Fotograflar));
+</script>
+
+<link rel="stylesheet" href="~/css/label-images.css" />
 <script src="~/js/script.js"></script>
-<link rel="stylesheet" href="~/css/label-images.css">
 
 <div class="etiket-container">
-    <div class="info"><p id="fotoIndex">1. fotoğraf</p></div>
+    <div class="info"><p id="fotoIndex">1. görsel</p></div>
 
     <div class="save-btn">
         <button id="saveBtn">Kaydet</button>
     </div>
 
     <div class="fotograf-item">
-        <img id="photo" src="" data-page="1" alt="Fotoğraf bulunamadı" />
+        <img id="photo" src="" data-id="" alt="Fotoğraf bulunamadı" />
     </div>
 
     <div class="foot-item">
-        <div class="etiket-btn">
             @foreach (var etiket in Model.Etiketler)
             {
                 <button class="etiket-btn" data-id="@etiket.Id">@etiket.EtiketAd</button>
             }
-        </div>
 
         <div class="foot-item">
             <button id="btn-prev">⬅ Geri</button>
@@ -31,45 +33,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    const fotoUrls = @Html.Raw(Json.Serialize(Model.Fotograflar));
-    let currentIndex = 0;
-
-    const photoEl = document.getElementById("photo");
-    const fotoIndexText = document.getElementById("fotoIndex");
-
-    function updatePhoto() {
-        if (fotoUrls.length > 0 && fotoUrls[currentIndex]) {
-            photoEl.src = fotoUrls[currentIndex];
-            photoEl.dataset.page = currentIndex + 1;
-            fotoIndexText.textContent = `${currentIndex + 1}. fotoğraf`;
-        } else {
-            photoEl.src = "";
-            fotoIndexText.textContent = "Fotoğraf bulunamadı";
-        }
-    }
-
-    document.getElementById("btn-next").addEventListener("click", function () {
-        if (currentIndex < fotoUrls.length - 1) {
-            currentIndex++;
-            updatePhoto();
-        }
-    });
-
-    document.getElementById("btn-prev").addEventListener("click", function () {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updatePhoto();
-        }
-    });
-
-    updatePhoto(); // sayfa yüklendiğinde ilk fotoğrafı göster
-
-    let etiketSecimleri = []; // { fotografUrl, etiketId } objeleri burada tutulur
-
-
-
-
-
-</script>

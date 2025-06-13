@@ -70,14 +70,16 @@ namespace WebAPI.Migrations
                 name: "FotografEtiket",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     FotografId = table.Column<int>(type: "int", nullable: false),
-                    EtiketId = table.Column<int>(type: "int", nullable: false),
+                    EtiketId = table.Column<int>(type: "int", nullable: true),
                     DoktorId = table.Column<int>(type: "int", nullable: false),
-                    EtiketTarihi = table.Column<DateOnly>(type: "date", nullable: false)
+                    EtiketTarihi = table.Column<DateOnly>(type: "date", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FotografEtiket", x => new { x.FotografId, x.EtiketId });
+                    table.PrimaryKey("PK_FotografEtiket", x => x.Id);
                     table.ForeignKey(
                         name: "FK_FotografEtiket_Doktor_DoktorId",
                         column: x => x.DoktorId,
@@ -88,8 +90,7 @@ namespace WebAPI.Migrations
                         name: "FK_FotografEtiket_Etiket_EtiketId",
                         column: x => x.EtiketId,
                         principalTable: "Etiket",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_FotografEtiket_Fotograf_FotografId",
                         column: x => x.FotografId,
@@ -110,23 +111,14 @@ namespace WebAPI.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Fotograf",
-                columns: new[] { "Id", "FotografPath" },
-                values: new object[,]
-                {
-                    { 1, "fotograf.jpg" },
-                    { 2, "2fotograf.jpg" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "FotografEtiket",
-                columns: new[] { "EtiketId", "FotografId", "DoktorId", "EtiketTarihi" },
+                columns: new[] { "Id", "DoktorId", "EtiketId", "EtiketTarihi", "FotografId" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, new DateOnly(2028, 5, 21) },
-                    { 2, 1, 1, new DateOnly(2022, 2, 5) },
-                    { 2, 2, 2, new DateOnly(2021, 1, 2) },
-                    { 3, 2, 2, new DateOnly(2023, 3, 8) }
+                    { 1, 1, 1, new DateOnly(2028, 5, 21), 1 },
+                    { 2, 1, 2, new DateOnly(2022, 2, 5), 1 },
+                    { 3, 2, 2, new DateOnly(2021, 1, 2), 2 },
+                    { 4, 2, 3, new DateOnly(2023, 3, 8), 2 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -138,6 +130,11 @@ namespace WebAPI.Migrations
                 name: "IX_FotografEtiket_EtiketId",
                 table: "FotografEtiket",
                 column: "EtiketId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FotografEtiket_FotografId",
+                table: "FotografEtiket",
+                column: "FotografId");
         }
 
         /// <inheritdoc />

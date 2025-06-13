@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mz/nHRzZoghxNtlBTFttVNxlQwOqtWhUr0oMjOn4+Lo=",
+  "Hash": "55mmh+/O5C8RoXzmAMfO4n1eCGCll0M1pZhwFWl6IxI=",
   "Source": "UI",
   "BasePath": "_content/UI",
   "Mode": "Default",
@@ -178,8 +178,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5ipweew5fc",
-      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "Fingerprint": "9g96nqa8gg",
+      "Integrity": "WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\script.js"
@@ -1794,7 +1794,7 @@
       ]
     },
     {
-      "Route": "js/script.5ipweew5fc.js",
+      "Route": "js/script.9g96nqa8gg.js",
       "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\script.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1804,7 +1804,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "0"
+          "Value": "1838"
         },
         {
           "Name": "Content-Type",
@@ -1812,11 +1812,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+          "Value": "\"WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 12:44:28 GMT"
+          "Value": "Fri, 13 Jun 2025 16:16:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1826,7 +1826,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5ipweew5fc"
+          "Value": "9g96nqa8gg"
         },
         {
           "Name": "label",
@@ -1834,7 +1834,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+          "Value": "sha256-WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M="
         }
       ]
     },
@@ -1849,7 +1849,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "0"
+          "Value": "1838"
         },
         {
           "Name": "Content-Type",
@@ -1857,11 +1857,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+          "Value": "\"WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 12:44:28 GMT"
+          "Value": "Fri, 13 Jun 2025 16:16:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1871,7 +1871,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+          "Value": "sha256-WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M="
         }
       ]
     },
@@ -6572,7 +6572,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 00:58:46 GMT"
+          "Value": "Fri, 13 Jun 2025 15:51:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6609,7 +6609,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 00:58:46 GMT"
+          "Value": "Fri, 13 Jun 2025 15:51:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6654,7 +6654,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 00:58:46 GMT"
+          "Value": "Fri, 13 Jun 2025 15:51:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6699,7 +6699,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 00:58:46 GMT"
+          "Value": "Fri, 13 Jun 2025 15:51:44 GMT"
         },
         {
           "Name": "Cache-Control",

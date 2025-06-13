@@ -5,6 +5,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using UI.Models;
+using UI.Models.Dtos;
 using WebAPI.Models.Dtos;
 namespace UI.Controllers;
 
@@ -45,7 +46,7 @@ public class HomeController : Controller
 
     public class FotoResponse
     {
-        public List<string> Fotograflar { get; set; }
+        public List<FotografDto> Fotograflar { get; set; }
         public List<EtiketDto> Etiketler { get; set; }
     }
 
