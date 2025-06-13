@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
+using WebAPI.Controllers;
 using WebAPI.Models.Domain;
 
 namespace WebAPI.Data
@@ -13,6 +14,9 @@ namespace WebAPI.Data
 
         public DbSet<Fotograf> Fotograf { get; set; }
         public DbSet<Etiket> Etiket { get; set; }
+
+        public DbSet<FotografEtiket>  FotografEtiket {get;set;}
+        public DbSet<Doktor> Doktor { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

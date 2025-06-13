@@ -1,7 +1,11 @@
+﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using UI.Models;
-
+using WebAPI.Models.Dtos;
 namespace UI.Controllers;
 
 public class HomeController : Controller
@@ -22,22 +26,27 @@ public class HomeController : Controller
     {
         return View();
     }
-    public async Task<IActionResult> labelImages(int id=1)
+    public async Task<IActionResult> labelImages()
     {
         var client = _httpClientFactory.CreateClient();
-        var response = await client.GetAsync($"https://localhost:7252/api/fotografetiketle/{id}");
+        var response = await client.GetAsync("https://localhost:7252/api/fotografetiketle");
+
         if (!response.IsSuccessStatusCode)
         {
-            return View("an error occurred");
+            return View("Error");
         }
 
         var result = await response.Content.ReadFromJsonAsync<FotoResponse>();
-        return View(model: result?.Url);
+
+        return View(result); // Model olarak Tüm FotoResponse gönderiyoruz
     }
+
+
 
     public class FotoResponse
     {
-        public string Url { get; set; }
+        public List<string> Fotograflar { get; set; }
+        public List<EtiketDto> Etiketler { get; set; }
     }
 
     public IActionResult updateInfo()

@@ -2,17 +2,11 @@
   {
     "ContainingType": "WebAPI.Controllers.FotografEtiketle",
     "Method": "GetFoto",
-    "RelativePath": "api/FotografEtiketle/{id}",
+    "RelativePath": "api/FotografEtiketle",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

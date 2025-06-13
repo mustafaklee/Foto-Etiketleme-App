@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G03isos7Sh1fZPYrcOC842QyxQXBADlGmFBbbnIiW7A=",
+  "Hash": "CdIO3wDICbF6eFHI/ba8JOe48AgN/qJZVUWaO5+o+lo=",
   "Source": "WebAPI",
   "BasePath": "_content/WebAPI",
   "Mode": "Default",
@@ -15,6 +15,2171 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.1.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vumzagqvzn",
+      "Integrity": "ibc79B62d8u+VULkvjCu8zDiFkoIpNkg8rvoK+SV3Jk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.10.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.10#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gob5ppmken",
+      "Integrity": "YOcgUDPBJjdrQcKFntaxNztEoksO7QDc8tf/DFrve0M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.10.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.11.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.11#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wuk1cqcy1h",
+      "Integrity": "KGzIV0F1RkGukDpeH3I3+y0Znw3rKMpgRcLvxCpb6C4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.11.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.12.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.12#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uja5fwctju",
+      "Integrity": "qrPV1HkcVw17c3aY02lhpNAuzeO/b5WzEshWdJDGK+A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.12.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.13.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.13#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zbr23maol6",
+      "Integrity": "IW6NFn6L+3ygtYOiSk2nGgzvUpyolFHKZhTXF3RBg1Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.13.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.14.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.14#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cu1flau4zo",
+      "Integrity": "FDRPZkYmFXdmz+ZqWq6NZzC6ZDsDc+JPEcRJ7cvEllM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.14.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.15.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.15#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p1xfkqfjmx",
+      "Integrity": "DUH7u1rm8AUPlMoil/b6JAirt1cDQhJjwFCIuQbmVig=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.15.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.17.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.17#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tn1ljd8ser",
+      "Integrity": "Vz1eprl5mp32kF+cH+S1YttwWKOrRWfmiMIFXsv2Ruc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.17.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.18.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.18#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qbhnp6r25l",
+      "Integrity": "iocS0YtWUOmS+RTkXBiTbLlTdiZJMxOEwWr84dh3kns=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.18.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.19.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.19#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6tll9u166",
+      "Integrity": "91/WU/ALYnOMAAYAL9/OZn5nVCErL0BjkPRZFB2SCSU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.19.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.2.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i2eeuy01b6",
+      "Integrity": "uiS203tsf2s/fPvDztmrU8AlJoZh7boP0Z4XXufjouI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.20.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.20#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "v9b3x33niw",
+      "Integrity": "0/hWdBoR7Bc3cG8vEH+7e8bECMsXFfLk0C8owKsf8Y0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.20.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.21.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.21#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1o44anpwf6",
+      "Integrity": "X3kgLcLfMoTvvkNr1wX+GAMZ3T8GVosn9KSVb/JvhjA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.21.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.22.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.22#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zhazsg1xqp",
+      "Integrity": "50tE6V6o+nd+gLqtPpnA7ctzuDtbM1Q6HawpucWz5fY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.22.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.23.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.23#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bsnu3zvjvf",
+      "Integrity": "FS08zeU+wb3wTARmnuE9KMUwv5gisaWNNG4EjQdYz0M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.23.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.3.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a7s2048psz",
+      "Integrity": "urTuXbQr8V/NLL32sCZye5RV0aiOP596l16/xJcqpZk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.4.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h81foq20sr",
+      "Integrity": "AZTcLwfSfqF7FacTkPiQEPZZTjvoO30BSt6Vzpy1ch4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.5.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.5#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e90uswcka1",
+      "Integrity": "0jg3HL1PhdVcHaZcE0qBvKD7tNeQl/4UbSsHlJmM2GE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.6.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.6#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sib8kjn12z",
+      "Integrity": "VFwHr2t7NsEktAVBPonQj4iXhmBruVnypCwVPLldi/g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.6.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.7.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s1gbb37q1j",
+      "Integrity": "ABNlA5Vu8AGaC6i2jZ48YPgJY3WaiMVonlExKu3HwSE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.7.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.9.jpg",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "img/cat.9#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6rpe5k5bt4",
+      "Integrity": "4n7U4vi1AzgD3Uo0pqTlGMslgfJA3DAqYMz1OtXjn9M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cat.9.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "img/cat.1.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16880"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ibc79B62d8u+VULkvjCu8zDiFkoIpNkg8rvoK+SV3Jk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:05:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ibc79B62d8u+VULkvjCu8zDiFkoIpNkg8rvoK+SV3Jk="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.1.vumzagqvzn.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16880"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ibc79B62d8u+VULkvjCu8zDiFkoIpNkg8rvoK+SV3Jk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:05:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vumzagqvzn"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ibc79B62d8u+VULkvjCu8zDiFkoIpNkg8rvoK+SV3Jk="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.10.gob5ppmken.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.10.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34315"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YOcgUDPBJjdrQcKFntaxNztEoksO7QDc8tf/DFrve0M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:05:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gob5ppmken"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.10.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YOcgUDPBJjdrQcKFntaxNztEoksO7QDc8tf/DFrve0M="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.10.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.10.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34315"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YOcgUDPBJjdrQcKFntaxNztEoksO7QDc8tf/DFrve0M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:05:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YOcgUDPBJjdrQcKFntaxNztEoksO7QDc8tf/DFrve0M="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.11.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.11.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22295"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KGzIV0F1RkGukDpeH3I3+y0Znw3rKMpgRcLvxCpb6C4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:06:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KGzIV0F1RkGukDpeH3I3+y0Znw3rKMpgRcLvxCpb6C4="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.11.wuk1cqcy1h.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.11.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22295"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KGzIV0F1RkGukDpeH3I3+y0Znw3rKMpgRcLvxCpb6C4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:06:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wuk1cqcy1h"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.11.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KGzIV0F1RkGukDpeH3I3+y0Znw3rKMpgRcLvxCpb6C4="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.12.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.12.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12109"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qrPV1HkcVw17c3aY02lhpNAuzeO/b5WzEshWdJDGK+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qrPV1HkcVw17c3aY02lhpNAuzeO/b5WzEshWdJDGK+A="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.12.uja5fwctju.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.12.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12109"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qrPV1HkcVw17c3aY02lhpNAuzeO/b5WzEshWdJDGK+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uja5fwctju"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.12.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qrPV1HkcVw17c3aY02lhpNAuzeO/b5WzEshWdJDGK+A="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.13.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.13.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IW6NFn6L+3ygtYOiSk2nGgzvUpyolFHKZhTXF3RBg1Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IW6NFn6L+3ygtYOiSk2nGgzvUpyolFHKZhTXF3RBg1Q="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.13.zbr23maol6.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.13.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IW6NFn6L+3ygtYOiSk2nGgzvUpyolFHKZhTXF3RBg1Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zbr23maol6"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.13.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IW6NFn6L+3ygtYOiSk2nGgzvUpyolFHKZhTXF3RBg1Q="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.14.cu1flau4zo.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FDRPZkYmFXdmz+ZqWq6NZzC6ZDsDc+JPEcRJ7cvEllM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cu1flau4zo"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.14.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FDRPZkYmFXdmz+ZqWq6NZzC6ZDsDc+JPEcRJ7cvEllM="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.14.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FDRPZkYmFXdmz+ZqWq6NZzC6ZDsDc+JPEcRJ7cvEllM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-FDRPZkYmFXdmz+ZqWq6NZzC6ZDsDc+JPEcRJ7cvEllM="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.15.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.15.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20569"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DUH7u1rm8AUPlMoil/b6JAirt1cDQhJjwFCIuQbmVig=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DUH7u1rm8AUPlMoil/b6JAirt1cDQhJjwFCIuQbmVig="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.15.p1xfkqfjmx.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.15.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20569"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DUH7u1rm8AUPlMoil/b6JAirt1cDQhJjwFCIuQbmVig=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p1xfkqfjmx"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.15.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DUH7u1rm8AUPlMoil/b6JAirt1cDQhJjwFCIuQbmVig="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.17.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.17.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32072"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vz1eprl5mp32kF+cH+S1YttwWKOrRWfmiMIFXsv2Ruc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vz1eprl5mp32kF+cH+S1YttwWKOrRWfmiMIFXsv2Ruc="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.17.tn1ljd8ser.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.17.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32072"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vz1eprl5mp32kF+cH+S1YttwWKOrRWfmiMIFXsv2Ruc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tn1ljd8ser"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.17.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vz1eprl5mp32kF+cH+S1YttwWKOrRWfmiMIFXsv2Ruc="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.18.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.18.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30119"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iocS0YtWUOmS+RTkXBiTbLlTdiZJMxOEwWr84dh3kns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iocS0YtWUOmS+RTkXBiTbLlTdiZJMxOEwWr84dh3kns="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.18.qbhnp6r25l.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.18.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30119"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iocS0YtWUOmS+RTkXBiTbLlTdiZJMxOEwWr84dh3kns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qbhnp6r25l"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.18.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iocS0YtWUOmS+RTkXBiTbLlTdiZJMxOEwWr84dh3kns="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.19.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.19.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12696"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"91/WU/ALYnOMAAYAL9/OZn5nVCErL0BjkPRZFB2SCSU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-91/WU/ALYnOMAAYAL9/OZn5nVCErL0BjkPRZFB2SCSU="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.19.x6tll9u166.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.19.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12696"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"91/WU/ALYnOMAAYAL9/OZn5nVCErL0BjkPRZFB2SCSU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6tll9u166"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.19.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-91/WU/ALYnOMAAYAL9/OZn5nVCErL0BjkPRZFB2SCSU="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.2.i2eeuy01b6.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24692"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uiS203tsf2s/fPvDztmrU8AlJoZh7boP0Z4XXufjouI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i2eeuy01b6"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uiS203tsf2s/fPvDztmrU8AlJoZh7boP0Z4XXufjouI="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.2.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24692"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uiS203tsf2s/fPvDztmrU8AlJoZh7boP0Z4XXufjouI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uiS203tsf2s/fPvDztmrU8AlJoZh7boP0Z4XXufjouI="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.20.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.20.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22043"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/hWdBoR7Bc3cG8vEH+7e8bECMsXFfLk0C8owKsf8Y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0/hWdBoR7Bc3cG8vEH+7e8bECMsXFfLk0C8owKsf8Y0="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.20.v9b3x33niw.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.20.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22043"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/hWdBoR7Bc3cG8vEH+7e8bECMsXFfLk0C8owKsf8Y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v9b3x33niw"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.20.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0/hWdBoR7Bc3cG8vEH+7e8bECMsXFfLk0C8owKsf8Y0="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.21.1o44anpwf6.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.21.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34342"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"X3kgLcLfMoTvvkNr1wX+GAMZ3T8GVosn9KSVb/JvhjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1o44anpwf6"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.21.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-X3kgLcLfMoTvvkNr1wX+GAMZ3T8GVosn9KSVb/JvhjA="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.21.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.21.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34342"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"X3kgLcLfMoTvvkNr1wX+GAMZ3T8GVosn9KSVb/JvhjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-X3kgLcLfMoTvvkNr1wX+GAMZ3T8GVosn9KSVb/JvhjA="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.22.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.22.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29232"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"50tE6V6o+nd+gLqtPpnA7ctzuDtbM1Q6HawpucWz5fY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-50tE6V6o+nd+gLqtPpnA7ctzuDtbM1Q6HawpucWz5fY="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.22.zhazsg1xqp.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.22.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29232"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"50tE6V6o+nd+gLqtPpnA7ctzuDtbM1Q6HawpucWz5fY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zhazsg1xqp"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.22.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-50tE6V6o+nd+gLqtPpnA7ctzuDtbM1Q6HawpucWz5fY="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.23.bsnu3zvjvf.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.23.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13853"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FS08zeU+wb3wTARmnuE9KMUwv5gisaWNNG4EjQdYz0M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bsnu3zvjvf"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.23.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FS08zeU+wb3wTARmnuE9KMUwv5gisaWNNG4EjQdYz0M="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.23.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.23.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13853"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FS08zeU+wb3wTARmnuE9KMUwv5gisaWNNG4EjQdYz0M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:07:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-FS08zeU+wb3wTARmnuE9KMUwv5gisaWNNG4EjQdYz0M="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.3.a7s2048psz.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37971"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"urTuXbQr8V/NLL32sCZye5RV0aiOP596l16/xJcqpZk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:08:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a7s2048psz"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-urTuXbQr8V/NLL32sCZye5RV0aiOP596l16/xJcqpZk="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.3.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37971"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"urTuXbQr8V/NLL32sCZye5RV0aiOP596l16/xJcqpZk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:08:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-urTuXbQr8V/NLL32sCZye5RV0aiOP596l16/xJcqpZk="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.4.h81foq20sr.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AZTcLwfSfqF7FacTkPiQEPZZTjvoO30BSt6Vzpy1ch4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:08:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h81foq20sr"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.4.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AZTcLwfSfqF7FacTkPiQEPZZTjvoO30BSt6Vzpy1ch4="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.4.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AZTcLwfSfqF7FacTkPiQEPZZTjvoO30BSt6Vzpy1ch4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:08:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AZTcLwfSfqF7FacTkPiQEPZZTjvoO30BSt6Vzpy1ch4="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.5.e90uswcka1.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5382"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0jg3HL1PhdVcHaZcE0qBvKD7tNeQl/4UbSsHlJmM2GE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:09:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e90uswcka1"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.5.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0jg3HL1PhdVcHaZcE0qBvKD7tNeQl/4UbSsHlJmM2GE="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.5.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5382"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0jg3HL1PhdVcHaZcE0qBvKD7tNeQl/4UbSsHlJmM2GE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:09:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0jg3HL1PhdVcHaZcE0qBvKD7tNeQl/4UbSsHlJmM2GE="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.6.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21413"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VFwHr2t7NsEktAVBPonQj4iXhmBruVnypCwVPLldi/g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:10:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VFwHr2t7NsEktAVBPonQj4iXhmBruVnypCwVPLldi/g="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.6.sib8kjn12z.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21413"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VFwHr2t7NsEktAVBPonQj4iXhmBruVnypCwVPLldi/g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:10:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sib8kjn12z"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.6.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VFwHr2t7NsEktAVBPonQj4iXhmBruVnypCwVPLldi/g="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.7.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36934"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ABNlA5Vu8AGaC6i2jZ48YPgJY3WaiMVonlExKu3HwSE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:10:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ABNlA5Vu8AGaC6i2jZ48YPgJY3WaiMVonlExKu3HwSE="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.7.s1gbb37q1j.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36934"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ABNlA5Vu8AGaC6i2jZ48YPgJY3WaiMVonlExKu3HwSE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:10:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s1gbb37q1j"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ABNlA5Vu8AGaC6i2jZ48YPgJY3WaiMVonlExKu3HwSE="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.9.6rpe5k5bt4.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16220"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4n7U4vi1AzgD3Uo0pqTlGMslgfJA3DAqYMz1OtXjn9M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:11:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6rpe5k5bt4"
+        },
+        {
+          "Name": "label",
+          "Value": "img/cat.9.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4n7U4vi1AzgD3Uo0pqTlGMslgfJA3DAqYMz1OtXjn9M="
+        }
+      ]
+    },
+    {
+      "Route": "img/cat.9.jpg",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\img\\cat.9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16220"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4n7U4vi1AzgD3Uo0pqTlGMslgfJA3DAqYMz1OtXjn9M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Sep 2013 17:11:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4n7U4vi1AzgD3Uo0pqTlGMslgfJA3DAqYMz1OtXjn9M="
+        }
+      ]
+    }
+  ]
 }

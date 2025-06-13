@@ -1,0 +1,50 @@
+# Visual Studio ile ilgili dosyalar
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build çıktı klasörleri
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.log
+
+# Derlenmiş dosyalar
+*.dll
+*.exe
+*.pdb
+*.cache
+*.appx
+*.appxbundle
+*.msi
+*.nupkg
+*.snupkg
+
+# ASP.NET Static Assets
+**/wwwroot/img/*.jpg
+
+# Rider ve diğer IDE'ler
+.idea/
+*.sln.iml
+
+# VS Code ayarları (isteğe bağlı)
+.vscode/
+
+# Paket klasörleri
+node_modules/
+packages/
+
+# Dotnet kullanıcı verileri
+*.db-shm
+*.db-wal
+*.db
+
+# Diğer
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db

@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\img\dusuk-isikta-fotograf-cekme.jpg" />
-    <Content Remove="wwwroot\img\fotograf.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -22,11 +17,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\img\dusuk-isikta-fotograf-cekme.jpg" />
-    <None Include="wwwroot\img\fotograf.jpg" />
   </ItemGroup>
 
 </Project>

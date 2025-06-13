@@ -1,40 +1,75 @@
-﻿
+﻿@model UI.Controllers.HomeController.FotoResponse
 @{
-    Layout = "_Layout"; // Alternatif layout dosyası
+    Layout = "_Layout";
 }
+
+<script src="~/js/script.js"></script>
 <link rel="stylesheet" href="~/css/label-images.css">
+
 <div class="etiket-container">
-    <div class="info"><p>1.fotoğraf</p></div>
+    <div class="info"><p id="fotoIndex">1. fotoğraf</p></div>
+
     <div class="save-btn">
-        <button>Kaydet</button>
+        <button id="saveBtn">Kaydet</button>
     </div>
+
     <div class="fotograf-item">
-        @if (Model != null)
-        {
-            <img src="@Model" alt="fotograf">
-        }
-        else
-        {
-            <p>Fotograf Bulunamadi</p>
-        }
+        <img id="photo" src="" data-page="1" alt="Fotoğraf bulunamadı" />
     </div>
+
     <div class="foot-item">
-        <div class="geribtn-item">
-            <button>Geri</button>
-        </div>
-
-
         <div class="etiket-btn">
-            <button>A</button>
-            <button>B</button>
-            <button>C</button>
-            <button>D</button>
-            <button>E</button>
-
+            @foreach (var etiket in Model.Etiketler)
+            {
+                <button class="etiket-btn" data-id="@etiket.Id">@etiket.EtiketAd</button>
+            }
         </div>
 
-        <div class="ileribtn-item">
-            <button>İleri</button>
+        <div class="foot-item">
+            <button id="btn-prev">⬅ Geri</button>
+            <button id="btn-next">İleri ➡</button>
         </div>
     </div>
 </div>
+
+<script>
+    const fotoUrls = @Html.Raw(Json.Serialize(Model.Fotograflar));
+    let currentIndex = 0;
+
+    const photoEl = document.getElementById("photo");
+    const fotoIndexText = document.getElementById("fotoIndex");
+
+    function updatePhoto() {
+        if (fotoUrls.length > 0 && fotoUrls[currentIndex]) {
+            photoEl.src = fotoUrls[currentIndex];
+            photoEl.dataset.page = currentIndex + 1;
+            fotoIndexText.textContent = `${currentIndex + 1}. fotoğraf`;
+        } else {
+            photoEl.src = "";
+            fotoIndexText.textContent = "Fotoğraf bulunamadı";
+        }
+    }
+
+    document.getElementById("btn-next").addEventListener("click", function () {
+        if (currentIndex < fotoUrls.length - 1) {
+            currentIndex++;
+            updatePhoto();
+        }
+    });
+
+    document.getElementById("btn-prev").addEventListener("click", function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updatePhoto();
+        }
+    });
+
+    updatePhoto(); // sayfa yüklendiğinde ilk fotoğrafı göster
+
+    let etiketSecimleri = []; // { fotografUrl, etiketId } objeleri burada tutulur
+
+
+
+
+
+</script>

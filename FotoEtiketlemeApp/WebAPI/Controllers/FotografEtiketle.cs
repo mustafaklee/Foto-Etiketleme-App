@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.X509Certificates;
 using WebAPI.Data;
+using WebAPI.Models.Domain;
 
 namespace WebAPI.Controllers
 {
@@ -15,18 +18,40 @@ namespace WebAPI.Controllers
             this.appDbContext = _appDbContext;
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetFoto(int id)
+        [HttpGet]
+        public IActionResult GetFoto()
         {
-            var foto = appDbContext.Fotograf.Find(id);
+            int doktorID = 1;
 
-            if(foto == null)
+            var fotograflar = appDbContext.Fotograf
+                .Where(f => appDbContext.FotografEtiket
+                    .Where(fe => fe.FotografId == f.Id && fe.DoktorId == doktorID)
+                    .Any(c => c.EtiketId != null)) // doktor henüz etiketlememiş
+                .Select(f => new
+                {
+                    Id = f.Id,
+                    FotografPath = f.FotografPath
+                })
+                .ToList();
+
+
+
+            var etiketler = appDbContext.Etiket
+                .Select(f=>new { f.Id ,f.EtiketAd })
+                .ToList();
+
+
+            if (fotograflar == null || !fotograflar.Any())
             {
-                return NotFound();
+                return NotFound("Etiketlenmiş fotoğraf bulunamadı.");
             }
 
-            string path = $"{Request.Scheme}://{Request.Host}/" + foto.FotografPath;
-            return Ok(new { url = path });
+            var paths = fotograflar
+                .Select(f => $"{Request.Scheme}://{Request.Host}/{f.FotografPath}")
+                .ToList();
+
+            return Ok(new { Fotograflar = paths,
+                            Etiketler = etiketler});
         }
 
     }
