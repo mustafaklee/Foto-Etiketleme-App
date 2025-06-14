@@ -1,14 +1,14 @@
-﻿@model UI.Controllers.HomeController.FotoResponse
-@{
+﻿@{
     Layout = "_Layout";
 }
 
+<meta charset="utf-8" />
 <script>
     const fotograflar = @Html.Raw(Json.Serialize(Model.Fotograflar));
 </script>
-
-<link rel="stylesheet" href="~/css/label-images.css" />
 <script src="~/js/script.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/label-images.css" />
 
 <div class="etiket-container">
     <div class="info"><p id="fotoIndex">1. görsel</p></div>
@@ -16,6 +16,13 @@
     <div class="save-btn">
         <button id="saveBtn">Kaydet</button>
     </div>
+
+    @if (ViewBag.message != null)
+    {
+        <div class="alert alert-info">@ViewBag.message</div>
+    }
+    <div id="resultMessage" class="alert d-none mt-3" role="alert"></div>
+
 
     <div class="fotograf-item">
         <img id="photo" src="" data-id="" alt="Fotoğraf bulunamadı" />

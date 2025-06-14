@@ -1,8 +1,9 @@
-﻿namespace UI.Models.Dtos
+﻿namespace WebAPI.Models.Dtos
 {
-    public class FotografDto
+    public class FotoDto
     {
         public int Id { get; set; }
         public string Path { get; set; }
     }
+
 }

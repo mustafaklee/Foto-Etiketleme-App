@@ -42,6 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("saveBtn").addEventListener("click", () => {
+        const msgBox = document.getElementById("resultMessage");
+        if (etiketSecimleri.length === 0) {
+            msgBox.textContent = "Lutfen en az bir fotograf icin etiket secin.";
+            msgBox.classList.remove("d-none", "alert-success");
+            msgBox.classList.add("alert-danger");
+            return;
+        }
+
         fetch("https://localhost:7252/api/FotografEtiketle/PostFoto", {
             method: "POST",
             headers: {
@@ -49,6 +57,20 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify(etiketSecimleri)
         })
-            .then(res => res.ok ? alert("Kaydedildi!") : alert("Hata oluþtu."));
+            .then(res => res.json())
+            .then(json => {
+                msgBox.textContent = json.message;
+
+                msgBox.classList.remove("d-none", "alert-success", "alert-danger");
+                msgBox.classList.add(json.success ? "alert-success" : "alert-danger");
+            })
+            .catch(() => {
+                const msgBox = document.getElementById("resultMessage");
+                msgBox.textContent = "Sunucu hatasý oluþtu.";
+                msgBox.classList.remove("d-none", "alert-success");
+                msgBox.classList.add("alert-danger");
+            });
     });
+
+
 });

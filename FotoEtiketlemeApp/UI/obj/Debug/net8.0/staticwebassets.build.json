@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "55mmh+/O5C8RoXzmAMfO4n1eCGCll0M1pZhwFWl6IxI=",
+  "Hash": "jVIlIV40LSzl6w8f4RGCphHpEvW4wSOCUS68MkhKx7k=",
   "Source": "UI",
   "BasePath": "_content/UI",
   "Mode": "Default",
@@ -178,8 +178,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "9g96nqa8gg",
-      "Integrity": "WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M=",
+      "Fingerprint": "2v9hwbnsm6",
+      "Integrity": "0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\script.js"
@@ -1488,7 +1488,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 21:53:06 GMT"
+          "Value": "Sat, 14 Jun 2025 13:35:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1525,7 +1525,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 21:53:06 GMT"
+          "Value": "Sat, 14 Jun 2025 13:35:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1794,7 +1794,7 @@
       ]
     },
     {
-      "Route": "js/script.9g96nqa8gg.js",
+      "Route": "js/script.2v9hwbnsm6.js",
       "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\script.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1804,7 +1804,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1838"
+          "Value": "2745"
         },
         {
           "Name": "Content-Type",
@@ -1812,11 +1812,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M=\""
+          "Value": "\"0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 16:16:17 GMT"
+          "Value": "Sat, 14 Jun 2025 14:41:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1826,7 +1826,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "9g96nqa8gg"
+          "Value": "2v9hwbnsm6"
         },
         {
           "Name": "label",
@@ -1834,7 +1834,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M="
+          "Value": "sha256-0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU="
         }
       ]
     },
@@ -1849,7 +1849,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1838"
+          "Value": "2745"
         },
         {
           "Name": "Content-Type",
@@ -1857,11 +1857,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M=\""
+          "Value": "\"0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 16:16:17 GMT"
+          "Value": "Sat, 14 Jun 2025 14:41:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1871,7 +1871,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WTRPaxDmWWY0MBq3TY426kYVUGZxTUz2V9nVc8y608M="
+          "Value": "sha256-0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU="
         }
       ]
     },

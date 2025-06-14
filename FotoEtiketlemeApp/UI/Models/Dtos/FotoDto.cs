@@ -1,8 +1,8 @@
 ﻿namespace UI.Models.Dtos
 {
-    public class EtiketDto
+    public class FotoDto
     {
         public int Id { get; set; }
-        public string EtiketAd { get; set; }
+        public string Path { get; set; }
     }
 }

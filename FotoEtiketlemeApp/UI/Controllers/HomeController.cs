@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using UI.Models;
 using UI.Models.Dtos;
-using WebAPI.Models.Dtos;
+using UI.Repositories;
+
+using Newtonsoft.Json;
+using System.Linq.Expressions;
 namespace UI.Controllers;
 
 public class HomeController : Controller
@@ -29,25 +29,35 @@ public class HomeController : Controller
     }
     public async Task<IActionResult> labelImages()
     {
-        var client = _httpClientFactory.CreateClient();
-        var response = await client.GetAsync("https://localhost:7252/api/fotografetiketle");
-
-        if (!response.IsSuccessStatusCode)
+        try
         {
-            return View("Error");
+            var client = _httpClientFactory.CreateClient();
+            var response = await client.GetAsync("https://localhost:7252/api/fotografetiketle");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                ViewBag.message = "Sunucuda hata oluştu.";
+                return View(new FotoEtiketDto
+                {
+                    Fotograflar = new List<FotoDto>(),
+                    Etiketler = new List<EtiketDto>()
+                });
+            }
+            else
+            {
+
+                var json = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<OperationResultDto<FotoEtiketDto>>(json);
+
+                ViewBag.message = result.Message;
+                return View(result.Data);
+            }
         }
-
-        var result = await response.Content.ReadFromJsonAsync<FotoResponse>();
-
-        return View(result); // Model olarak Tüm FotoResponse gönderiyoruz
-    }
-
-
-
-    public class FotoResponse
-    {
-        public List<FotografDto> Fotograflar { get; set; }
-        public List<EtiketDto> Etiketler { get; set; }
+        catch(Exception ex)
+        {
+            ViewBag.message = $"Sunucuda hata oluştu. {ex}";
+            return View();
+        }
     }
 
     public IActionResult updateInfo()

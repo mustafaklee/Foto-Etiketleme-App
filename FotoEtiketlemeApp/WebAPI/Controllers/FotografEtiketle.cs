@@ -22,28 +22,20 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [Route("PostFoto")]
-        public IActionResult PostFoto([FromBody] List<EtiketSecimDto>  secimler)
+        public async Task<IActionResult> PostFoto([FromBody] List<EtiketSecimDto>  secimler)
         {
             int doktorId = 1;
-            foreach (var secim in secimler)
+            var postDataToDb = new PostDataToDB(appDbContext);
+            var result = await postDataToDb.PostFoto(secimler, doktorId);
+
+            if (result.Success)
             {
-                var mevcut = appDbContext.FotografEtiket
-                    .FirstOrDefault(fe => fe.FotografId == secim.FotografId && doktorId == fe.DoktorId);
-
-                if (mevcut != null)
-                {
-                    mevcut.EtiketId = secim.EtiketId;
-                    mevcut.EtiketTarihi = DateOnly.FromDateTime(DateTime.Now);
-                }
-                else
-                {
-                    return BadRequest($"FotografId {secim.FotografId} ve DoktorId {doktorId} ile eşleşen kayıt bulunamadı.");
-                }
+                return Ok(result);
             }
-
-            appDbContext.SaveChanges();
-            return Ok();
-
+            else
+            {
+                return BadRequest(result);
+            }
         }
 
 
@@ -54,10 +46,17 @@ namespace WebAPI.Controllers
             int doktorID = 1;
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
 
-            var fotoEtiketle = new FotoEtiketle(appDbContext);
-            var result = await fotoEtiketle.GetFoto(doktorID, baseUrl);
+            var pullDataFromDb = new PullDataFromDB(appDbContext);
+            var result = await pullDataFromDb.GetFoto(doktorID, baseUrl);
 
-            return Ok(result);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
         }
 
     }
