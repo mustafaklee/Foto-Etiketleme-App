@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jVIlIV40LSzl6w8f4RGCphHpEvW4wSOCUS68MkhKx7k=",
+  "Hash": "puoEkQqYKfzGTN9MgUOGk1RX9JuIBaeUcP6frU3Xr3A=",
   "Source": "UI",
   "BasePath": "_content/UI",
   "Mode": "Default",
@@ -178,8 +178,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2v9hwbnsm6",
-      "Integrity": "0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU=",
+      "Fingerprint": "l21u9fsj7h",
+      "Integrity": "E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\script.js"
@@ -1794,51 +1794,6 @@
       ]
     },
     {
-      "Route": "js/script.2v9hwbnsm6.js",
-      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\script.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2745"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 14:41:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2v9hwbnsm6"
-        },
-        {
-          "Name": "label",
-          "Value": "js/script.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU="
-        }
-      ]
-    },
-    {
       "Route": "js/script.js",
       "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\script.js",
       "Selectors": [],
@@ -1849,7 +1804,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2745"
+          "Value": "2719"
         },
         {
           "Name": "Content-Type",
@@ -1857,11 +1812,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU=\""
+          "Value": "\"E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 14:41:23 GMT"
+          "Value": "Sat, 14 Jun 2025 15:06:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1871,7 +1826,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0hdjeClLncbYJ3TBnZMCQgaHa6KXqHuGVyDE2uv13KU="
+          "Value": "sha256-E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk="
+        }
+      ]
+    },
+    {
+      "Route": "js/script.l21u9fsj7h.js",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\script.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2719"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 15:06:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l21u9fsj7h"
+        },
+        {
+          "Name": "label",
+          "Value": "js/script.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk="
         }
       ]
     },
