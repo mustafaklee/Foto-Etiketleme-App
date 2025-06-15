@@ -1,5 +1,7 @@
 wwwroot\css\labeled-images.css
 wwwroot\css\label-images.css
+wwwroot\css\login.css
+wwwroot\css\register.css
 wwwroot\css\style.css
 wwwroot\css\update-info.css
 wwwroot\favicon.ico

@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\ui\\repositories\\rolevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|solutionrelative:ui\\repositories\\rolevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\ui\\repositories\\irolevalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|solutionrelative:ui\\repositories\\irolevalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\ui\\repositories\\iapirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|solutionrelative:ui\\repositories\\iapirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\ui\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|solutionrelative:ui\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\ui\\views\\login\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38B6144A-2C2A-453B-A47D-8E7763C338DF}|UI\\UI.csproj|solutionrelative:ui\\views\\login\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoleValidator.cs",
+              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Repositories\\RoleValidator.cs",
+              "RelativeDocumentMoniker": "UI\\Repositories\\RoleValidator.cs",
+              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Repositories\\RoleValidator.cs",
+              "RelativeToolTip": "UI\\Repositories\\RoleValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T23:48:03.05Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -34,28 +59,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Program.cs",
-              "RelativeToolTip": "WebAPI\\Program.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEUAAAAoAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IRoleValidation.cs",
+              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Repositories\\IRoleValidation.cs",
+              "RelativeDocumentMoniker": "UI\\Repositories\\IRoleValidation.cs",
+              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Repositories\\IRoleValidation.cs",
+              "RelativeToolTip": "UI\\Repositories\\IRoleValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T14:37:27.483Z",
+              "WhenOpened": "2025-06-15T23:47:52.183Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAuAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "IApiRepository.cs",
+              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Repositories\\IApiRepository.cs",
+              "RelativeDocumentMoniker": "UI\\Repositories\\IApiRepository.cs",
+              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Repositories\\IApiRepository.cs",
+              "RelativeToolTip": "UI\\Repositories\\IApiRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T14:36:43.023Z",
+              "WhenOpened": "2025-06-15T23:39:36.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "UI\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "UI\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwD0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T23:27:15.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Views\\Login\\Register.cshtml",
+              "RelativeDocumentMoniker": "UI\\Views\\Login\\Register.cshtml",
+              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\Views\\Login\\Register.cshtml",
+              "RelativeToolTip": "UI\\Views\\Login\\Register.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T23:27:07.427Z",
               "EditorCaption": ""
             }
           ]

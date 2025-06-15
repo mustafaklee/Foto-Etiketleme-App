@@ -4,13 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebAPI.Data;
-using WebAPI.Logic;
 using WebAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -30,7 +28,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("FotografAppDb"),
-        new MySqlServerVersion(new Version(8,0,0))
+        new MySqlServerVersion(new Version(8, 0, 0))
 ));
 
 builder.Services.AddDbContext<AuthDbContext>(options =>
@@ -41,15 +39,12 @@ builder.Services.AddDbContext<AuthDbContext>(options =>
 
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 
-
-
 //guvenlik ayarları
 builder.Services.AddIdentityCore<IdentityUser>()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AuthDbContext>()
     .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("FotoApp")
     .AddDefaultTokenProviders();
-
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -73,9 +68,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     });
 
-
 var app = builder.Build();
-app.UseStaticFiles(); 
+
+app.UseStaticFiles();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -83,10 +78,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseCors("AllowUI");
 app.UseHttpsRedirection();
-app.UseAuthorization();
-app.UseAuthentication();
-app.MapControllers();
 
+// SIRALAMA ÇOK ÖNEMLİ!
+app.UseAuthentication(); // ÖNCESİNDE olmalı
+app.UseAuthorization();  // SONRASINDA olmalı
+
+app.MapControllers();
 app.Run();

@@ -4,19 +4,19 @@ using Newtonsoft.Json;
 using UI.Models;
 using UI.Models.Dtos;
 using UI.Repositories;
-
 using Newtonsoft.Json;
 using System.Linq.Expressions;
+using Microsoft.AspNetCore.Authorization;
 namespace UI.Controllers;
 
 public class HomeController : Controller
 {
 
-    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly IApiRepository _apiRepository;
 
-    public HomeController(IHttpClientFactory httpClientFactory)
+    public HomeController(IApiRepository apiRepository)
     {
-        _httpClientFactory = httpClientFactory;
+        _apiRepository = apiRepository;
     }
 
     public IActionResult Index()
@@ -27,35 +27,18 @@ public class HomeController : Controller
     {
         return View();
     }
-    public async Task<IActionResult> labelImages()
+    [HttpGet]
+    public async Task<IActionResult> LabelImages()
     {
         try
         {
-            var client = _httpClientFactory.CreateClient();
-            var response = await client.GetAsync("https://localhost:7252/api/fotografetiketle");
-
-            if (!response.IsSuccessStatusCode)
-            {
-                ViewBag.message = "Sunucuda hata oluştu.";
-                return View(new FotoEtiketDto
-                {
-                    Fotograflar = new List<FotoDto>(),
-                    Etiketler = new List<EtiketDto>()
-                });
-            }
-            else
-            {
-
-                var json = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<OperationResultDto<FotoEtiketDto>>(json);
-
-                ViewBag.message = result.Message;
-                return View(result.Data);
-            }
+            var result = await _apiRepository.GetProtectedDataAsync("fotografetiketle");
+            ViewBag.message = result.Message;
+            return View(result.Data);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
-            ViewBag.message = $"Sunucuda hata oluştu. {ex}";
+            ViewBag.message = $"Sunucuda hata oluştu: {ex.Message}";
             return View();
         }
     }
@@ -64,7 +47,6 @@ public class HomeController : Controller
     {
         return View();
     }
-
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

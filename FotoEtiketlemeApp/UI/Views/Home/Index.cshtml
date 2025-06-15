@@ -4,4 +4,8 @@
     <p>Toplam Atanan Fotoğraf: <span class="count">0</span></p>
     <p>Etiketlenmiş Fotoğraflar: <span class="count">0</span></p>
     <p>Bekleyen Fotoğraflar: <span class="count">0</span></p>
+    @if (ViewBag.message != null)
+    {
+        <div class="alert alert-info">@ViewBag.message</div>
+    }
 </div>

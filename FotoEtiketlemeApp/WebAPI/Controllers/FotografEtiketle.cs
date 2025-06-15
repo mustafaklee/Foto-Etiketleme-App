@@ -6,10 +6,12 @@ using WebAPI.Data;
 using WebAPI.Models.Domain;
 using WebAPI.Models.Dtos;
 using WebAPI.Logic;
+using Microsoft.AspNetCore.Authorization;
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FotografEtiketle : ControllerBase
     {
 

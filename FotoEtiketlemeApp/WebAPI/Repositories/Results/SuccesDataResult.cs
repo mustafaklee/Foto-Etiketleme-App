@@ -1,4 +1,4 @@
-﻿using WebAPI.Repositories.Results.DataResult;
+﻿using WebAPI.Repositories.Results;
 
 namespace WebAPI.Repositories.Results
 {

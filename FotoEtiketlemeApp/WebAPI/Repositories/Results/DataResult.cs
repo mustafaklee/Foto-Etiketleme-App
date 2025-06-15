@@ -1,4 +1,4 @@
-﻿namespace WebAPI.Repositories.Results.DataResult
+﻿namespace WebAPI.Repositories.Results
 {
     public abstract class DataResult<T> : Result, IDataResult<T>
     {

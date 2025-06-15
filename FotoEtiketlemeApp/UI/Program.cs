@@ -1,9 +1,27 @@
+using UI.Repositories;
+using System.Net.Http;
+using Microsoft.Extensions.DependencyInjection;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
 builder.Services.AddControllers().AddNewtonsoftJson();
+
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddTransient<JwtAuthorizationHandler>();
+builder.Services.AddHttpClient("AuthorizedClient")
+    .AddHttpMessageHandler<JwtAuthorizationHandler>();
+
+builder.Services.AddScoped<IApiRepository, ApiRepository>();
+builder.Services.AddSession();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddDistributedMemoryCache();
+
+
 
 var app = builder.Build();
 
@@ -16,14 +34,14 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseRouting();
 app.UseStaticFiles();
-
-
+app.UseRouting();
+app.UseSession(); // Session'ý UseRouting'den sonra koyun
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Login}/{id?}");
 
 app.Run();

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Models.Dtos;
@@ -22,6 +23,7 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [Route("Register")]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerRequestDto)
         {
             var identityUser = new IdentityUser
