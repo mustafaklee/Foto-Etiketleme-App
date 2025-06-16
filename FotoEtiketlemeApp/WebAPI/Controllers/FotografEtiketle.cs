@@ -43,6 +43,7 @@ namespace WebAPI.Controllers
 
 
         [HttpGet]
+        [Route("GetFoto")]
         public async Task<IActionResult> GetFoto()
         {
             int doktorID = 1;
@@ -50,6 +51,27 @@ namespace WebAPI.Controllers
 
             var pullDataFromDb = new PullDataFromDB(appDbContext);
             var result = await pullDataFromDb.GetFoto(doktorID, baseUrl);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("GetFotoByDate")]
+        public async Task<IActionResult> GetFotoByDate(DateOnly startDate,
+            DateOnly endDate)
+        {
+            int doktorID = 1;
+            string baseUrl = $"{Request.Scheme}://{Request.Host}";
+
+            var pullDataFromDb = new PullDataFromDB(appDbContext);
+            var result = await pullDataFromDb.GetFotoByDate(doktorID, baseUrl,startDate,endDate);
 
             if (result.Success)
             {

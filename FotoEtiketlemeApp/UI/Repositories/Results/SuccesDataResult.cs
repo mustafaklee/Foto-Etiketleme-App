@@ -1,6 +1,6 @@
 ﻿using UI.Repositories.Results;
 
-namespace WebAPI.Repositories.Results
+namespace UI.Repositories.Results
 {
     public class SuccessDataResult<T> : DataResult<T>
     {

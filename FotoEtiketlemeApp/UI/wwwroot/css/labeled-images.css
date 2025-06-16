@@ -78,3 +78,15 @@ button:hover {
 .save-btn{
     margin-right: 0;
 }
+
+.etiket-btn .selected {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
+}
+#responseMessage {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}

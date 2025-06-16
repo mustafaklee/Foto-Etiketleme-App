@@ -1,12 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using UI.Models;
 using UI.Models.Dtos;
 using UI.Repositories;
-using Newtonsoft.Json;
-using System.Linq.Expressions;
-using Microsoft.AspNetCore.Authorization;
 namespace UI.Controllers;
 
 public class HomeController : Controller
@@ -23,16 +19,20 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    [HttpGet]
     public IActionResult labeledImages()
     {
-        return View();
+        
+        return View(new FotoEtiketDto());
     }
+
     [HttpGet]
     public async Task<IActionResult> LabelImages()
     {
         try
         {
-            var result = await _apiRepository.GetProtectedDataAsync("fotografetiketle");
+            var result = await _apiRepository.GetProtectedDataAsync("fotografetiketle/GetFoto");
             ViewBag.message = result.Message;
             return View(result.Data);
         }
@@ -42,7 +42,6 @@ public class HomeController : Controller
             return View();
         }
     }
-
     public IActionResult updateInfo()
     {
         return View();

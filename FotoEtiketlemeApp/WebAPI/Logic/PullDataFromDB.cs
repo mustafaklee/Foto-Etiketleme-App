@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using WebAPI.Repositories.Results;
 using WebAPI.Models.Domain;
 using WebAPI.Models.Dtos;
+using Microsoft.AspNetCore.Mvc;
 namespace WebAPI.Logic
 {
 
@@ -62,5 +63,80 @@ namespace WebAPI.Logic
                 return new ErrorDataResult<FotoEtiketDto>($"Bir hata meydana geldi{ex}");
             }
         }
+
+
+        
+        public async Task<IDataResult<FotoEtiketDto>> GetFotoByDate(
+            int doktorID,
+            string baseUrl,
+            DateOnly startDate,
+            DateOnly endDate)
+        {
+            // ileride düzenleme için burda automapper kullanılmalıdır!
+            try
+            {
+                var labeledQuery = appDbContext.FotografEtiket
+                    .Where(fe =>
+                        fe.DoktorId == doktorID &&
+                        fe.EtiketId != null &&
+                        fe.EtiketTarihi.HasValue &&
+                        fe.EtiketTarihi.Value >= startDate &&
+                        fe.EtiketTarihi.Value <= endDate
+                    );
+
+                var fotograflar = await labeledQuery
+                    .Select(fe => new FotoDto
+                    {
+                        Id = fe.Fotograf.Id,
+                        Path = $"{baseUrl}/{fe.Fotograf.FotografPath}"
+                    })
+                    .ToListAsync();
+
+                var etiketler = await appDbContext.Etiket
+                    .Select(f => new EtiketDto
+                    {
+                        Id = f.Id,
+                        EtiketAd = f.EtiketAd
+                    })
+                    .ToListAsync();
+
+                var hasEtiket = await labeledQuery
+                    .Select(fe => new EtiketDto
+                    {
+                        Id = fe.EtiketId!.Value,
+                        EtiketAd = fe.Etiket!.EtiketAd
+                    })
+                    .ToListAsync();
+
+                var resultDto = new FotoEtiketDto
+                {
+                    Fotograflar = fotograflar,
+                    Etiketler = etiketler,
+                    hasEtiket = hasEtiket
+                };
+
+                if (!fotograflar.Any())
+                {
+                    return new SuccessDataResult<FotoEtiketDto>(
+                        resultDto,
+                        $"Belirtilen {startDate:yyyy-MM-dd} – {endDate:yyyy-MM-dd} aralığında etiketli fotoğraf bulunamadı."
+                    );
+                }
+
+                return new SuccessDataResult<FotoEtiketDto>(
+                    resultDto,
+                    $"Belirtilen {startDate:yyyy-MM-dd} – {endDate:yyyy-MM-dd} aralığında {fotograflar.Count} adet etiketli fotoğraf getirildi."
+                );
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDataResult<FotoEtiketDto>($"Bir hata meydana geldi: {ex.Message}");
+            }
+
+        }
+
+
+
+
     }
 }

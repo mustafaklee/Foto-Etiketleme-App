@@ -34,11 +34,32 @@
   {
     "ContainingType": "WebAPI.Controllers.FotografEtiketle",
     "Method": "GetFoto",
-    "RelativePath": "api/FotografEtiketle",
+    "RelativePath": "api/FotografEtiketle/GetFoto",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.FotografEtiketle",
+    "Method": "GetFotoByDate",
+    "RelativePath": "api/FotografEtiketle/GetFotoByDate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

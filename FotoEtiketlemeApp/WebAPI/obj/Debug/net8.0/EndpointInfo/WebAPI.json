@@ -107,10 +107,40 @@
         }
       }
     },
-    "/api/FotografEtiketle": {
+    "/api/FotografEtiketle/GetFoto": {
       "get": {
         "tags": [
           "FotografEtiketle"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FotografEtiketle/GetFotoByDate": {
+      "get": {
+        "tags": [
+          "FotografEtiketle"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
         ],
         "responses": {
           "200": {

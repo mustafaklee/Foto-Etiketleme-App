@@ -1,12 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using UI.Models.Dtos;
 using UI.Repositories;
 using UI.Repositories.Results;
-using WebAPI.Repositories.Results;
-
 public class ApiRepository : IApiRepository
 {
     private readonly IHttpClientFactory _httpClientFactory;
@@ -25,7 +21,8 @@ public class ApiRepository : IApiRepository
             return new ErrorDataResult<FotoEtiketDto>(new FotoEtiketDto
             {
                 Fotograflar = new List<FotoDto>(),
-                Etiketler = new List<EtiketDto>()
+                Etiketler = new List<EtiketDto>(),  
+                hasEtiket = new List<EtiketDto>()
             }
             , "Yetkisiz erişim. Lütfen giriş yapın.");
         }
@@ -40,7 +37,8 @@ public class ApiRepository : IApiRepository
         return new ErrorDataResult<FotoEtiketDto>(new FotoEtiketDto
         {
             Fotograflar = new List<FotoDto>(),
-            Etiketler = new List<EtiketDto>()
+            Etiketler = new List<EtiketDto>(),
+            hasEtiket = new List<EtiketDto>()
         }
         , $"Hata: {response.StatusCode} - {error}");
     }
