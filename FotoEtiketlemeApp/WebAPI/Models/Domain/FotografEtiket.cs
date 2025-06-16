@@ -12,7 +12,7 @@ namespace WebAPI.Models.Domain
         public int? EtiketId { get; set; }
         public Etiket? Etiket { get; set; }
 
-        public int DoktorId { get; set; }
+        public Guid DoktorId { get; set; }
         public Doktor Doktor { get; set; }
 
         public DateOnly? EtiketTarihi { get; set; }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.Data;
 using WebAPI.Models.Dtos;
 using WebAPI.Repositories;
 
@@ -13,11 +13,12 @@ namespace WebAPI.Controllers
     {
         public readonly UserManager<IdentityUser> userManager;
         public readonly ITokenRepository tokenRepository;
-
-        public AuthController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository)
+        public readonly AppDbContext appDbContext;
+        public AuthController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository,AppDbContext appDbContext)
         {
             this.userManager = userManager;
             this.tokenRepository = tokenRepository;
+            this.appDbContext = appDbContext;
         }
 
 
@@ -39,6 +40,15 @@ namespace WebAPI.Controllers
                 //add roles to this user
                 if (registerRequestDto.Roles != null && registerRequestDto.Roles.Any())
                 {
+                    var doktor = new Models.Domain.Doktor
+                    {
+                        Id = Guid.Parse(identityUser.Id),
+                        Email = identityUser.Email,
+                    };
+
+                    await appDbContext.Doktor.AddAsync(doktor);
+                    await appDbContext.SaveChangesAsync(); 
+
                     identityResult = await userManager.AddToRolesAsync(identityUser, registerRequestDto.Roles);
                     if (identityResult.Succeeded)
                     {
@@ -70,6 +80,13 @@ namespace WebAPI.Controllers
                         //create a token
                         var jwtToken = tokenRepository.CreateJWTToken(user, roles.ToList());
 
+                        Response.Cookies.Append("JwtToken", jwtToken, new CookieOptions
+                        {
+                            HttpOnly = false,          // JavaScript erişebilsin diye
+                            Secure = false,             // HTTPS zorunlu
+                            SameSite = SameSiteMode.Strict,
+                            Expires = DateTimeOffset.UtcNow.AddMinutes(15)
+                        });
                         var response = new LoginResponseDto
                         {
                             JwtToken = jwtToken

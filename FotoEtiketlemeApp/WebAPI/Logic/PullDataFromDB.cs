@@ -15,7 +15,7 @@ namespace WebAPI.Logic
             this.appDbContext = _appDbContext;
         }
 
-        public async Task<IDataResult<FotoEtiketDto>> GetFoto(int doktorID,string baseUrl)
+        public async Task<IDataResult<FotoEtiketDto>> GetFoto(Guid doktorID,string baseUrl)
         {
             //ileride düzenleem için burda automapper kullanılmalıdır!
             try
@@ -67,7 +67,7 @@ namespace WebAPI.Logic
 
         
         public async Task<IDataResult<FotoEtiketDto>> GetFotoByDate(
-            int doktorID,
+            Guid doktorID,
             string baseUrl,
             DateOnly startDate,
             DateOnly endDate)

@@ -64,6 +64,26 @@
   },
   {
     "ContainingType": "WebAPI.Controllers.FotografEtiketle",
+    "Method": "GetStats",
+    "RelativePath": "api/FotografEtiketle/GetStats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPI.Repositories.Results.IDataResult\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.FotografEtiketle",
     "Method": "PostFoto",
     "RelativePath": "api/FotografEtiketle/PostFoto",
     "HttpMethod": "POST",

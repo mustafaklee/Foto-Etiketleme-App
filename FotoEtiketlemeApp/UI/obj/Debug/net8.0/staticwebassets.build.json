@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "V+dzkKr3TBmcxeqh1WpYG2Ff0cC7sVDEC1ufFT3/kFA=",
+  "Hash": "sNJgbAHw60tnY1Ea5fMXl5u0zQLz4BCmMiKUFg9GLR8=",
   "Source": "UI",
   "BasePath": "_content/UI",
   "Mode": "Default",
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "l9fhfixsj7",
-      "Integrity": "d5FEI8e7YyflGj5Ng/lebsE/jV2fYxESufbDlNhpR9s=",
+      "Fingerprint": "5414uygq78",
+      "Integrity": "pQR4C/S6zcEjm+7t9q4CoIgndHPo5q3UvT3F5iJx8UA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\label-images.css"
@@ -206,6 +206,27 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\Index.js",
+      "SourceId": "UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\",
+      "BasePath": "_content/UI",
+      "RelativePath": "js/Index#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4278hclsn6",
+      "Integrity": "RHkMgQMKhMfoDQbg/RZ43IH4RyzYUVGBV5oH+Q29dkg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Index.js"
+    },
+    {
       "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\labeledImages.js",
       "SourceId": "UI",
       "SourceType": "Discovered",
@@ -220,8 +241,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2qtqv9ql1r",
-      "Integrity": "+jttc9I6quJW6cXi3Y9Ir2iGDehFLit5TaqlTC78guc=",
+      "Fingerprint": "v1id2d3vsl",
+      "Integrity": "oyJubsimdexBlzxat6TkMhGp9Yx2aZKDIp3vE0SZxhk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\labeledImages.js"
@@ -241,8 +262,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "l21u9fsj7h",
-      "Integrity": "E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk=",
+      "Fingerprint": "24yxbqrywy",
+      "Integrity": "8u1JURTPl0w3UQRHeEq/AArdccp+RipUDBx/LTp/Flc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\script.js"
@@ -1529,6 +1550,51 @@
       ]
     },
     {
+      "Route": "css/label-images.5414uygq78.css",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\label-images.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1226"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pQR4C/S6zcEjm+7t9q4CoIgndHPo5q3UvT3F5iJx8UA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 22:19:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5414uygq78"
+        },
+        {
+          "Name": "label",
+          "Value": "css/label-images.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pQR4C/S6zcEjm+7t9q4CoIgndHPo5q3UvT3F5iJx8UA="
+        }
+      ]
+    },
+    {
       "Route": "css/label-images.css",
       "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\label-images.css",
       "Selectors": [],
@@ -1539,7 +1605,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1114"
+          "Value": "1226"
         },
         {
           "Name": "Content-Type",
@@ -1547,11 +1613,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"d5FEI8e7YyflGj5Ng/lebsE/jV2fYxESufbDlNhpR9s=\""
+          "Value": "\"pQR4C/S6zcEjm+7t9q4CoIgndHPo5q3UvT3F5iJx8UA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 13:35:03 GMT"
+          "Value": "Mon, 16 Jun 2025 22:19:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1561,52 +1627,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-d5FEI8e7YyflGj5Ng/lebsE/jV2fYxESufbDlNhpR9s="
-        }
-      ]
-    },
-    {
-      "Route": "css/label-images.l9fhfixsj7.css",
-      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\label-images.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1114"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"d5FEI8e7YyflGj5Ng/lebsE/jV2fYxESufbDlNhpR9s=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 13:35:03 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "l9fhfixsj7"
-        },
-        {
-          "Name": "label",
-          "Value": "css/label-images.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-d5FEI8e7YyflGj5Ng/lebsE/jV2fYxESufbDlNhpR9s="
+          "Value": "sha256-pQR4C/S6zcEjm+7t9q4CoIgndHPo5q3UvT3F5iJx8UA="
         }
       ]
     },
@@ -2021,8 +2042,8 @@
       ]
     },
     {
-      "Route": "js/labeledImages.2qtqv9ql1r.js",
-      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\labeledImages.js",
+      "Route": "js/Index.4278hclsn6.js",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\Index.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2031,7 +2052,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5672"
+          "Value": "1286"
         },
         {
           "Name": "Content-Type",
@@ -2039,11 +2060,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+jttc9I6quJW6cXi3Y9Ir2iGDehFLit5TaqlTC78guc=\""
+          "Value": "\"RHkMgQMKhMfoDQbg/RZ43IH4RyzYUVGBV5oH+Q29dkg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Jun 2025 14:12:12 GMT"
+          "Value": "Mon, 16 Jun 2025 21:43:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2053,15 +2074,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "2qtqv9ql1r"
+          "Value": "4278hclsn6"
         },
         {
           "Name": "label",
-          "Value": "js/labeledImages.js"
+          "Value": "js/Index.js"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+jttc9I6quJW6cXi3Y9Ir2iGDehFLit5TaqlTC78guc="
+          "Value": "sha256-RHkMgQMKhMfoDQbg/RZ43IH4RyzYUVGBV5oH+Q29dkg="
+        }
+      ]
+    },
+    {
+      "Route": "js/Index.js",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\Index.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1286"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RHkMgQMKhMfoDQbg/RZ43IH4RyzYUVGBV5oH+Q29dkg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 21:43:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RHkMgQMKhMfoDQbg/RZ43IH4RyzYUVGBV5oH+Q29dkg="
         }
       ]
     },
@@ -2076,7 +2134,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5672"
+          "Value": "5521"
         },
         {
           "Name": "Content-Type",
@@ -2084,11 +2142,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+jttc9I6quJW6cXi3Y9Ir2iGDehFLit5TaqlTC78guc=\""
+          "Value": "\"oyJubsimdexBlzxat6TkMhGp9Yx2aZKDIp3vE0SZxhk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Jun 2025 14:12:12 GMT"
+          "Value": "Mon, 16 Jun 2025 20:52:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2098,7 +2156,97 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+jttc9I6quJW6cXi3Y9Ir2iGDehFLit5TaqlTC78guc="
+          "Value": "sha256-oyJubsimdexBlzxat6TkMhGp9Yx2aZKDIp3vE0SZxhk="
+        }
+      ]
+    },
+    {
+      "Route": "js/labeledImages.v1id2d3vsl.js",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\labeledImages.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5521"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oyJubsimdexBlzxat6TkMhGp9Yx2aZKDIp3vE0SZxhk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 20:52:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v1id2d3vsl"
+        },
+        {
+          "Name": "label",
+          "Value": "js/labeledImages.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oyJubsimdexBlzxat6TkMhGp9Yx2aZKDIp3vE0SZxhk="
+        }
+      ]
+    },
+    {
+      "Route": "js/script.24yxbqrywy.js",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\script.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8u1JURTPl0w3UQRHeEq/AArdccp+RipUDBx/LTp/Flc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 20:51:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "24yxbqrywy"
+        },
+        {
+          "Name": "label",
+          "Value": "js/script.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8u1JURTPl0w3UQRHeEq/AArdccp+RipUDBx/LTp/Flc="
         }
       ]
     },
@@ -2113,7 +2261,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2719"
+          "Value": "3082"
         },
         {
           "Name": "Content-Type",
@@ -2121,11 +2269,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk=\""
+          "Value": "\"8u1JURTPl0w3UQRHeEq/AArdccp+RipUDBx/LTp/Flc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Jun 2025 12:46:40 GMT"
+          "Value": "Mon, 16 Jun 2025 20:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2135,52 +2283,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk="
-        }
-      ]
-    },
-    {
-      "Route": "js/script.l21u9fsj7h.js",
-      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\script.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2719"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 16 Jun 2025 12:46:40 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "l21u9fsj7h"
-        },
-        {
-          "Name": "label",
-          "Value": "js/script.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-E9oUac0fd5zrEfkTTkWYDZVTd5Fdu9JieRoxaNFFqWk="
+          "Value": "sha256-8u1JURTPl0w3UQRHeEq/AArdccp+RipUDBx/LTp/Flc="
         }
       ]
     },

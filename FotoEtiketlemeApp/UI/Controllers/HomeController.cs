@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
+using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using UI.Models;
 using UI.Models.Dtos;
 using UI.Repositories;
@@ -15,6 +17,7 @@ public class HomeController : Controller
         _apiRepository = apiRepository;
     }
 
+    [HttpGet]
     public IActionResult Index()
     {
         return View();
@@ -23,7 +26,6 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult labeledImages()
     {
-        
         return View(new FotoEtiketDto());
     }
 
@@ -36,9 +38,9 @@ public class HomeController : Controller
             ViewBag.message = result.Message;
             return View(result.Data);
         }
-        catch (Exception ex)
+        catch
         {
-            ViewBag.message = $"Sunucuda hata oluştu: {ex.Message}";
+            ViewBag.message = $"Sunucuda hata oluştu:";
             return View();
         }
     }

@@ -1,6 +1,18 @@
 let currentIndex = 0;
 let etiketSecimleri = []; // { fotografId, etiketId }
 
+function getCookieValue(name) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        let [key, value] = cookie.trim().split('=');
+        if (key === name) return decodeURIComponent(value);
+    }
+    return null;
+}
+
+const token = getCookieValue("JwtToken");
+
+
 function updatePhoto() {
     if (fotograflar[currentIndex]) {
         const f = fotograflar[currentIndex];
@@ -53,7 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("https://localhost:7252/api/FotografEtiketle/PostFoto", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
             },
             body: JSON.stringify(etiketSecimleri)
         })

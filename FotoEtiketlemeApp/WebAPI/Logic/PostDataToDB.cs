@@ -13,7 +13,7 @@ namespace WebAPI.Logic
             this.appDbContext = _appDbContext;
 
         }
-        public async Task<Repositories.Results.IResult> PostFoto(List<EtiketSecimDto> secimler , int doktorId)
+        public async Task<Repositories.Results.IResult> PostFoto(List<EtiketSecimDto> secimler , Guid doktorId)
         {
             try
             {

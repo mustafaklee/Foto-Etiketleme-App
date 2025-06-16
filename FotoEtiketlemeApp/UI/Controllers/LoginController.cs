@@ -53,6 +53,14 @@ namespace UI.Controllers
                     var loginResponse = JsonConvert.DeserializeObject<LoginResponseDto>(responseContent);
                     HttpContext.Session.SetString("JwtToken", loginResponse.JwtToken);
                     ViewBag.Message = responseContent;
+
+                    Response.Cookies.Append("JwtToken", loginResponse.JwtToken, new CookieOptions
+                    {
+                        HttpOnly = false, // JavaScript erişebilsin
+                        Secure = false,
+                        SameSite = SameSiteMode.Strict,
+                        Expires = DateTimeOffset.UtcNow.AddMinutes(15)
+                    });
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -96,6 +104,18 @@ namespace UI.Controllers
                 ViewBag.Message = responseContent;
                 return View();
             }
+        }
+
+
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            // Oturumu temizle
+            HttpContext.Session.Remove("JwtToken");
+            HttpContext.Session.Clear(); // Tüm session'ı temizlemek istersen
+            Response.Cookies.Delete("JwtToken");
+            // Giriş sayfasına yönlendir
+            return RedirectToAction("Login", "Login");
         }
 
     }

@@ -107,6 +107,35 @@
         }
       }
     },
+    "/api/FotografEtiketle/GetStats": {
+      "get": {
+        "tags": [
+          "FotografEtiketle"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectIDataResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectIDataResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectIDataResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/FotografEtiketle/GetFoto": {
       "get": {
         "tags": [
@@ -221,6 +250,25 @@
             "minLength": 1,
             "type": "string",
             "format": "password"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObjectIDataResult": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "data": {
+            "nullable": true,
+            "readOnly": true
           }
         },
         "additionalProperties": false

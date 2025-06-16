@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class AddDoktorSeed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,8 +21,7 @@ namespace WebAPI.Migrations
                 name: "Doktor",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Ad = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Soyad = table.Column<string>(type: "longtext", nullable: false)
@@ -74,7 +73,7 @@ namespace WebAPI.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     FotografId = table.Column<int>(type: "int", nullable: false),
                     EtiketId = table.Column<int>(type: "int", nullable: true),
-                    DoktorId = table.Column<int>(type: "int", nullable: false),
+                    DoktorId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     EtiketTarihi = table.Column<DateOnly>(type: "date", nullable: true)
                 },
                 constraints: table =>
@@ -101,6 +100,17 @@ namespace WebAPI.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.InsertData(
+                table: "Doktor",
+                columns: new[] { "Id", "Ad", "Email", "Soyad" },
+                values: new object[,]
+                {
+                    { new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301"), "Ali", "ali@example.com", "Yılmaz" },
+                    { new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c5555"), "Fatma", "fatma@example.com", "Çelik" },
+                    { new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c8888"), "Ayşe", "ayse@example.com", "Kaya" },
+                    { new Guid("3f2504e0-abcd-11d3-9a0c-0305e82c1111"), "Mehmet", "mehmet@example.com", "Demir" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Etiket",
                 columns: new[] { "Id", "EtiketAd" },
                 values: new object[,]
@@ -111,14 +121,25 @@ namespace WebAPI.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Fotograf",
+                columns: new[] { "Id", "FotografPath" },
+                values: new object[,]
+                {
+                    { 1, "cat.1.jpg" },
+                    { 2, "cat.2.jpg" },
+                    { 3, "cat.3.jpg" },
+                    { 4, "cat.4.jpg" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "FotografEtiket",
                 columns: new[] { "Id", "DoktorId", "EtiketId", "EtiketTarihi", "FotografId" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, new DateOnly(2028, 5, 21), 1 },
-                    { 2, 1, 2, new DateOnly(2022, 2, 5), 1 },
-                    { 3, 2, 2, new DateOnly(2021, 1, 2), 2 },
-                    { 4, 2, 3, new DateOnly(2023, 3, 8), 2 }
+                    { 1, new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301"), 1, new DateOnly(2028, 5, 21), 1 },
+                    { 2, new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c8888"), 2, new DateOnly(2022, 2, 5), 1 },
+                    { 3, new Guid("3f2504e0-abcd-11d3-9a0c-0305e82c1111"), 2, new DateOnly(2021, 1, 2), 2 },
+                    { 4, new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c5555"), 3, new DateOnly(2023, 3, 8), 2 }
                 });
 
             migrationBuilder.CreateIndex(

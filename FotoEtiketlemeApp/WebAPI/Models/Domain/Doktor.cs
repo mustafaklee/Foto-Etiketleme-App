@@ -2,9 +2,7 @@
 {
     public class Doktor
     {
-        public int Id { get; set; }
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
+        public Guid  Id { get; set; }
         public string Email { get; set; }
 
         // Doktorun etiketlediği fotoğraflar

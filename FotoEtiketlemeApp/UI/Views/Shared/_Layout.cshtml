@@ -15,9 +15,11 @@
         <div class="flex-nav-container">
             <a class="flex-nav-item" href="/Home/labelImages">Fotoğraf Etiketle</a>
             <a class="flex-nav-item" href="/Home/labeledImages">Etiketlenmiş Fotoğraflar</a>
-            <a class="flex-nav-item" href="/Home/updateInfo">Bilgilerimi Güncelle</a>
-            <a class="flex-nav-item" href="/Login/Register">Kullanıcı Oluştur</a>
-            <a class="flex-nav-item" href="">Çıkış Yap</a>
+            @if (Context.User.IsInRole("Admin"))
+            {
+                <a class="flex-nav-item" href="/Login/Register">Kullanıcı Oluştur</a>
+            }
+            <a class="flex-nav-item" href="/Login/Logout">Çıkış Yap</a>
         </div>
     </nav>
 

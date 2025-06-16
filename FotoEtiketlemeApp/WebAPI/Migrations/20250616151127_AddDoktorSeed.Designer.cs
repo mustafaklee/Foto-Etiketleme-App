@@ -11,8 +11,8 @@ using WebAPI.Data;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250613160140_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250616151127_AddDoktorSeed")]
+    partial class AddDoktorSeed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,9 +24,9 @@ namespace WebAPI.Migrations
 
             modelBuilder.Entity("WebAPI.Models.Domain.Doktor", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Ad")
                         .IsRequired()
@@ -43,6 +43,36 @@ namespace WebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Doktor");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301"),
+                            Ad = "Ali",
+                            Email = "ali@example.com",
+                            Soyad = "Yılmaz"
+                        },
+                        new
+                        {
+                            Id = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c8888"),
+                            Ad = "Ayşe",
+                            Email = "ayse@example.com",
+                            Soyad = "Kaya"
+                        },
+                        new
+                        {
+                            Id = new Guid("3f2504e0-abcd-11d3-9a0c-0305e82c1111"),
+                            Ad = "Mehmet",
+                            Email = "mehmet@example.com",
+                            Soyad = "Demir"
+                        },
+                        new
+                        {
+                            Id = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c5555"),
+                            Ad = "Fatma",
+                            Email = "fatma@example.com",
+                            Soyad = "Çelik"
+                        });
                 });
 
             modelBuilder.Entity("WebAPI.Models.Domain.Etiket", b =>
@@ -90,6 +120,28 @@ namespace WebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Fotograf");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FotografPath = "cat.1.jpg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FotografPath = "cat.2.jpg"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FotografPath = "cat.3.jpg"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            FotografPath = "cat.4.jpg"
+                        });
                 });
 
             modelBuilder.Entity("WebAPI.Models.Domain.FotografEtiket", b =>
@@ -98,8 +150,8 @@ namespace WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("DoktorId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("DoktorId")
+                        .HasColumnType("char(36)");
 
                     b.Property<int?>("EtiketId")
                         .HasColumnType("int");
@@ -124,7 +176,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            DoktorId = 1,
+                            DoktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301"),
                             EtiketId = 1,
                             EtiketTarihi = new DateOnly(2028, 5, 21),
                             FotografId = 1
@@ -132,7 +184,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 2,
-                            DoktorId = 1,
+                            DoktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c8888"),
                             EtiketId = 2,
                             EtiketTarihi = new DateOnly(2022, 2, 5),
                             FotografId = 1
@@ -140,7 +192,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 3,
-                            DoktorId = 2,
+                            DoktorId = new Guid("3f2504e0-abcd-11d3-9a0c-0305e82c1111"),
                             EtiketId = 2,
                             EtiketTarihi = new DateOnly(2021, 1, 2),
                             FotografId = 2
@@ -148,7 +200,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 4,
-                            DoktorId = 2,
+                            DoktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c5555"),
                             EtiketId = 3,
                             EtiketTarihi = new DateOnly(2023, 3, 8),
                             FotografId = 2
