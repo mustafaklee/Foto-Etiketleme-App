@@ -53,3 +53,11 @@ C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

@@ -6,11 +6,12 @@ using WebAPI.Models.Dtos;
 using WebAPI.Logic;
 using System.Security.Claims;
 using WebAPI.Repositories.Results;
+using Microsoft.AspNetCore.Authorization;
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
+    [Authorize]
     public class FotografEtiketle : ControllerBase
     {
 
@@ -76,12 +77,33 @@ namespace WebAPI.Controllers
             }
         }
 
+        [HttpGet("GetStatsForAdmin")]
+        public async Task<IDataResult<List<AdminIstatistikDto>>> GetStatsForAdmin()
+        {
+            try
+            {
+                var stats = await appDbContext.Doktor
+                    .Select(d => new AdminIstatistikDto
+                    {
+                        Email = d.Email,
+                        AtananFotoSayisi = d.FotografEtiketleri.Count(),
+                        EtiketlenenFotoSayisi = d.FotografEtiketleri.Count(fe => fe.EtiketId != null),
+                        BekleyenFotoSayisi = d.FotografEtiketleri.Count(fe => fe.EtiketId == null)
+                    })
+                    .ToListAsync();
+
+                return new SuccessDataResult<List<AdminIstatistikDto>>(stats, "İstatistikler başarıyla getirildi");
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDataResult<List<AdminIstatistikDto>>($"Hata oluştu: {ex.Message}");
+            }
+        }
 
 
 
-        [HttpGet]
-        [Route("GetFoto")]
-        public async Task<IActionResult> GetFoto()
+        [HttpGet("GetFoto")]
+        public async Task<IActionResult> GetFoto([FromQuery] int count)
         {
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
 
@@ -91,7 +113,7 @@ namespace WebAPI.Controllers
 
             var pullDataFromDb = new PullDataFromDB(appDbContext);
 
-            var result = await pullDataFromDb.GetFoto(doktorId, baseUrl);
+            var result = await pullDataFromDb.GetFoto(doktorId, baseUrl, count);
 
             if (result.Success)
             {

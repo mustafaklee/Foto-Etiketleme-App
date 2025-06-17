@@ -15,13 +15,15 @@ namespace WebAPI.Logic
             this.appDbContext = _appDbContext;
         }
 
-        public async Task<IDataResult<FotoEtiketDto>> GetFoto(Guid doktorID,string baseUrl)
+        public async Task<IDataResult<FotoEtiketDto>> GetFoto(Guid doktorID,string baseUrl,int count)
         {
             //ileride düzenleem için burda automapper kullanılmalıdır!
             try
             {
                 var fotograflar = await appDbContext.FotografEtiket
                     .Where(fe => fe.DoktorId == doktorID && fe.EtiketId == null)
+                    .OrderBy(fe => fe.Id)
+                    .Take(count)
                     .Select(fe => new FotoDto
                     {
                         Id = fe.Fotograf.Id,

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Reflection;
+using System.Data;
+using System.Security.Claims;
 using System.Text;
 using UI.Models.Dtos;
-using UI.Repositories;
-
+using System.IdentityModel.Tokens.Jwt;
 namespace UI.Controllers
 {
     public class LoginController : Controller
@@ -31,14 +33,14 @@ namespace UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequestDto model)
         {
-            ViewBag.AvailableRoles = new List<string> { "Admin", "Doctor" }; // HER ZAMAN LAZIM
+            ViewBag.AvailableRoles = new List<string> { "Admin", "Doctor" };
+
             if (!ModelState.IsValid)
             {
                 ViewBag.Message = "Lütfen tüm alanları doldurun.";
                 return View(model);
             }
 
-            // Login için normal client kullan (token henüz yok)
             using (var client = _httpClientFactory.CreateClient())
             {
                 string apiUrl = "https://localhost:7252/api/Auth/Login";
@@ -51,16 +53,45 @@ namespace UI.Controllers
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
                     var loginResponse = JsonConvert.DeserializeObject<LoginResponseDto>(responseContent);
-                    HttpContext.Session.SetString("JwtToken", loginResponse.JwtToken);
-                    ViewBag.Message = responseContent;
 
+                    HttpContext.Session.SetString("JwtToken", loginResponse.JwtToken);
                     Response.Cookies.Append("JwtToken", loginResponse.JwtToken, new CookieOptions
                     {
-                        HttpOnly = false, // JavaScript erişebilsin
+                        HttpOnly = false,
                         Secure = false,
                         SameSite = SameSiteMode.Strict,
                         Expires = DateTimeOffset.UtcNow.AddMinutes(15)
                     });
+
+                    var handler = new JwtSecurityTokenHandler();
+                    var jwtToken = handler.ReadJwtToken(loginResponse.JwtToken);
+                    var claims = jwtToken.Claims.ToList();
+
+                    var email = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+                    var userId = claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                    var roles = claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).ToList();
+
+                    var authClaims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Email, email),
+                        new Claim(ClaimTypes.NameIdentifier, userId)
+                    };
+
+                    foreach (var role in roles)
+                    {
+                        authClaims.Add(new Claim(ClaimTypes.Role, role));
+                    }
+
+                    var identity = new ClaimsIdentity(authClaims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var principal = new ClaimsPrincipal(identity);
+
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+                    if (roles.Contains("Admin"))
+                    {
+                        return RedirectToAction("AdminIndex", "Home");
+                    }
+
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -68,6 +99,7 @@ namespace UI.Controllers
                 return View(model);
             }
         }
+
         public IActionResult Register()
         {
             ViewBag.AvailableRoles = new List<string> { "Admin","Doctor" };

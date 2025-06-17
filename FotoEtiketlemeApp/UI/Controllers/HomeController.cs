@@ -1,12 +1,13 @@
 ﻿using System.Diagnostics;
 using System.Net.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using UI.Models;
 using UI.Models.Dtos;
 using UI.Repositories;
 namespace UI.Controllers;
-
+[Authorize]
 public class HomeController : Controller
 {
 
@@ -23,6 +24,14 @@ public class HomeController : Controller
         return View();
     }
 
+
+    [HttpGet]
+    public IActionResult AdminIndex()
+    {
+        return View();
+    }
+
+
     [HttpGet]
     public IActionResult labeledImages()
     {
@@ -30,11 +39,11 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> LabelImages()
+    public async Task<IActionResult> LabelImages(int count)
     {
         try
         {
-            var result = await _apiRepository.GetProtectedDataAsync("fotografetiketle/GetFoto");
+            var result = await _apiRepository.GetProtectedDataAsync($"fotografetiketle/GetFoto?count={count}");
             ViewBag.message = result.Message;
             return View(result.Data);
         }

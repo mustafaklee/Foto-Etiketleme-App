@@ -136,10 +136,49 @@
         }
       }
     },
+    "/api/FotografEtiketle/GetStatsForAdmin": {
+      "get": {
+        "tags": [
+          "FotografEtiketle"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminIstatistikDtoListIDataResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminIstatistikDtoListIDataResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminIstatistikDtoListIDataResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/FotografEtiketle/GetFoto": {
       "get": {
         "tags": [
           "FotografEtiketle"
+        ],
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -220,6 +259,51 @@
   },
   "components": {
     "schemas": {
+      "AdminIstatistikDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "atananFotoSayisi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "etiketlenenFotoSayisi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bekleyenFotoSayisi": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AdminIstatistikDtoListIDataResult": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminIstatistikDto"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
       "EtiketSecimDto": {
         "type": "object",
         "properties": {
