@@ -12,7 +12,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
         const token = getCookieValue("JwtToken");
-        fetch("https://localhost:7252/api/FotografEtiketle/GetStatsForAdmin", {
+    fetch("http://192.168.1.104:5001/api/FotografEtiketle/GetStatsForAdmin", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`,

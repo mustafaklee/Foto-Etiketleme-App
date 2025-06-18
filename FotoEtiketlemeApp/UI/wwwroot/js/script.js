@@ -39,20 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.getElementById("btn-next").addEventListener("click", () => {
-        if (currentIndex < fotograflar.length - 1) {
-            currentIndex++;
-            updatePhoto();
-        }
-    });
-
-    document.getElementById("btn-prev").addEventListener("click", () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updatePhoto();
-        }
-    });
-
     document.getElementById("saveBtn").addEventListener("click", () => {
         const msgBox = document.getElementById("resultMessage");
         if (etiketSecimleri.length === 0) {
@@ -62,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        fetch("https://localhost:7252/api/FotografEtiketle/PostFoto", {
+        fetch("http://192.168.1.104:5001/api/FotografEtiketle/PostFoto", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

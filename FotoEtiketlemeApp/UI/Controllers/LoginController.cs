@@ -12,10 +12,12 @@ namespace UI.Controllers
     public class LoginController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IConfiguration _configuration;
 
-        public LoginController(IHttpClientFactory httpClientFactory)
+        public LoginController(IHttpClientFactory httpClientFactory,IConfiguration configuration)
         {
             _httpClientFactory = httpClientFactory;
+            _configuration = configuration;
         }
 
 
@@ -43,7 +45,7 @@ namespace UI.Controllers
 
             using (var client = _httpClientFactory.CreateClient())
             {
-                string apiUrl = "https://localhost:7252/api/Auth/Login";
+                string apiUrl = $"{_configuration["ApiBaseUrl"]}/api/Auth/Login";
                 var jsonContent = JsonConvert.SerializeObject(model);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
@@ -120,7 +122,7 @@ namespace UI.Controllers
 
             using (var client = _httpClientFactory.CreateClient("AuthorizedClient"))
             {
-                string apiUrl = "https://localhost:7252/api/Auth/Register";
+                string apiUrl = $"{_configuration["ApiBaseUrl"]}/api/Auth/Register";
                 var jsonContent = JsonConvert.SerializeObject(model);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 

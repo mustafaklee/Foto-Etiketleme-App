@@ -7,7 +7,7 @@ using UI.Models;
 using UI.Models.Dtos;
 using UI.Repositories;
 namespace UI.Controllers;
-[Authorize]
+//[Authorize]
 public class HomeController : Controller
 {
 
@@ -41,16 +41,18 @@ public class HomeController : Controller
     [HttpGet]
     public async Task<IActionResult> LabelImages(int count)
     {
+
+        return View(new FotoEtiketDto() { });
+        var result = await _apiRepository.GetProtectedDataAsync($"fotografetiketle/GetFoto?count={count}");
         try
         {
-            var result = await _apiRepository.GetProtectedDataAsync($"fotografetiketle/GetFoto?count={count}");
             ViewBag.message = result.Message;
             return View(result.Data);
         }
         catch
         {
             ViewBag.message = $"Sunucuda hata oluştu:";
-            return View();
+            return View(new FotoEtiketDto());
         }
     }
     public IActionResult updateInfo()

@@ -6,16 +6,18 @@ using UI.Repositories.Results;
 public class ApiRepository : IApiRepository
 {
     private readonly IHttpClientFactory _httpClientFactory;
-
-    public ApiRepository(IHttpClientFactory httpClientFactory)
+    private readonly IConfiguration _configuration;
+    public ApiRepository(IHttpClientFactory httpClientFactory,IConfiguration configuration)
     {
         _httpClientFactory = httpClientFactory;
+        _configuration = configuration;
     }
 
     public async Task<IDataResult<FotoEtiketDto>> GetProtectedDataAsync(string route)
     {
         var client = _httpClientFactory.CreateClient("AuthorizedClient");
-        var response = await client.GetAsync($"https://localhost:7252/api/{route}");
+        string apiUrl = $"{_configuration["ApiBaseUrl"]}/api/{route}";
+        var response = await client.GetAsync(apiUrl);
         if (response.StatusCode == HttpStatusCode.Unauthorized)
         {
             return new ErrorDataResult<FotoEtiketDto>(new FotoEtiketDto

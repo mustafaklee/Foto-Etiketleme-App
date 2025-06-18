@@ -9,6 +9,90 @@
       "PackagePath": "staticwebassets\\css\\adminIndex.css"
     },
     {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\css\\Aimara.css",
+      "PackagePath": "staticwebassets\\css\\css\\Aimara.css"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\css\\Example.css",
+      "PackagePath": "staticwebassets\\css\\css\\Example.css"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\css\\lastnode.png",
+      "PackagePath": "staticwebassets\\css\\css\\lastnode.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\css\\node.png",
+      "PackagePath": "staticwebassets\\css\\css\\node.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\css\\vline.png",
+      "PackagePath": "staticwebassets\\css\\css\\vline.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\add1.png",
+      "PackagePath": "staticwebassets\\css\\images\\add1.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\aimarajs.png",
+      "PackagePath": "staticwebassets\\css\\images\\aimarajs.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\aimarajs2.png",
+      "PackagePath": "staticwebassets\\css\\images\\aimarajs2.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\blue_key.png",
+      "PackagePath": "staticwebassets\\css\\images\\blue_key.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\collapse.png",
+      "PackagePath": "staticwebassets\\css\\images\\collapse.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\delete.png",
+      "PackagePath": "staticwebassets\\css\\images\\delete.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\expand.png",
+      "PackagePath": "staticwebassets\\css\\images\\expand.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\file.png",
+      "PackagePath": "staticwebassets\\css\\images\\file.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\folder.png",
+      "PackagePath": "staticwebassets\\css\\images\\folder.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\key_green.png",
+      "PackagePath": "staticwebassets\\css\\images\\key_green.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\leaf.png",
+      "PackagePath": "staticwebassets\\css\\images\\leaf.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\magic_ball.png",
+      "PackagePath": "staticwebassets\\css\\images\\magic_ball.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\monitor.png",
+      "PackagePath": "staticwebassets\\css\\images\\monitor.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\right.png",
+      "PackagePath": "staticwebassets\\css\\images\\right.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\star.png",
+      "PackagePath": "staticwebassets\\css\\images\\star.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\images\\tree.png",
+      "PackagePath": "staticwebassets\\css\\images\\tree.png"
+    },
+    {
       "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
     },
@@ -19,6 +103,10 @@
     {
       "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\labeled-images.css",
       "PackagePath": "staticwebassets\\css\\labeled-images.css"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\lib\\Aimara.js",
+      "PackagePath": "staticwebassets\\css\\lib\\Aimara.js"
     },
     {
       "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\login.css",
@@ -35,6 +123,22 @@
     {
       "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\img\\foto\\1.png",
+      "PackagePath": "staticwebassets\\img\\foto\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\img\\foto\\2.png",
+      "PackagePath": "staticwebassets\\img\\foto\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\img\\foto\\3.png",
+      "PackagePath": "staticwebassets\\img\\foto\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\img\\foto\\4.png",
+      "PackagePath": "staticwebassets\\img\\foto\\4.png"
     },
     {
       "Id": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\Index.js",

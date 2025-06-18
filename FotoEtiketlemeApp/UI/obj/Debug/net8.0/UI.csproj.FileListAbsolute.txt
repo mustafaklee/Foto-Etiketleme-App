@@ -27,7 +27,6 @@ C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.UI.props
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.UI.props
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\refint\UI.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\UI.pdb
@@ -61,3 +60,4 @@ C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\UI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

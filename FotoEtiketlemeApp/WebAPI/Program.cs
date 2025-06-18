@@ -15,15 +15,28 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowUI", policy =>
+//    {
+//        policy.WithOrigins("https://localhost:7224") // UI projesinin adresi
+//              .AllowAnyHeader()
+//              .AllowAnyMethod();
+//    });
+//});
+
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowUI", policy =>
-    {
-        policy.WithOrigins("https://localhost:7224") // UI projesinin adresi
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
+    options.AddPolicy("AllowLocalhost",
+        policy => policy
+            .WithOrigins("http://192.168.1.104:5000")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
 });
+
+
+
 
 //dependency injection
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -81,7 +94,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowUI");
+//burası allowuı olacak
+app.UseCors("AllowLocalhost");
 app.UseHttpsRedirection();
 
 // SIRALAMA ÇOK ÖNEMLİ!

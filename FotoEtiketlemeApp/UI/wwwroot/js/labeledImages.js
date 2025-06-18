@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        fetch(`https://localhost:7252/api/FotografEtiketle/GetFotoByDate?startDate=${start}&endDate=${end}`, {
+        fetch(`http://192.168.1.104:5001/api/FotografEtiketle/GetFotoByDate?startDate=${start}&endDate=${end}`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        fetch("https://localhost:7252/api/FotografEtiketle/PostFoto", {
+        fetch("http://192.168.1.104:5001/api/FotografEtiketle/PostFoto", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,

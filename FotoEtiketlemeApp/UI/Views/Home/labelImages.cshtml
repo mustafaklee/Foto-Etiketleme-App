@@ -1,41 +1,163 @@
 ﻿@{
-    Layout = "_Layout";
+	Layout = "_Layout";
 }
 
 <meta charset="utf-8" />
 <script>
-    const fotograflar = @Html.Raw(Json.Serialize(Model.Fotograflar));
+	const fotograflar = @Html.Raw(Json.Serialize(Model.Fotograflar));
 </script>
 <script src="~/js/script.js"></script>
 <link rel="stylesheet" href="~/css/label-images.css" />
 
-<div class="etiket-container">
-    <div class="info"><p id="fotoIndex">1. görsel</p></div>
+@*
+	folder explorer compontents
+*@
+<link rel="stylesheet" type="text/css" href="~/css/css/Aimara.css">
+<link rel="stylesheet" type="text/css" href="~/css/css/Example.css">
+<script src="/css/lib/Aimara.js" type="text/javascript"></script>
+<div class="main-container">
+	<div id="div_tree" class="left-panel">
+		<!-- Sol panel içeriği burada olacak -->
+	</div>
+	<div class="right-panel">
+		<div class="etiket-container">
+			@*
+			<div class="save-btn">
+				<button id="saveBtn">Kaydet</button>
+			</div>
+			 
 
-    <div class="save-btn">
-        <button id="saveBtn">Kaydet</button>
-    </div>
+			@if (ViewBag.message != null)
+			{
+				<div class="alert alert-info">@ViewBag.message</div>
+			} *@
 
-    @if (ViewBag.message != null)
-    {
-        <div class="alert alert-info">@ViewBag.message</div>
-    }
-    <div id="resultMessage" class="alert d-none mt-3" role="alert"></div>
+			<div class="photos-container">
+				<img id="photo" src="/img/foto/1.png" onclick="toggleImageSize(this)" />
+				<img id="photo" src="/img/foto/2.png" onclick="toggleImageSize(this)" />
+				<img id="photo" src="/img/foto/3.png" onclick="toggleImageSize(this)" />
+				<img id="photo" src="/img/foto/4.png" onclick="toggleImageSize(this)" />
+			</div>
 
 
-    <div class="fotograf-item">
-        <img id="photo" src="" data-id="" alt="Fotoğraf bulunamadı" />
-    </div>
-
-    <div class="foot-item">
-            @foreach (var etiket in Model.Etiketler)
-            {
-                <button class="etiket-btn" data-id="@etiket.Id">@etiket.EtiketAd</button>
-            }
-
-        <div class="foot-item">
-            <button id="btn-prev">⬅ Geri</button>
-            <button id="btn-next">İleri ➡</button>
-        </div>
-    </div>
+			@* <div class="fotograf-item">
+				<img id="photo" src="" data-id="" alt="Fotoğraf bulunamadı" />
+			</div> *@
+		</div>
+	</div>
 </div>
+
+
+
+<script type="text/javascript">
+	var starIcon = '@Url.Content("~/css/images/star.png")';
+	var keyIcon = '@Url.Content("~/css/images/blue_key.png")';
+	window.onload = function() {
+		var contex_menu = {
+			'context1' : {
+				elements : [
+					{
+						text : 'Node Actions',
+						icon: '~/css/images/blue_key.png',
+						action : function(node) {
+
+						},
+						submenu: {
+							elements : [
+								{
+									text : 'Toggle Node',
+									icon: '~/css/images/leaf.png',
+									action : function(node) {
+										node.toggleNode();
+									}
+								},
+								{
+									text : 'Expand Node',
+									icon: '~/css/images/leaf.png',
+									action : function(node) {
+										node.expandNode();
+									}
+								},
+								{
+									text : 'Collapse Node',
+									icon: 'images/leaf.png',
+									action : function(node) {
+										node.collapseNode();
+									}
+								},
+								{
+									text : 'Expand Subtree',
+									icon: 'images/tree.png',
+									action : function(node) {
+										node.expandSubtree();
+									}
+								},
+								{
+									text : 'Collapse Subtree',
+									icon: 'images/tree.png',
+									action : function(node) {
+										node.collapseSubtree();
+									}
+								},
+								{
+									text : 'Delete Node',
+									icon: 'images/delete.png',
+									action : function(node) {
+										node.removeNode();
+									}
+								},
+							]
+						}
+					},
+					{
+						text : 'Child Actions',
+						icon: 'images/blue_key.png',
+						action : function(node) {
+
+						},
+						submenu: {
+							elements : [
+								{
+									text : 'Create Child Node',
+									icon: 'images/add1.png',
+									action : function(node) {
+										node.createChildNode('Created',false,'images/folder.png',null,'context1');
+									}
+								},
+								{
+									text : 'Create 1000 Child Nodes',
+									icon: 'images/add1.png',
+									action : function(node) {
+										for (var i=0; i<1000; i++)
+											node.createChildNode('Created -' + i,false,'images/folder.png',null,'context1');
+									}
+								},
+								{
+									text : 'Delete Child Nodes',
+									icon: 'images/delete.png',
+									action : function(node) {
+										node.removeChildNodes();
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		};
+
+		//Creating the tree
+		tree = createTree('div_tree','white',contex_menu);
+		//Loop to create test nodes
+		for (var i=1; i<5; i++) {
+			node1 = tree.createNode('Level 0 - Node ' + i,false,starIcon,null,null,'context1');
+			for (var j=1; j<5; j++) {
+				node2 = node1.createChildNode('Level 1 - Node ' + j, false,keyIcon,null,'context1');
+
+			}
+		}
+
+		//Rendering the tree
+		tree.drawTree();
+	};
+</script>
