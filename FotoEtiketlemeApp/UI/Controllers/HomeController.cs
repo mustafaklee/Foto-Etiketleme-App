@@ -39,21 +39,9 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> LabelImages(int count)
+    public async Task<IActionResult> LabelImages()
     {
-
-        return View(new FotoEtiketDto() { });
-        var result = await _apiRepository.GetProtectedDataAsync($"fotografetiketle/GetFoto?count={count}");
-        try
-        {
-            ViewBag.message = result.Message;
-            return View(result.Data);
-        }
-        catch
-        {
-            ViewBag.message = $"Sunucuda hata oluştu:";
-            return View(new FotoEtiketDto());
-        }
+        return View(new FotoEtiketDto());
     }
     public IActionResult updateInfo()
     {

@@ -11,7 +11,7 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class FotografEtiketle : ControllerBase
     {
 
@@ -22,120 +22,99 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpPost]
-        [Route("PostFoto")]
-        public async Task<IActionResult> PostFoto([FromBody] List<EtiketSecimDto>  secimler)
-        {
-            Guid doktorId = User.GetUserId().Value;
-            if (doktorId == null)
-                return Unauthorized();
+        //[HttpPost]
+        //[Route("PostFoto")]
+        //public async Task<IActionResult> PostFoto([FromBody] List<EtiketSecimDto>  secimler)
+        //{
+        //    Guid doktorId = User.GetUserId().Value;
+        //    if (doktorId == null)
+        //        return Unauthorized();
 
-            var postDataToDb = new PostDataToDB(appDbContext);
-            var result = await postDataToDb.PostFoto(secimler, doktorId);
+        //    var postDataToDb = new PostDataToDB(appDbContext);
+        //    var result = await postDataToDb.PostFoto(secimler, doktorId);
 
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(result);
-            }
-        }
+        //    if (result.Success)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    else
+        //    {
+        //        return BadRequest(result);
+        //    }
+        //}
 
-        [HttpGet]
-        [Route("GetStats")]
-        public async Task<IDataResult<Object>> GetStats()
-        {
-            try
-            {
-                Guid doktorId = User.GetUserId().Value;
-                if (doktorId == null)
-                    return new ErrorDataResult<object>($"Hata oluştu");
+        //[HttpGet]
+        //[Route("GetStats")]
+        //public async Task<IDataResult<Object>> GetStats()
+        //{
+        //    try
+        //    {
+        //        Guid doktorId = User.GetUserId().Value;
+        //        if (doktorId == null)
+        //            return new ErrorDataResult<object>($"Hata oluştu");
 
-                var email = User.FindFirst(ClaimTypes.Email)?.Value;
-                var etiketlenmis = await appDbContext.FotografEtiket
-                    .Where(fe => fe.DoktorId == doktorId && fe.EtiketId != null)
-                    .CountAsync();
+        //        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        //        var etiketlenmis = await appDbContext.FotografEtiket
+        //            .Where(fe => fe.DoktorId == doktorId && fe.EtiketId != null)
+        //            .CountAsync();
 
-                var bekleyen = await appDbContext.FotografEtiket
-                    .Where(fe => fe.DoktorId == doktorId && fe.EtiketId == null)
-                    .CountAsync();
+        //        var bekleyen = await appDbContext.FotografEtiket
+        //            .Where(fe => fe.DoktorId == doktorId && fe.EtiketId == null)
+        //            .CountAsync();
 
-                var stats = new
-                {
-                    Email = email,
-                    Etiketlenmis = etiketlenmis,
-                    Bekleyen = bekleyen
-                };
+        //        var stats = new
+        //        {
+        //            Email = email,
+        //            Etiketlenmis = etiketlenmis,
+        //            Bekleyen = bekleyen
+        //        };
 
-                return new SuccessDataResult<object>(stats, "İstatistikler getirildi");
-            }
-            catch (Exception ex)
-            {
-                return new ErrorDataResult<object>($"Hata oluştu: {ex.Message}");
-            }
-        }
+        //        return new SuccessDataResult<object>(stats, "İstatistikler getirildi");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new ErrorDataResult<object>($"Hata oluştu: {ex.Message}");
+        //    }
+        //}
 
-        [HttpGet("GetStatsForAdmin")]
-        public async Task<IDataResult<List<AdminIstatistikDto>>> GetStatsForAdmin()
-        {
-            try
-            {
-                var stats = await appDbContext.Doktor
-                    .Select(d => new AdminIstatistikDto
-                    {
-                        Email = d.Email,
-                        AtananFotoSayisi = d.FotografEtiketleri.Count(),
-                        EtiketlenenFotoSayisi = d.FotografEtiketleri.Count(fe => fe.EtiketId != null),
-                        BekleyenFotoSayisi = d.FotografEtiketleri.Count(fe => fe.EtiketId == null)
-                    })
-                    .ToListAsync();
+        //[HttpGet("GetStatsForAdmin")]
+        //public async Task<IDataResult<List<AdminIstatistikDto>>> GetStatsForAdmin()
+        //{
+        //    try
+        //    {
+        //        var stats = await appDbContext.Doktor
+        //            .Select(d => new AdminIstatistikDto
+        //            {
+        //                Email = d.Email,
+        //                AtananFotoSayisi = d.FotografEtiketleri.Count(),
+        //                EtiketlenenFotoSayisi = d.FotografEtiketleri.Count(fe => fe.EtiketId != null),
+        //                BekleyenFotoSayisi = d.FotografEtiketleri.Count(fe => fe.EtiketId == null)
+        //            })
+        //            .ToListAsync();
 
-                return new SuccessDataResult<List<AdminIstatistikDto>>(stats, "İstatistikler başarıyla getirildi");
-            }
-            catch (Exception ex)
-            {
-                return new ErrorDataResult<List<AdminIstatistikDto>>($"Hata oluştu: {ex.Message}");
-            }
-        }
+        //        return new SuccessDataResult<List<AdminIstatistikDto>>(stats, "İstatistikler başarıyla getirildi");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new ErrorDataResult<List<AdminIstatistikDto>>($"Hata oluştu: {ex.Message}");
+        //    }
+        //}
 
 
 
         [HttpGet("GetFoto")]
-        public async Task<IActionResult> GetFoto([FromQuery] int count)
+        public async Task<IActionResult> GetFoto()
         {
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
 
-            Guid doktorId = User.GetUserId().Value;
-            if (doktorId == null)
-                return Unauthorized(); 
-
-            var pullDataFromDb = new PullDataFromDB(appDbContext);
-
-            var result = await pullDataFromDb.GetFoto(doktorId, baseUrl, count);
-
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(result.Message);
-            }
-        }
-
-        [HttpGet]
-        [Route("GetFotoByDate")]
-        public async Task<IActionResult> GetFotoByDate(DateOnly startDate,DateOnly endDate)
-        {
-            Guid doktorId = User.GetUserId().Value;
+            //Guid doktorId = User.GetUserId().Value;
+            var doktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301");
             if (doktorId == null)
                 return Unauthorized();
-            string baseUrl = $"{Request.Scheme}://{Request.Host}";
 
             var pullDataFromDb = new PullDataFromDB(appDbContext);
-            var result = await pullDataFromDb.GetFotoByDate(doktorId, baseUrl,startDate,endDate);
+
+            var result = await pullDataFromDb.GetFoto(doktorId, baseUrl);
 
             if (result.Success)
             {
@@ -146,6 +125,50 @@ namespace WebAPI.Controllers
                 return BadRequest(result.Message);
             }
         }
+
+
+        [HttpGet("GetBreastAndFinding")]
+        public async Task<IActionResult> GetBreastAndFinding()
+        {
+            string baseUrl = $"{Request.Scheme}://{Request.Host}";
+
+            var pullDataFromDb = new PullDataFromDB(appDbContext);
+
+            var result = await pullDataFromDb.GetBreastAndFinding();
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
+        }
+
+
+
+        //[HttpGet]
+        //[Route("GetFotoByDate")]
+        //public async Task<IActionResult> GetFotoByDate(DateOnly startDate,DateOnly endDate)
+        //{
+        //    Guid doktorId = User.GetUserId().Value;
+        //    if (doktorId == null)
+        //        return Unauthorized();
+        //    string baseUrl = $"{Request.Scheme}://{Request.Host}";
+
+        //    var pullDataFromDb = new PullDataFromDB(appDbContext);
+        //    var result = await pullDataFromDb.GetFotoByDate(doktorId, baseUrl,startDate,endDate);
+
+        //    if (result.Success)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    else
+        //    {
+        //        return BadRequest(result.Message);
+        //    }
+        //}
 
     }
 }

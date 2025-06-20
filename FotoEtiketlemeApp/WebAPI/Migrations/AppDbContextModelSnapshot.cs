@@ -19,21 +19,60 @@ namespace WebAPI.Migrations
                 .HasAnnotation("ProductVersion", "8.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("WebAPI.Models.Domain.BreastBirads", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BreastBirads");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryName = "BI-RADS 1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryName = "BI-RADS 2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryName = "BI-RADS 3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryName = "BI-RADS 4"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryName = "BI-RADS 5"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryName = "BI-RADS 6"
+                        });
+                });
+
             modelBuilder.Entity("WebAPI.Models.Domain.Doktor", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("Ad")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Soyad")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -45,62 +84,102 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301"),
-                            Ad = "Ali",
-                            Email = "ali@example.com",
-                            Soyad = "Yılmaz"
+                            Email = "ali@example.com"
                         },
                         new
                         {
                             Id = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c8888"),
-                            Ad = "Ayşe",
-                            Email = "ayse@example.com",
-                            Soyad = "Kaya"
+                            Email = "ayse@example.com"
                         },
                         new
                         {
                             Id = new Guid("3f2504e0-abcd-11d3-9a0c-0305e82c1111"),
-                            Ad = "Mehmet",
-                            Email = "mehmet@example.com",
-                            Soyad = "Demir"
+                            Email = "mehmet@example.com"
                         },
                         new
                         {
                             Id = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c5555"),
-                            Ad = "Fatma",
-                            Email = "fatma@example.com",
-                            Soyad = "Çelik"
+                            Email = "fatma@example.com"
                         });
                 });
 
-            modelBuilder.Entity("WebAPI.Models.Domain.Etiket", b =>
+            modelBuilder.Entity("WebAPI.Models.Domain.FindingCategories", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("EtiketAd")
+                    b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Etiket");
+                    b.ToTable("FindingCategories");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            EtiketAd = "A"
+                            CategoryName = "Mass"
                         },
                         new
                         {
                             Id = 2,
-                            EtiketAd = "B"
+                            CategoryName = "Global Asymmetry"
                         },
                         new
                         {
                             Id = 3,
-                            EtiketAd = "C"
+                            CategoryName = "Architectural Distortion"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryName = "Nipple Retraction, Mass"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryName = "Suspicious Calcification,Focal Asymmetry"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryName = "Focal Asymmetry"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryName = "Asymmetry"
+                        });
+                });
+
+            modelBuilder.Entity("WebAPI.Models.Domain.Folder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("DoktorId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("FolderPath")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoktorId");
+
+                    b.ToTable("Folder");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DoktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301"),
+                            FolderPath = "memography/0a0c5108270e814818c1ad002482ce74"
                         });
                 });
 
@@ -110,11 +189,16 @@ namespace WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("FolderId")
+                        .HasColumnType("int");
+
                     b.Property<string>("FotografPath")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FolderId");
 
                     b.ToTable("Fotograf");
 
@@ -122,22 +206,26 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            FotografPath = "cat.1.jpg"
+                            FolderId = 1,
+                            FotografPath = "0a6a90bdc088e0cc62df8d2d58d14840.png"
                         },
                         new
                         {
                             Id = 2,
-                            FotografPath = "cat.2.jpg"
+                            FolderId = 1,
+                            FotografPath = "1b66d3ea1dae116b7c0e87e3caab3340.png"
                         },
                         new
                         {
                             Id = 3,
-                            FotografPath = "cat.3.jpg"
+                            FolderId = 1,
+                            FotografPath = "7a3df96890c90370590984ca196d1b40.png"
                         },
                         new
                         {
                             Id = 4,
-                            FotografPath = "cat.4.jpg"
+                            FolderId = 1,
+                            FotografPath = "cb8a1b1282b4b16c0f322e9fc89a9c35.png"
                         });
                 });
 
@@ -147,25 +235,22 @@ namespace WebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<Guid>("DoktorId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<int?>("EtiketId")
+                    b.Property<int?>("breast_biradsId")
                         .HasColumnType("int");
 
-                    b.Property<DateOnly?>("EtiketTarihi")
-                        .HasColumnType("date");
+                    b.Property<int?>("finding_categoriesId")
+                        .HasColumnType("int");
 
-                    b.Property<int>("FotografId")
+                    b.Property<int>("imageId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DoktorId");
+                    b.HasIndex("breast_biradsId");
 
-                    b.HasIndex("EtiketId");
+                    b.HasIndex("finding_categoriesId");
 
-                    b.HasIndex("FotografId");
+                    b.HasIndex("imageId");
 
                     b.ToTable("FotografEtiket");
 
@@ -173,70 +258,96 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            DoktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301"),
-                            EtiketId = 1,
-                            EtiketTarihi = new DateOnly(2028, 5, 21),
-                            FotografId = 1
+                            breast_biradsId = 1,
+                            finding_categoriesId = 1,
+                            imageId = 1
                         },
                         new
                         {
                             Id = 2,
-                            DoktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c8888"),
-                            EtiketId = 2,
-                            EtiketTarihi = new DateOnly(2022, 2, 5),
-                            FotografId = 1
+                            breast_biradsId = 1,
+                            finding_categoriesId = 1,
+                            imageId = 2
                         },
                         new
                         {
                             Id = 3,
-                            DoktorId = new Guid("3f2504e0-abcd-11d3-9a0c-0305e82c1111"),
-                            EtiketId = 2,
-                            EtiketTarihi = new DateOnly(2021, 1, 2),
-                            FotografId = 2
+                            breast_biradsId = 3,
+                            finding_categoriesId = 5,
+                            imageId = 3
                         },
                         new
                         {
                             Id = 4,
-                            DoktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c5555"),
-                            EtiketId = 3,
-                            EtiketTarihi = new DateOnly(2023, 3, 8),
-                            FotografId = 2
+                            breast_biradsId = 3,
+                            finding_categoriesId = 5,
+                            imageId = 4
                         });
                 });
 
-            modelBuilder.Entity("WebAPI.Models.Domain.FotografEtiket", b =>
+            modelBuilder.Entity("WebAPI.Models.Domain.Folder", b =>
                 {
                     b.HasOne("WebAPI.Models.Domain.Doktor", "Doktor")
-                        .WithMany("FotografEtiketleri")
+                        .WithMany("Folder")
                         .HasForeignKey("DoktorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebAPI.Models.Domain.Etiket", "Etiket")
-                        .WithMany("FotografEtiketleri")
-                        .HasForeignKey("EtiketId");
+                    b.Navigation("Doktor");
+                });
 
-                    b.HasOne("WebAPI.Models.Domain.Fotograf", "Fotograf")
-                        .WithMany("FotografEtiketleri")
-                        .HasForeignKey("FotografId")
+            modelBuilder.Entity("WebAPI.Models.Domain.Fotograf", b =>
+                {
+                    b.HasOne("WebAPI.Models.Domain.Folder", "Folder")
+                        .WithMany("Fotograf")
+                        .HasForeignKey("FolderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Doktor");
+                    b.Navigation("Folder");
+                });
 
-                    b.Navigation("Etiket");
+            modelBuilder.Entity("WebAPI.Models.Domain.FotografEtiket", b =>
+                {
+                    b.HasOne("WebAPI.Models.Domain.BreastBirads", "BreastBirads")
+                        .WithMany("FotografEtiket")
+                        .HasForeignKey("breast_biradsId");
+
+                    b.HasOne("WebAPI.Models.Domain.FindingCategories", "FindingCategories")
+                        .WithMany("FotografEtiket")
+                        .HasForeignKey("finding_categoriesId");
+
+                    b.HasOne("WebAPI.Models.Domain.Fotograf", "Fotograf")
+                        .WithMany("FotografEtiketleri")
+                        .HasForeignKey("imageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BreastBirads");
+
+                    b.Navigation("FindingCategories");
 
                     b.Navigation("Fotograf");
                 });
 
-            modelBuilder.Entity("WebAPI.Models.Domain.Doktor", b =>
+            modelBuilder.Entity("WebAPI.Models.Domain.BreastBirads", b =>
                 {
-                    b.Navigation("FotografEtiketleri");
+                    b.Navigation("FotografEtiket");
                 });
 
-            modelBuilder.Entity("WebAPI.Models.Domain.Etiket", b =>
+            modelBuilder.Entity("WebAPI.Models.Domain.Doktor", b =>
                 {
-                    b.Navigation("FotografEtiketleri");
+                    b.Navigation("Folder");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.Domain.FindingCategories", b =>
+                {
+                    b.Navigation("FotografEtiket");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.Domain.Folder", b =>
+                {
+                    b.Navigation("Fotograf");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Domain.Fotograf", b =>

@@ -6,6 +6,6 @@
         public string Email { get; set; }
 
         // Doktorun etiketlediği fotoğraflar
-        public ICollection<FotografEtiket> FotografEtiketleri { get; set; }
+        public ICollection<Folder> Folder { get; set; }
     }
 }

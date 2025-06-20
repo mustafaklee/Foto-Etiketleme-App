@@ -1,6 +1,6 @@
 ul.tree, ul.tree ul {
 	list-style-type: none;
-	background: url(vline.png) repeat-y;
+	background: none !important;
 	margin: 0;
 	padding: 0;
 	padding-left: 7px;
@@ -11,8 +11,7 @@ ul.tree, ul.tree ul {
 }
 
 li.last {
-	background-image: 'url("css/lastnode.png")';
-	background-repeat: no-repeat;
+	background: none !important;
 }
 
 ul.tree ul {
@@ -23,7 +22,7 @@ ul.tree li {
 	margin: 0;
 	padding: 0 12px;
 	line-height: 22px;
-	background: url(node.png) no-repeat;
+	background: none !important;
 }
 
 ul.tree li.last {
@@ -62,28 +61,24 @@ span.node a {
 span.node {
 	margin-left: -1px;
 	padding-right: 3px;
-
 	padding-top: 4px;
 	padding-bottom: 4px;
+	background-color: transparent !important;
+	border-radius: 2px;
 }
 
 span.node:hover {
-	margin-left: -1px;
-	padding-right: 3px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	background-color: #DCEDFF;
+	background-color: #e3f2fd !important;
 	border-radius: 2px;
 }
 
 span.node_selected {
 	margin-left: -2px;
 	padding-right: 3px;
-
 	padding-top: 4px;
 	padding-bottom: 4px;
-	background-color: #CEFFCE;
-	border: 1px solid #8AE88A;
+	background-color: #bbdefb !important;
+	border: 1px solid #90caf9;
 	border-radius: 2px;
 }
 

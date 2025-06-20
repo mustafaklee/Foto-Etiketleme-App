@@ -1,149 +1,315 @@
-﻿
-/* Ana kapsay�c�y� flexbox ile ayarl�yoruz */
+﻿html, body {
+    height: 100vh;
+    overflow-y: hidden !important;
+}
+
 .main-container {
     display: flex;
-    width: 100%;
-    height: 100vh; /* Tam ekran y�ksekli�i */
+    width: 100vw;
+    height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
-/* Sol panel (div_tree) alan� - Ekran�n %30'unu kaplar */
-.left-panel {
-    flex-shrink: 0; /* Panelin k���lmesini engeller */
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-right: 2px solid #ccc; /* Sa� taraftan ay�ran �izgi */
+.left-panel, .middle-panel, .right-panel {
+    height: 100vh;
     overflow-y: auto;
-    max-height:100%;
 }
 
-/* Sa� panel (fotograflar�n g�sterilece�i alan) - Kalan geni�li�in hepsini kaplar */
+.left-panel {
+    width: 20%;
+    padding: 20px;
+    background: #fff;
+    border-right: 2px solid #ccc;
+}
+
+.middle-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fafafa;
+    padding: 0;
+    overflow-y: auto;
+    height: 100vh;
+}
+
 .right-panel {
-    flex: 1; /* Kalan alan�n hepsini kaplar (%70) */
+    width: 20%;
+    padding: 20px;
+    background: #fff;
+    border-left: 2px solid #ccc;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-/* Etiket konteyner d�zeni */
-.etiket-container {
-    background-color: white;
-    width: 100%;
-    max-width: none; /* Max-width s�n�r�n� kald�r�yoruz */
-    min-height: 600px;
-    display: flex;
-    margin: 1rem 0; /* Auto margin'i kald�r�yoruz */
-    flex-direction: column;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Foto�raflar i�in konteyner - YAN YANA D�KEY D�ZEN� */
-.photos-container {
-    display: flex;
-    flex-direction: row; /* Yan yana s�ralama */
-    gap: 26px; /* Foto�raflar aras� bo�luk */
-    flex-wrap: wrap; /* S��mayan foto�raflar alt sat�ra ge�er */
-    justify-content: center;
-}
-
-    /* Foto�raf stilleri */
-    .photos-container img {
-        max-width: 700px; /* Maksimum geni�lik */
-        max-height: 600px; /* Maksimum y�kseklik */
-        object-fit: contain; /* Foto�raf�n tamam�n� g�sterir, oran bozulmaz */
-        border: 2px solid #e0e0e0;
-        border-radius: 4px;
-        background-color: #f8f9fa;
-    }
-
-/* Foto�raf alan� d�zeni */
-.fotograf-item {
-    border: 2px solid #e0e0e0;
-    width: 100%; /* Geni�lik %100, responsive olacak */
-    height: 400px;
-    border-radius: 4px;
-    overflow: auto;
-    background-color: #f8f9fa;
-    text-align: center;
-}
-
-    /* Foto�raf resmi */
-    .fotograf-item img {
-        max-width: 200%;
-        max-height: 100%;
-        object-fit: contain;
-    }
-
-/* Etiket butonlar� d�zeni */
-.etiket-btn {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 1rem 0;
-}
-
-/* Alt butonlar�n d�zeni */
-.foot-item {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
-/* Butonlar�n stilini ayarl�yoruz */
-button {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #3498db;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 14px;
+/* Fotoğraflar */
+.photos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    width: 100%;
+    height: 100%;
+    max-height: 90vh;
+    padding: 0;
+    margin: 0;
 }
 
-    button:hover {
-        background-color: #2980b9;
+    .photos-container img {
+        max-width: 100%;
+        max-height: 600px;
+        object-fit: contain;
+        border: 2px solid #e0e0e0;
+        border-radius: 4px;
+        background: #f8f9fa;
     }
 
-/* Save butonunun hizalanmas� */
-.save-btn {
-    margin-left: 0;
+/* İleri/Geri butonları */
+
+.nav-buttons button:hover {
+    background-color: #2980b9;
+}
+
+.photo-wrapper {
+    flex: 1 1 0;
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
 }
 
-/* Se�ilen etiket butonu */
-.etiket-btn.selected {
-    background-color: #0d6efd;
-    color: white;
-    border-color: #0d6efd;
+.photo-caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
+.etiket-controls {
+    width: 100%;
 }
 
-/* Responsive tasar�m i�in medya sorgular� */
-@media (max-width: 768px) {
+.etiket-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+    .etiket-checkbox-group label {
+        font-size: 14px;
+    }
+
+
+
+/* ---------------- Sağ Panel: daha profesyonel görünüm ---------------- */
+.right-panel {
+    width: 22%; /* biraz nefes payı */
+    padding: 32px 24px;
+    background: #ffffff;
+    border-left: 1px solid #e5e7eb; /* daha yumuşak bir çizgi */
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* elemanlar arası boşluk */
+    box-shadow: -4px 0 20px rgba(0,0,0,.05); /* hafif gölge */
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+    /* Bölüm başlıkları */
+    .right-panel label strong {
+        font-size: 15px;
+        color: #111827;
+        letter-spacing: .3px;
+    }
+
+/* Navigasyon butonları */
+.nav-buttons {
+    justify-content: space-between;
+    gap: 16px;
+}
+    .nav-buttons button {
+        flex: 1;
+        padding: 0.4rem 0.8rem; /* Daha dar yükseklik ve yatay boşluk */
+        font-size: 14px; /* Daha küçük yazı */
+        font-weight: 500;
+        border-radius: 4px;
+        background-color: #2563eb;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+        .nav-buttons button:hover {
+            background: #1e40af;
+            transform: translateY(-1px);
+        }
+
+        .nav-buttons button:active {
+            transform: translateY(0);
+        }
+
+/* Etiket (checkbox) kutuları */
+.etiket-checkbox-group {
+    padding: 8px 0;
+    max-height: 180px; /* taşma engeli */
+    overflow-y: auto;
+}
+
+    .etiket-checkbox-group label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: #374151;
+        cursor: pointer;
+    }
+
+    .etiket-checkbox-group input[type="checkbox"] {
+        accent-color: #2563eb; /* modern mavi */
+    }
+
+/* BI-RADS açılır menüsü */
+#biradsSelect {
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #374151;
+    background-color: #f9fafb;
+    transition: border .2s ease;
+}
+
+    #biradsSelect:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37,99,235,.2);
+    }
+
+/* Küçük ekranlarda sağ paneli alt tarafa al */
+@media (max-width: 992px) {
+    html, body {
+        height: 100vh;
+        overflow-y: hidden !important;
+    }
     .main-container {
         flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
     }
-
-    .left-panel,
-    .right-panel {
+    .left-panel, .middle-panel, .right-panel {
         width: 100%;
-        height: auto;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 16px 8px;
+        height: 33vh;
+        overflow-y: auto;
     }
+    .middle-panel {
+        padding: 12px 4px;
+        height: 34vh;
+    }
+    .photos-container {
+        flex-direction: column;
+        gap: 2vh;
+        height: 60vh;
+        max-height: 60vh;
+    }
+    .photo-wrapper img {
+        max-width: 96vw;
+        width: 100%;
+        max-height: 28vh;
+        height: 28vh;
+    }
+    .etiket-controls {
+        width: 100%;
+        padding: 0;
+    }
+    .etiket-checkbox-group {
+        max-height: 120px;
+        font-size: 13px;
+    }
+    .menu-label {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 4px;
+    }
+    .nav-buttons {
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    .nav-buttons button {
+        font-size: 13px;
+        padding: 0.3rem 0.5rem;
+    }
+    #biradsSelect {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+}
 
-    .left-panel {
-        max-height: 300px;
+/* Çok küçük ekranlar için ekstra düzenleme */
+@media (max-width: 600px) {
+    .main-container {
+        padding: 0;
+        height: 100vh;
     }
+    .left-panel, .middle-panel, .right-panel {
+        padding: 8px 2px;
+        height: 33vh;
+    }
+    .photos-container {
+        gap: 1vh;
+        height: 40vh;
+        max-height: 40vh;
+    }
+    .photo-wrapper img {
+        max-width: 98vw;
+        width: 100%;
+        max-height: 18vh;
+        height: 18vh;
+    }
+    .etiket-checkbox-group label {
+        font-size: 12px;
+    }
+    .menu-label {
+        font-size: 13px;
+    }
+}
 
-    /* Mobilde foto�raflar� daha k���k yap */
-    .photos-container img {
-        width: 150px;
-        height: 200px;
-    }
+.ms-select {
+    width: 100%;
+    min-height: 2.5rem;
+    padding: .25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.ms-label {
+    display: block;
+    margin-top: .75rem;
+    font-weight: 600;
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 80vh;
+    max-width: 48vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    background: #f8f9fa;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }

@@ -6,15 +6,12 @@ namespace WebAPI.Models.Domain
     {
         [Key]
         public int Id { get; set; }
-        public int FotografId { get; set; }
+        public int imageId { get; set; }
         public Fotograf Fotograf { get; set; }
+        public int? breast_biradsId { get; set; }
+        public BreastBirads? BreastBirads { get; set; }
+        public int? finding_categoriesId { get; set; }
+        public FindingCategories? FindingCategories { get; set; }
 
-        public int? EtiketId { get; set; }
-        public Etiket? Etiket { get; set; }
-
-        public Guid DoktorId { get; set; }
-        public Doktor Doktor { get; set; }
-
-        public DateOnly? EtiketTarihi { get; set; }
     }
 }

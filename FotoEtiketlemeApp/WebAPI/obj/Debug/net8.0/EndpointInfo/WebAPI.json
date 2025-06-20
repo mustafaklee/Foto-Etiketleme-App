@@ -67,119 +67,11 @@
         }
       }
     },
-    "/api/FotografEtiketle/PostFoto": {
-      "post": {
-        "tags": [
-          "FotografEtiketle"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/EtiketSecimDto"
-                }
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/EtiketSecimDto"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/EtiketSecimDto"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/FotografEtiketle/GetStats": {
-      "get": {
-        "tags": [
-          "FotografEtiketle"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ObjectIDataResult"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ObjectIDataResult"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ObjectIDataResult"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/FotografEtiketle/GetStatsForAdmin": {
-      "get": {
-        "tags": [
-          "FotografEtiketle"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AdminIstatistikDtoListIDataResult"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AdminIstatistikDtoListIDataResult"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AdminIstatistikDtoListIDataResult"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/FotografEtiketle/GetFoto": {
       "get": {
         "tags": [
           "FotografEtiketle"
         ],
-        "parameters": [
-          {
-            "name": "count",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -187,28 +79,10 @@
         }
       }
     },
-    "/api/FotografEtiketle/GetFotoByDate": {
+    "/api/FotografEtiketle/GetBreastAndFinding": {
       "get": {
         "tags": [
           "FotografEtiketle"
-        ],
-        "parameters": [
-          {
-            "name": "startDate",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "endDate",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -259,65 +133,6 @@
   },
   "components": {
     "schemas": {
-      "AdminIstatistikDto": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "atananFotoSayisi": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "etiketlenenFotoSayisi": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "bekleyenFotoSayisi": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AdminIstatistikDtoListIDataResult": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AdminIstatistikDto"
-            },
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "EtiketSecimDto": {
-        "type": "object",
-        "properties": {
-          "fotografId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "etiketId": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "LoginRequestDto": {
         "required": [
           "password",
@@ -334,25 +149,6 @@
             "minLength": 1,
             "type": "string",
             "format": "password"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ObjectIDataResult": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "data": {
-            "nullable": true,
-            "readOnly": true
           }
         },
         "additionalProperties": false
