@@ -15,22 +15,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("AllowUI", policy =>
-//    {
-//        policy.WithOrigins("https://localhost:7224") // UI projesinin adresi
-//              .AllowAnyHeader()
-//              .AllowAnyMethod();
-//    });
-//});
-
-
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhost",
+    options.AddPolicy("AllowFrontend",
         policy => policy
-            .WithOrigins("https://localhost:7224")  //frontend url
+            .WithOrigins("http://localhost:8080")  //frontend url
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
@@ -95,7 +84,7 @@ if (app.Environment.IsDevelopment())
 }
 
 //burası allowuı olacak
-app.UseCors("AllowLocalhost");
+app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
 
 // SIRALAMA ÇOK ÖNEMLİ!

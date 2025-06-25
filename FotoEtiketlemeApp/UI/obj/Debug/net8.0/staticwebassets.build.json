@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XUBWj5fnl7/8xJz4mFQVkc47zCRsouw6ijgK72SkUNw=",
+  "Hash": "YoH6a7u0fzK02MhOKaXAuKweRBNo0KoXLzDV3pFwHVc=",
   "Source": "UI",
   "BasePath": "_content/UI",
   "Mode": "Default",
@@ -577,8 +577,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "7mfyybulai",
-      "Integrity": "ce4ZWoGuboHJVZp13nX2iIjRqXo7yPn2CcowPjog8yw=",
+      "Fingerprint": "6g6nr85gu5",
+      "Integrity": "ZuuKif4zSRgbbKWMgSYEOTH4q/NkxvjTnzUa87d4mIc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\label-images.css"
@@ -913,8 +913,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ov2jf8f4ng",
-      "Integrity": "VBR1ZyjXcpYGEak1GEwNiQWTdRtEIRGa85yixsQptrE=",
+      "Fingerprint": "2tmu59lml4",
+      "Integrity": "9ocQEwNVCZpYF55YhMPtQE7WBnvO8mQPTjJpWIBdM5I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Label_Images\\photoViewer.js"
@@ -4171,7 +4171,7 @@
       ]
     },
     {
-      "Route": "css/label-images.7mfyybulai.css",
+      "Route": "css/label-images.6g6nr85gu5.css",
       "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\css\\label-images.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4181,7 +4181,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4757"
+          "Value": "6764"
         },
         {
           "Name": "Content-Type",
@@ -4189,11 +4189,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ce4ZWoGuboHJVZp13nX2iIjRqXo7yPn2CcowPjog8yw=\""
+          "Value": "\"ZuuKif4zSRgbbKWMgSYEOTH4q/NkxvjTnzUa87d4mIc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Jun 2025 19:56:20 GMT"
+          "Value": "Sat, 21 Jun 2025 23:11:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4203,7 +4203,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "7mfyybulai"
+          "Value": "6g6nr85gu5"
         },
         {
           "Name": "label",
@@ -4211,7 +4211,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ce4ZWoGuboHJVZp13nX2iIjRqXo7yPn2CcowPjog8yw="
+          "Value": "sha256-ZuuKif4zSRgbbKWMgSYEOTH4q/NkxvjTnzUa87d4mIc="
         }
       ]
     },
@@ -4226,7 +4226,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4757"
+          "Value": "6764"
         },
         {
           "Name": "Content-Type",
@@ -4234,11 +4234,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ce4ZWoGuboHJVZp13nX2iIjRqXo7yPn2CcowPjog8yw=\""
+          "Value": "\"ZuuKif4zSRgbbKWMgSYEOTH4q/NkxvjTnzUa87d4mIc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Jun 2025 19:56:20 GMT"
+          "Value": "Sat, 21 Jun 2025 23:11:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4248,7 +4248,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ce4ZWoGuboHJVZp13nX2iIjRqXo7yPn2CcowPjog8yw="
+          "Value": "sha256-ZuuKif4zSRgbbKWMgSYEOTH4q/NkxvjTnzUa87d4mIc="
         }
       ]
     },
@@ -5483,6 +5483,51 @@
       ]
     },
     {
+      "Route": "js/Label_Images/photoViewer.2tmu59lml4.js",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\Label_Images\\photoViewer.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2351"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9ocQEwNVCZpYF55YhMPtQE7WBnvO8mQPTjJpWIBdM5I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Jun 2025 20:52:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2tmu59lml4"
+        },
+        {
+          "Name": "label",
+          "Value": "js/Label_Images/photoViewer.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9ocQEwNVCZpYF55YhMPtQE7WBnvO8mQPTjJpWIBdM5I="
+        }
+      ]
+    },
+    {
       "Route": "js/Label_Images/photoViewer.js",
       "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\Label_Images\\photoViewer.js",
       "Selectors": [],
@@ -5493,7 +5538,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2309"
+          "Value": "2351"
         },
         {
           "Name": "Content-Type",
@@ -5501,11 +5546,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"VBR1ZyjXcpYGEak1GEwNiQWTdRtEIRGa85yixsQptrE=\""
+          "Value": "\"9ocQEwNVCZpYF55YhMPtQE7WBnvO8mQPTjJpWIBdM5I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Jun 2025 20:39:05 GMT"
+          "Value": "Fri, 20 Jun 2025 20:52:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5515,52 +5560,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-VBR1ZyjXcpYGEak1GEwNiQWTdRtEIRGa85yixsQptrE="
-        }
-      ]
-    },
-    {
-      "Route": "js/Label_Images/photoViewer.ov2jf8f4ng.js",
-      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\UI\\wwwroot\\js\\Label_Images\\photoViewer.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2309"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"VBR1ZyjXcpYGEak1GEwNiQWTdRtEIRGa85yixsQptrE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 20 Jun 2025 20:39:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ov2jf8f4ng"
-        },
-        {
-          "Name": "label",
-          "Value": "js/Label_Images/photoViewer.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-VBR1ZyjXcpYGEak1GEwNiQWTdRtEIRGa85yixsQptrE="
+          "Value": "sha256-9ocQEwNVCZpYF55YhMPtQE7WBnvO8mQPTjJpWIBdM5I="
         }
       ]
     },

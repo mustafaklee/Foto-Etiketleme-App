@@ -1,0 +1,314 @@
+﻿html, body {
+    height: 100vh;
+    overflow-y: hidden !important;
+}
+
+.main-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.left-panel, .middle-panel, .right-panel {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.left-panel {
+    width: 20%;
+    padding: 20px;
+    background: #fff;
+    border-right: 2px solid #ccc;
+}
+
+.middle-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fafafa;
+    padding: 0;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.right-panel {
+    width: 20%;
+    padding: 20px;
+    background: #fff;
+    border-left: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Fotoğraflar */
+.photos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    width: 100%;
+    height: 100%;
+    max-height: 90vh;
+    padding: 0;
+    margin: 0;
+}
+
+    .photos-container img {
+        max-width: 100%;
+        max-height: 600px;
+        object-fit: contain;
+        border: 2px solid #e0e0e0;
+        border-radius: 4px;
+        background: #f8f9fa;
+    }
+
+/* İleri/Geri butonları */
+
+.nav-buttons button:hover {
+    background-color: #2980b9;
+}
+
+.photo-wrapper {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    margin: 0;
+    width: 48%;
+}
+
+.photo-wrapper img {
+    height: 400px;
+    width: auto;
+    max-height: 80vh;
+    max-width: 100%;
+    object-fit: contain;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    background: #f8f9fa;
+}
+
+.photo-caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
+.etiket-controls {
+    width: 100%;
+}
+
+.etiket-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+    .etiket-checkbox-group label {
+        font-size: 14px;
+    }
+
+
+
+/* ---------------- Sağ Panel: daha profesyonel görünüm ---------------- */
+.right-panel {
+    width: 22%; /* biraz nefes payı */
+    padding: 32px 24px;
+    background: #ffffff;
+    border-left: 1px solid #e5e7eb; /* daha yumuşak bir çizgi */
+    display: flex;
+    flex-direction: column;
+    row-gap: 10%; /* elemanlar arası boşluk */
+    box-shadow: -4px 0 20px rgba(0,0,0,.05); /* hafif gölge */
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+    /* Bölüm başlıkları */
+    .right-panel label strong {
+        font-size: 15px;
+        color: #111827;
+        letter-spacing: .3px;
+    }
+
+/* Navigasyon butonları */
+.nav-buttons {
+    justify-content: space-between;
+    gap: 16px;
+}
+    .nav-buttons button {
+        flex: 1;
+        padding: 0.4rem 0.8rem; /* Daha dar yükseklik ve yatay boşluk */
+        font-size: 14px; /* Daha küçük yazı */
+        font-weight: 500;
+        border-radius: 4px;
+        background-color: #2563eb;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+        .nav-buttons button:hover {
+            background: #1e40af;
+            transform: translateY(-1px);
+        }
+
+        .nav-buttons button:active {
+            transform: translateY(0);
+        }
+
+/* Etiket (checkbox) kutuları */
+.etiket-checkbox-group {
+    padding: 8px 0;
+    max-height: 180px; /* taşma engeli */
+}
+
+    .etiket-checkbox-group label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: #374151;
+        cursor: pointer;
+    }
+
+    .etiket-checkbox-group input[type="checkbox"] {
+        accent-color: #2563eb; /* modern mavi */
+    }
+
+/* BI-RADS açılır menüsü */
+#biradsSelect {
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #374151;
+    background-color: #f9fafb;
+    transition: border .2s ease;
+}
+
+    #biradsSelect:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37,99,235,.2);
+    }
+
+/* Küçük ekranlarda sağ paneli alt tarafa al */
+@media (max-width: 992px) {
+    html, body {
+        height: 100vh;
+        overflow-y: hidden !important;
+    }
+    .main-container {
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .left-panel, .middle-panel, .right-panel {
+        width: 100%;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 16px 8px;
+        height: 33vh;
+        overflow-y: auto;
+    }
+    .middle-panel {
+        padding: 12px 4px;
+        height: 34vh;
+    }
+    .photos-container {
+        flex-direction: column;
+        gap: 2vh;
+        height: 60vh;
+        max-height: 60vh;
+    }
+    .photo-wrapper img {
+        max-width: 96vw;
+        width: 100%;
+        max-height: 28vh;
+        height: 28vh;
+    }
+    .etiket-controls {
+        width: 100%;
+        padding: 0;
+    }
+    .etiket-checkbox-group {
+        max-height: 120px;
+        font-size: 13px;
+    }
+    .menu-label {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 4px;
+    }
+    .nav-buttons {
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    .nav-buttons button {
+        font-size: 13px;
+        padding: 0.3rem 0.5rem;
+    }
+    #biradsSelect {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+}
+
+/* Çok küçük ekranlar için ekstra düzenleme */
+@media (max-width: 600px) {
+    .main-container {
+        padding: 0;
+        height: 100vh;
+    }
+    .left-panel, .middle-panel, .right-panel {
+        padding: 8px 2px;
+        height: 33vh;
+    }
+    .photos-container {
+        gap: 1vh;
+        height: 40vh;
+        max-height: 40vh;
+    }
+    .photo-wrapper img {
+        max-width: 98vw;
+        width: 100%;
+        max-height: 18vh;
+        height: 18vh;
+    }
+    .etiket-checkbox-group label {
+        font-size: 12px;
+    }
+    .menu-label {
+        font-size: 13px;
+    }
+}
+
+.ms-select {
+    width: 100%;
+    min-height: 2.5rem;
+    padding: .25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.ms-label {
+    display: block;
+    margin-top: .75rem;
+    font-weight: 600;
+}

@@ -426,8 +426,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>7mfyybulai</Fingerprint>
-      <Integrity>ce4ZWoGuboHJVZp13nX2iIjRqXo7yPn2CcowPjog8yw=</Integrity>
+      <Fingerprint>6g6nr85gu5</Fingerprint>
+      <Integrity>ZuuKif4zSRgbbKWMgSYEOTH4q/NkxvjTnzUa87d4mIc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\label-images.css'))</OriginalItemSpec>
@@ -750,8 +750,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ov2jf8f4ng</Fingerprint>
-      <Integrity>VBR1ZyjXcpYGEak1GEwNiQWTdRtEIRGa85yixsQptrE=</Integrity>
+      <Fingerprint>2tmu59lml4</Fingerprint>
+      <Integrity>9ocQEwNVCZpYF55YhMPtQE7WBnvO8mQPTjJpWIBdM5I=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Label_Images\photoViewer.js'))</OriginalItemSpec>

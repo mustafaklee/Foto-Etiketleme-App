@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hrdiIycTczUSbKgvipDsRHXeveuO1ecmhtGOZgnF5yk=",
+  "Hash": "RXz2Zq2pdGEA8nkzrM8cxze7GlipGXcAwZa0y4MGxl8=",
   "Source": "WebAPI",
   "BasePath": "_content/WebAPI",
   "Mode": "Default",
@@ -99,6 +99,90 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\memography\\0a0c5108270e814818c1ad002482ce74\\cb8a1b1282b4b16c0f322e9fc89a9c35.png"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\040fb9e96d6619afdb69aae3893bebcb.png",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "memography/0a42c6ff59b652c12aa5a784fffa97c4/040fb9e96d6619afdb69aae3893bebcb#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fxm04m7qai",
+      "Integrity": "7f9AdbLUUVv1QXEm9uYyxgU4LEptYRHH+vxsMHbMAs0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\040fb9e96d6619afdb69aae3893bebcb.png"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\31f9bcd6e042eb0f047eaef8a4d71c97.png",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "memography/0a42c6ff59b652c12aa5a784fffa97c4/31f9bcd6e042eb0f047eaef8a4d71c97#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7hzniwdu1a",
+      "Integrity": "pcqkhcLTHVGcXf/AVE0j6DJDGpHzqMx0QkvGPGRGsAI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\31f9bcd6e042eb0f047eaef8a4d71c97.png"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\5335b81f00d4608d8ab9d6cbdb73b965.png",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "memography/0a42c6ff59b652c12aa5a784fffa97c4/5335b81f00d4608d8ab9d6cbdb73b965#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4i6qb33tnz",
+      "Integrity": "bOopsd5r1sMvMV3MsdIuxhNkvODg5TAp8ONU1TPXuYs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\5335b81f00d4608d8ab9d6cbdb73b965.png"
+    },
+    {
+      "Identity": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\ae3b2767096883cfd24cb03f12bb6674.png",
+      "SourceId": "WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "RelativePath": "memography/0a42c6ff59b652c12aa5a784fffa97c4/ae3b2767096883cfd24cb03f12bb6674#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8zgai6waz3",
+      "Integrity": "dB7k6Mo756ssOCYfpvw+2dsfLqfGlQYDtt6ErNCRSaY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\ae3b2767096883cfd24cb03f12bb6674.png"
     }
   ],
   "Endpoints": [
@@ -427,6 +511,334 @@
         {
           "Name": "integrity",
           "Value": "sha256-C+Bmq4icxXjt5q3etGusKTjyd2HQENOBpjRz8vk7rcM="
+        }
+      ]
+    },
+    {
+      "Route": "memography/0a42c6ff59b652c12aa5a784fffa97c4/040fb9e96d6619afdb69aae3893bebcb.fxm04m7qai.png",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\040fb9e96d6619afdb69aae3893bebcb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "879766"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7f9AdbLUUVv1QXEm9uYyxgU4LEptYRHH+vxsMHbMAs0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 Aug 2024 20:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fxm04m7qai"
+        },
+        {
+          "Name": "label",
+          "Value": "memography/0a42c6ff59b652c12aa5a784fffa97c4/040fb9e96d6619afdb69aae3893bebcb.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7f9AdbLUUVv1QXEm9uYyxgU4LEptYRHH+vxsMHbMAs0="
+        }
+      ]
+    },
+    {
+      "Route": "memography/0a42c6ff59b652c12aa5a784fffa97c4/040fb9e96d6619afdb69aae3893bebcb.png",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\040fb9e96d6619afdb69aae3893bebcb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "879766"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7f9AdbLUUVv1QXEm9uYyxgU4LEptYRHH+vxsMHbMAs0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 Aug 2024 20:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7f9AdbLUUVv1QXEm9uYyxgU4LEptYRHH+vxsMHbMAs0="
+        }
+      ]
+    },
+    {
+      "Route": "memography/0a42c6ff59b652c12aa5a784fffa97c4/31f9bcd6e042eb0f047eaef8a4d71c97.7hzniwdu1a.png",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\31f9bcd6e042eb0f047eaef8a4d71c97.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "640472"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pcqkhcLTHVGcXf/AVE0j6DJDGpHzqMx0QkvGPGRGsAI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 Aug 2024 20:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7hzniwdu1a"
+        },
+        {
+          "Name": "label",
+          "Value": "memography/0a42c6ff59b652c12aa5a784fffa97c4/31f9bcd6e042eb0f047eaef8a4d71c97.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pcqkhcLTHVGcXf/AVE0j6DJDGpHzqMx0QkvGPGRGsAI="
+        }
+      ]
+    },
+    {
+      "Route": "memography/0a42c6ff59b652c12aa5a784fffa97c4/31f9bcd6e042eb0f047eaef8a4d71c97.png",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\31f9bcd6e042eb0f047eaef8a4d71c97.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "640472"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pcqkhcLTHVGcXf/AVE0j6DJDGpHzqMx0QkvGPGRGsAI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 Aug 2024 20:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pcqkhcLTHVGcXf/AVE0j6DJDGpHzqMx0QkvGPGRGsAI="
+        }
+      ]
+    },
+    {
+      "Route": "memography/0a42c6ff59b652c12aa5a784fffa97c4/5335b81f00d4608d8ab9d6cbdb73b965.4i6qb33tnz.png",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\5335b81f00d4608d8ab9d6cbdb73b965.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "528343"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bOopsd5r1sMvMV3MsdIuxhNkvODg5TAp8ONU1TPXuYs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 Aug 2024 20:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4i6qb33tnz"
+        },
+        {
+          "Name": "label",
+          "Value": "memography/0a42c6ff59b652c12aa5a784fffa97c4/5335b81f00d4608d8ab9d6cbdb73b965.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bOopsd5r1sMvMV3MsdIuxhNkvODg5TAp8ONU1TPXuYs="
+        }
+      ]
+    },
+    {
+      "Route": "memography/0a42c6ff59b652c12aa5a784fffa97c4/5335b81f00d4608d8ab9d6cbdb73b965.png",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\5335b81f00d4608d8ab9d6cbdb73b965.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "528343"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bOopsd5r1sMvMV3MsdIuxhNkvODg5TAp8ONU1TPXuYs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 Aug 2024 20:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bOopsd5r1sMvMV3MsdIuxhNkvODg5TAp8ONU1TPXuYs="
+        }
+      ]
+    },
+    {
+      "Route": "memography/0a42c6ff59b652c12aa5a784fffa97c4/ae3b2767096883cfd24cb03f12bb6674.8zgai6waz3.png",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\ae3b2767096883cfd24cb03f12bb6674.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "980129"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dB7k6Mo756ssOCYfpvw+2dsfLqfGlQYDtt6ErNCRSaY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 Aug 2024 20:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8zgai6waz3"
+        },
+        {
+          "Name": "label",
+          "Value": "memography/0a42c6ff59b652c12aa5a784fffa97c4/ae3b2767096883cfd24cb03f12bb6674.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dB7k6Mo756ssOCYfpvw+2dsfLqfGlQYDtt6ErNCRSaY="
+        }
+      ]
+    },
+    {
+      "Route": "memography/0a42c6ff59b652c12aa5a784fffa97c4/ae3b2767096883cfd24cb03f12bb6674.png",
+      "AssetFile": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\memography\\0a42c6ff59b652c12aa5a784fffa97c4\\ae3b2767096883cfd24cb03f12bb6674.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "980129"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dB7k6Mo756ssOCYfpvw+2dsfLqfGlQYDtt6ErNCRSaY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 Aug 2024 20:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dB7k6Mo756ssOCYfpvw+2dsfLqfGlQYDtt6ErNCRSaY="
         }
       ]
     }
