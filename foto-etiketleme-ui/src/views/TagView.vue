@@ -2,7 +2,7 @@
   <div class="main-container">
     <!-- Sol Panel -->
     <div class="left-panel">
-      <TreeView :treeData="folders" />
+      <TreeView :treeData="folders" @selectFolder="onSelectFolder" />
     </div>
 
     <!-- Orta Panel (Fotoğraflar) -->
@@ -98,7 +98,8 @@
           </div>
         </div>
       </div>
-      <button @click="saveTags">Kaydet</button>
+      <button @click="saveTags">Ekle</button>
+      <button @click="veritabaninaGonder">Veritabanına Gönder</button>
     </div>
 
   </div>
@@ -108,8 +109,8 @@
 import { ref, onMounted } from "vue";
 import TreeView from "../components/TreeView.vue";
 import { loadPhotos } from "../js/photoViewer";
-import { getFotos, getEtiketler } from "../js/api";
-
+import { getFotos, getEtiketler, postEtiketler } from "../js/api";
+import { toRaw } from "vue";
 export default {
   components: {
     TreeView,
@@ -123,7 +124,13 @@ export default {
     const selectedBiradsSol = ref("");
     const selectedBiradsSag = ref("");
     const folders = ref([]);
+    const etiketeHazirData = ref([]);
+
+
+
     let currentPhotoList = [];
+    // Klasör bazlı etiketleme verisi
+    const folderTagData = ref({});
 
     onMounted(async () => {
       const fotoResponse = await getFotos();
@@ -164,25 +171,20 @@ export default {
     // Fotoğraf verileri ile kaydetme işlemi
     const saveTags = () => {
       const photosToSave = [];
-
+      
       // Fotoğraflar sırasıyla (R-CC, R-MLO, L-CC, L-MLO) işlem yapıyoruz
       currentPhotoList.forEach((photo, index) => {
         let laterality = "";
-        let view_position = "";
 
         // Fotoğraf sırasına göre laterality (Sol veya Sağ meme) ve view_position (CC ya da MLO) ayarlıyoruz
         if (index === 0) {
           laterality = "R";  // Sağ meme
-          view_position = "CC"; // CC pozisyonu
         } else if (index === 1) {
           laterality = "R";  // Sağ meme
-          view_position = "MLO"; // MLO pozisyonu
         } else if (index === 2) {
           laterality = "L";  // Sol meme
-          view_position = "CC"; // CC pozisyonu
         } else if (index === 3) {
           laterality = "L";  // Sol meme
-          view_position = "MLO"; // MLO pozisyonu
         }
 
         // Sol ve sağ meme için doğru BI-RADS ve finding categories değerini seçiyoruz
@@ -192,23 +194,88 @@ export default {
         // Her fotoğraf için veriyi hazırlama
         const photoData = {
           image_id: photo.id, // Fotoğrafın benzersiz ID'si
-          laterality: laterality, // Sol ya da Sağ meme
-          view_position: view_position, // Görüntü pozisyonu
           breast_birads: biradsValue, // BI-RADS değeri
           finding_categories: findings, // Seçilen finding categories
         };
-
+        etiketeHazirData.value = photosToSave;
         photosToSave.push(photoData);
       });
 
       // Kaydedilecek fotoğraf verilerini konsola yazdırıyoruz
       console.log("Kaydedilecek fotoğraf verileri:", photosToSave);
 
+      // Tüm klasörlerin etiketleme verilerini logla
+      console.log("Tüm klasörlerin etiketleme verileri:", JSON.parse(JSON.stringify(folderTagData.value)));
+
+      // Aktif klasörün id'sini bul
+      let activeFolderId = null;
+      if (folders.value && folders.value.length > 0 && currentPhotoList.length > 0) {
+        // Fotoğraflardan birinin parent klasörünü bul
+        const photoId = currentPhotoList[0].id;
+        const folder = folders.value.find(f => f.children.some(c => c.id === photoId));
+        if (folder) activeFolderId = folder.id;
+      }
+      // Etiketleme bilgisini kaydet
+      if (activeFolderId) {
+        folderTagData.value[activeFolderId] = {
+          selectedFindings1: [...selectedFindings1.value],
+          selectedFindings2: [...selectedFindings2.value],
+          selectedBiradsSol: selectedBiradsSol.value,
+          selectedBiradsSag: selectedBiradsSag.value,
+        };
+      }
       // Bu verileri veritabanına kaydetme işlemi burada yapılabilir
     };
 
+    // Klasör seçildiğinde ilgili fotoğrafları yükle
+    const onSelectFolder = (folderId) => {
+      const selectedFolder = folders.value.find(f => f.id === folderId);
+      if (selectedFolder && selectedFolder.children && selectedFolder.children.length > 0) {
+        const photoItems = selectedFolder.children.map(child => ({
+          id: child.id,
+          path: child.photoUrl,
+        }));
+        currentPhotoList = photoItems;
+        loadPhotos(photoItems);
+      } else {
+        // Fotoğraf yoksa boş göster
+        currentPhotoList = [];
+        loadPhotos([]);
+      }
+      // Etiketleme alanını güncelle
+      if (folderTagData.value[folderId]) {
+        // Daha önce etiketleme yapılmışsa, alanları doldur
+        selectedFindings1.value = [...folderTagData.value[folderId].selectedFindings1];
+        selectedFindings2.value = [...folderTagData.value[folderId].selectedFindings2];
+        selectedBiradsSol.value = folderTagData.value[folderId].selectedBiradsSol;
+        selectedBiradsSag.value = folderTagData.value[folderId].selectedBiradsSag;
+      } else {
+        // Hiç etiketleme yapılmamışsa, alanları sıfırla
+        selectedFindings1.value = [];
+        selectedFindings2.value = [];
+        selectedBiradsSol.value = "";
+        selectedBiradsSag.value = "";
+      }
+    };
 
-    
+    const veritabaninaGonder = async () => {
+      try {
+        // Proxy içermemesi için JSON'dan geçir
+        const rawList = toRaw(etiketeHazirData.value);
+        const cleanList = JSON.parse(JSON.stringify(rawList)); // tüm Proxy'leri siler
+
+        const result = await postEtiketler(cleanList);
+        console.log("Veritabanına gönderme sonucu:", result);
+        if (result && result.message) {
+          alert("Başarılı: " + result.message);
+        } else {
+          alert("Veritabanına gönderme başarılı!");
+        }
+      } catch (err) {
+        console.error("Veritabanına gönderme hatası:", err);
+        alert("Hata: " + (err?.message || err));
+      }
+    };
 
     return {
       activeTab,
@@ -220,6 +287,9 @@ export default {
       selectedBiradsSag,
       folders,
       saveTags, // saveTags fonksiyonunu burada döndürüyoruz
+      onSelectFolder, // yeni fonksiyonu ekle
+      folderTagData,
+      veritabaninaGonder,
     };
   },
 };

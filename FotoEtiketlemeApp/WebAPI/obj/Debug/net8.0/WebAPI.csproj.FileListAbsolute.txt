@@ -116,3 +116,4 @@ C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\musta\OneDrive\Masaüstü\Foto Etiketleme App\FotoEtiketlemeApp\WebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

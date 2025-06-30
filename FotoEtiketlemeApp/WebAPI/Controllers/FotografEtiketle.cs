@@ -22,26 +22,28 @@ namespace WebAPI.Controllers
         }
 
 
-        //[HttpPost]
-        //[Route("PostFoto")]
-        //public async Task<IActionResult> PostFoto([FromBody] List<EtiketSecimDto>  secimler)
-        //{
-        //    Guid doktorId = User.GetUserId().Value;
-        //    if (doktorId == null)
-        //        return Unauthorized();
+        [HttpPost("PostFoto")]
+        public async Task<IActionResult> PostFoto([FromBody] List<EtiketSecimDto> secimler)
+        {
+            string baseUrl = $"{Request.Scheme}://{Request.Host}";
 
-        //    var postDataToDb = new PostDataToDB(appDbContext);
-        //    var result = await postDataToDb.PostFoto(secimler, doktorId);
+            //Guid doktorId = User.GetUserId().Value;
+            var doktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301");
+            if (doktorId == null)
+                return Unauthorized();
 
-        //    if (result.Success)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(result);
-        //    }
-        //}
+            var postDataToDb = new PostDataToDB(appDbContext);
+            var result = await postDataToDb.PostFoto(secimler, doktorId);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
 
         //[HttpGet]
         //[Route("GetStats")]

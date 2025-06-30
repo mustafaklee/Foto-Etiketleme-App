@@ -1,8 +1,16 @@
-﻿namespace WebAPI.Models.Dtos
+﻿using System.Text.Json.Serialization;
+
+namespace WebAPI.Models.Dtos
 {
     public class EtiketSecimDto
     {
-        public int FotografId { get; set; }
-        public int EtiketId { get; set; }
+        [JsonPropertyName("image_id")]
+        public int ImageId { get; set; }
+
+        [JsonPropertyName("breast_birads")]
+        public int BreastBirads { get; set; }
+
+        [JsonPropertyName("finding_categories")]
+        public List<int> FindingCategories { get; set; }
     }
 }

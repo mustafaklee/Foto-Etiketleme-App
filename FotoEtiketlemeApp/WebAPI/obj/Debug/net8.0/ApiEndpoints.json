@@ -52,6 +52,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebAPI.Controllers.FotografEtiketle",
+    "Method": "PostFoto",
+    "RelativePath": "api/FotografEtiketle/PostFoto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "secimler",
+        "Type": "System.Collections.Generic.List\u00601[[WebAPI.Models.Dtos.EtiketSecimDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

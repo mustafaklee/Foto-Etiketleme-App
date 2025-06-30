@@ -1,6 +1,6 @@
 <template>
   <li>
-    <div class="tree-node-label" @click="toggleNodeOrSelect" :title="node.name">
+    <div class="tree-node-label" @click="selectFolderOnly" @dblclick="toggleNode" :title="node.name">
       <template v-if="node.photoUrl">
         <a :href="node.photoUrl" target="_blank" @click.stop>{{ node.name }}</a>
       </template>
@@ -34,21 +34,31 @@ export default {
       expanded: !!this.node.expanded,
     };
   },
+  mounted() {
+    this.renkKontrol();
+  },
+  watch: {
+    "node.id": function() { this.renkKontrol && this.renkKontrol(); },
+    "node.expanded": function(val) { this.expanded = val; },
+  },
   methods: {
-    toggleNodeOrSelect() {
+    selectFolderOnly() {
       if (!this.node.photoUrl) {
-        // Klasör tıklandı
         this.$emit('selectFolder', this.node.id);
       }
+    },
+    toggleNode() {
       if (this.node.children && this.node.children.length) {
         this.expanded = !this.expanded;
         this.$emit("toggle", this.node);
       }
     },
-  },
-  watch: {
-    "node.expanded"(val) {
-      this.expanded = val;
+    renkKontrol() {
+      if (!this.node.photoUrl && this.folderTagData && this.folderTagData[this.node.id]) {
+        this.etiketlendiMi = true;
+      } else {
+        this.etiketlendiMi = false;
+      }
     },
   },
 };
