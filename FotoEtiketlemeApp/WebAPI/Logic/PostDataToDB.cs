@@ -18,29 +18,36 @@ namespace WebAPI.Logic
         {
             try
             {
-
                 foreach (var dto in secimler)
                 {
+                    // 1. FotografEtiket kaydı
+                    var etiket = new FotografEtiket
+                    {
+                        FotografId = dto.ImageId,
+                        BreastBiradsId = dto.BreastBirads
+                    };
+                    await appDbContext.FotografEtiket.AddAsync(etiket);
+
+                    // 2. Her bir FindingCategoriesId için FindingCategoriesEntity oluştur
                     foreach (var catId in dto.FindingCategories)
                     {
-                        var etiket = new FotografEtiket
+                        var fce = new FindingCategoriesEntity
                         {
-                            imageId = dto.ImageId,
-                            breast_biradsId = dto.BreastBirads,
-                            finding_categoriesId = catId
-                            
+                            ImageId = dto.ImageId, // Bu, FotografId'ye karşılık gelir
+                            FindingCategoriesId = catId
                         };
-                        await appDbContext.FotografEtiket.AddAsync(etiket);
+                        await appDbContext.FindingCategoriesEntities.AddAsync(fce);
                     }
                 }
 
                 await appDbContext.SaveChangesAsync();
-                return new SuccessResult("Kayıt İşlemi Başarıyla Gerçekleşti");
+                return new SuccessResult("Kayıt işlemi başarıyla gerçekleşti.");
             }
             catch (Exception ex)
             {
-                return new ErrorResult($"Veritabanına Kaydederken Bir hata meydana geldi {ex}");
+                return new ErrorResult($"Veritabanına kaydederken bir hata meydana geldi: {ex.Message}");
             }
         }
+
     }
 }

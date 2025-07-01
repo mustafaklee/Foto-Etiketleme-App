@@ -110,7 +110,6 @@ import { ref, onMounted } from "vue";
 import TreeView from "../components/TreeView.vue";
 import { loadPhotos } from "../js/photoViewer";
 import { getFotos, getEtiketler, postEtiketler } from "../js/api";
-import { toRaw } from "vue";
 export default {
   components: {
     TreeView,
@@ -124,7 +123,7 @@ export default {
     const selectedBiradsSol = ref("");
     const selectedBiradsSag = ref("");
     const folders = ref([]);
-    const etiketeHazirData = ref([]);
+    const etiketeHazirData = ref({});
 
 
 
@@ -197,20 +196,12 @@ export default {
           breast_birads: biradsValue, // BI-RADS değeri
           finding_categories: findings, // Seçilen finding categories
         };
-        etiketeHazirData.value = photosToSave;
         photosToSave.push(photoData);
       });
-
-      // Kaydedilecek fotoğraf verilerini konsola yazdırıyoruz
-      console.log("Kaydedilecek fotoğraf verileri:", photosToSave);
-
-      // Tüm klasörlerin etiketleme verilerini logla
-      console.log("Tüm klasörlerin etiketleme verileri:", JSON.parse(JSON.stringify(folderTagData.value)));
 
       // Aktif klasörün id'sini bul
       let activeFolderId = null;
       if (folders.value && folders.value.length > 0 && currentPhotoList.length > 0) {
-        // Fotoğraflardan birinin parent klasörünü bul
         const photoId = currentPhotoList[0].id;
         const folder = folders.value.find(f => f.children.some(c => c.id === photoId));
         if (folder) activeFolderId = folder.id;
@@ -223,8 +214,9 @@ export default {
           selectedBiradsSol: selectedBiradsSol.value,
           selectedBiradsSag: selectedBiradsSag.value,
         };
+        // Fotoğraf etiketleme verilerini de kaydet
+        etiketeHazirData.value[activeFolderId] = photosToSave;
       }
-      // Bu verileri veritabanına kaydetme işlemi burada yapılabilir
     };
 
     // Klasör seçildiğinde ilgili fotoğrafları yükle
@@ -260,10 +252,13 @@ export default {
 
     const veritabaninaGonder = async () => {
       try {
-        // Proxy içermemesi için JSON'dan geçir
-        const rawList = toRaw(etiketeHazirData.value);
-        const cleanList = JSON.parse(JSON.stringify(rawList)); // tüm Proxy'leri siler
+        // Tüm klasörlerin fotoğraf etiketleme verilerini birleştir
+        let allPhotoTags = [];
+        Object.values(etiketeHazirData.value).forEach(photoList => {
+          allPhotoTags = allPhotoTags.concat(photoList);
+        });
 
+        const cleanList = JSON.parse(JSON.stringify(allPhotoTags));
         const result = await postEtiketler(cleanList);
         console.log("Veritabanına gönderme sonucu:", result);
         if (result && result.message) {
@@ -286,8 +281,8 @@ export default {
       selectedBiradsSol,
       selectedBiradsSag,
       folders,
-      saveTags, // saveTags fonksiyonunu burada döndürüyoruz
-      onSelectFolder, // yeni fonksiyonu ekle
+      saveTags,
+      onSelectFolder,
       folderTagData,
       veritabaninaGonder,
     };

@@ -11,6 +11,7 @@ namespace WebAPI.Models.Dtos
         public int BreastBirads { get; set; }
 
         [JsonPropertyName("finding_categories")]
-        public List<int> FindingCategories { get; set; }
+        public List<int> FindingCategories { get; set; } = new();
     }
+
 }

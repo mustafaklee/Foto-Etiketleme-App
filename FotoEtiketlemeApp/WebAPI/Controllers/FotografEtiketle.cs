@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using WebAPI.Data;
-using WebAPI.Extensions;
 using WebAPI.Models.Dtos;
 using WebAPI.Logic;
-using System.Security.Claims;
-using WebAPI.Repositories.Results;
 using Microsoft.AspNetCore.Authorization;
 namespace WebAPI.Controllers
 {

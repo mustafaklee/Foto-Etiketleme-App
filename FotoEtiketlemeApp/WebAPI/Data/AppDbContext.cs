@@ -17,6 +17,7 @@ namespace WebAPI.Data
         public DbSet<Doktor> Doktor { get; set; }
         public DbSet<FindingCategories> FindingCategories { get; set; }
         public DbSet<Folder> Folder { get; set; }
+        public DbSet<FindingCategoriesEntity> FindingCategoriesEntities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -83,23 +84,63 @@ namespace WebAPI.Data
 
             var fotograflar = new List<Fotograf>()
             {
-                new Fotograf { Id = 1, FotografPath = "0a6a90bdc088e0cc62df8d2d58d14840.png", FolderId = 1 },
-                new Fotograf { Id = 2, FotografPath = "1b66d3ea1dae116b7c0e87e3caab3340.png", FolderId = 1 },
-                new Fotograf { Id = 3, FotografPath = "7a3df96890c90370590984ca196d1b40.png", FolderId = 1 },
-                new Fotograf { Id = 4, FotografPath = "cb8a1b1282b4b16c0f322e9fc89a9c35.png", FolderId = 1 }
+                new Fotograf { Id = 1, FotografPath = "0a6a90bdc088e0cc62df8d2d58d14840.png", FolderId = 1,laterality_id=1,view_position_id=2 },
+                new Fotograf { Id = 2, FotografPath = "1b66d3ea1dae116b7c0e87e3caab3340.png", FolderId = 1 ,laterality_id=2,view_position_id=1},
+                new Fotograf { Id = 3, FotografPath = "7a3df96890c90370590984ca196d1b40.png", FolderId = 1 ,laterality_id=1,view_position_id=1},
+                new Fotograf { Id = 4, FotografPath = "cb8a1b1282b4b16c0f322e9fc89a9c35.png", FolderId = 1 ,laterality_id=1,view_position_id=2}
             };
 
             builder.Entity<Fotograf>().HasData(fotograflar);
 
+            var findingCategoriesId = new List<FindingCategoriesEntity>()
+            {
+                new FindingCategoriesEntity{Id=1,ImageId=1,FindingCategoriesId=1},
+                new FindingCategoriesEntity{Id=2,ImageId=1,FindingCategoriesId=2},
+                new FindingCategoriesEntity{Id=3,ImageId=2,FindingCategoriesId=5},
+                new FindingCategoriesEntity{Id=4,ImageId=2,FindingCategoriesId=4},
+                new FindingCategoriesEntity{Id=5,ImageId=2,FindingCategoriesId=2},
+                new FindingCategoriesEntity{Id=6,ImageId=3,FindingCategoriesId=6},
+                new FindingCategoriesEntity{Id=7,ImageId=4,FindingCategoriesId=7},
+
+            };
+
+            builder.Entity<FindingCategoriesEntity>().HasData(findingCategoriesId);
+
+
             var fotografEtiketleri = new List<FotografEtiket>()
             {
-                new FotografEtiket { Id = 1, imageId = 1, breast_biradsId = 1, finding_categoriesId = 1 },
-                new FotografEtiket { Id = 2, imageId = 2, breast_biradsId = 1, finding_categoriesId = 1 },
-                new FotografEtiket { Id = 3, imageId = 3, breast_biradsId = 3, finding_categoriesId = 5 },
-                new FotografEtiket { Id = 4, imageId = 4, breast_biradsId = 3, finding_categoriesId = 5}
+                new FotografEtiket { Id = 1, FotografId = 1, BreastBiradsId = 1 },
+                new FotografEtiket { Id = 2, FotografId = 2, BreastBiradsId = 2 },
+                new FotografEtiket { Id = 3, FotografId = 3, BreastBiradsId = 3 },
+                new FotografEtiket { Id = 4, FotografId = 4, BreastBiradsId = 4 }
             };
 
             builder.Entity<FotografEtiket>().HasData(fotografEtiketleri);
+
+            var view_position = new List<view_position>()
+            {
+                new view_position{id=1,view_position_name="CC"},
+                new view_position{id=2,view_position_name="MLO"}
+            };
+            builder.Entity<view_position>().HasData(view_position);
+
+            var laterality = new List<laterality>()
+            {
+                new laterality{id=1,laterality_name="R"},
+                new laterality{id=2,laterality_name="L"}
+            };
+            builder.Entity<laterality>().HasData(laterality);
+
+            builder.Entity<Fotograf>()
+            .HasOne(f => f.laterality)
+            .WithMany(l => l.Fotograf)
+            .HasForeignKey(f => f.laterality_id);
+
+            builder.Entity<Fotograf>()
+            .HasOne(f => f.view_Position)
+            .WithMany(vp => vp.Fotograf)
+            .HasForeignKey(f => f.view_position_id);
+
 
             // Relationship configuration for Many-to-Many
             builder.Entity<FotografEtiket>()
@@ -108,18 +149,12 @@ namespace WebAPI.Data
             builder.Entity<FotografEtiket>()
                 .HasOne(fe => fe.Fotograf)
                 .WithMany(f => f.FotografEtiketleri)
-                .HasForeignKey(fe => fe.imageId);
+                .HasForeignKey(fe => fe.FotografId);
 
             builder.Entity<FotografEtiket>()
                 .HasOne(fe => fe.BreastBirads)
                 .WithMany(b => b.FotografEtiket)
-                .HasForeignKey(fe => fe.breast_biradsId);
-
-            builder.Entity<FotografEtiket>()
-                .HasOne(fe => fe.FindingCategories)
-                .WithMany(fc => fc.FotografEtiket)
-                .HasForeignKey(fe => fe.finding_categoriesId);
-
+                .HasForeignKey(fe => fe.BreastBiradsId);
             // Folder ve Fotograf İlişkisini Kurma
             builder.Entity<Fotograf>()
                 .HasOne(f => f.Folder)
@@ -131,6 +166,21 @@ namespace WebAPI.Data
                 .HasOne(f => f.Doktor)
                 .WithMany(d => d.Folder)
                 .HasForeignKey(f => f.DoktorId);
+
+
+
+            // FindingCategoriesEntity → Fotograf
+            builder.Entity<FindingCategoriesEntity>()
+                .HasOne(fce => fce.Fotograf)
+                .WithMany(f => f.FindingCategoriesEntities)
+                .HasForeignKey(fce => fce.ImageId);
+
+            // FindingCategoriesEntity → FindingCategories
+            builder.Entity<FindingCategoriesEntity>()
+                .HasOne(fce => fce.FindingCategories)
+                .WithMany(fc => fc.FindingCategoriesEntities)
+                .HasForeignKey(fce => fce.FindingCategoriesId);
+
         }
     }
 }
