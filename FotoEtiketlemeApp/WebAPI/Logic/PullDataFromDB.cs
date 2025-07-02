@@ -1,9 +1,8 @@
 ﻿using WebAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Repositories.Results;
-using WebAPI.Models.Domain;
 using WebAPI.Models.Dtos;
-using Microsoft.AspNetCore.Mvc;
+using WebAPI.Models.Domain;
 namespace WebAPI.Logic
 {
 
@@ -15,14 +14,21 @@ namespace WebAPI.Logic
             this.appDbContext = _appDbContext;
         }
 
-        public async Task<IDataResult<List<FolderFotoDto>>> GetFoto(Guid doktorID, string baseUrl)
+        public async Task<IDataResult<List<FolderFotoDto>>> GetFoto(Guid doktorID, string baseUrl, int page, int pageSize)
         {
-            //ileride düzenleem için burda automapper kullanılmalıdır!
             try
             {
+                int skip = (page - 1) * pageSize;
+
                 var folders = await appDbContext.Folder
                     .Where(f => f.DoktorId == doktorID)
+                    .OrderBy(f => f.Id) // sıralama olmazsa paging çakışabilir
+                    .Skip(skip)
+                    .Take(pageSize)
+                    .Include(f => f.Fotograf) // Include Fotograf for each folder
+                    .ThenInclude(f => f.laterality) // Include the laterality relationship
                     .Include(f => f.Fotograf)
+                    .ThenInclude(f => f.view_Position) // Include the view_position relationship
                     .ToListAsync();
 
                 var folderFotograflar = folders
@@ -33,7 +39,9 @@ namespace WebAPI.Logic
                         Fotograflar = folder.Fotograf.Select(f => new FotoDto
                         {
                             Id = f.Id,
-                            Path = $"{baseUrl}/{folder.FolderPath}/{f.FotografPath}"
+                            Path = $"{baseUrl}/{folder.FolderPath}/{f.FotografPath}",
+                            laterality_id = f.laterality.id, // Map the laterality ID
+                            view_Position = f.view_position_id, // Map the view_position name
                         }).ToList()
                     }).ToList();
 
@@ -44,6 +52,8 @@ namespace WebAPI.Logic
                 return new ErrorDataResult<List<FolderFotoDto>>($"Bir hata meydana geldi: {ex.Message}");
             }
         }
+            
+
 
         public async Task<IDataResult<object>> GetBreastAndFinding()
         {

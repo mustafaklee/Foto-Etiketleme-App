@@ -1,10 +1,11 @@
-﻿export async function getFotos() {
+﻿export async function getFotos(page = 1, pageSize = 20) {
     const token = localStorage.getItem('jwtToken');
-    const response = await fetch("https://localhost:7252/api/FotografEtiketle/GetFoto", {
-        headers: {
-            'Authorization': `Bearer ${token}`
-        }
-    });
+    const response = await fetch(`https://localhost:7252/api/FotografEtiketle/GetFoto?page=${page}&pageSize=${pageSize}`,
+        {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
     return await response.json();
 }
 

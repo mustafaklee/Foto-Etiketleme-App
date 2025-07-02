@@ -1,8 +1,10 @@
 <template>
   <div class="main-container">
     <!-- Sol Panel -->
-    <div class="left-panel">
+    <div class="left-panel" @scroll="onLeftPanelScroll" ref="leftPanelRef" style="overflow-y:auto;max-height:600px;">
       <TreeView :treeData="folders" @selectFolder="onSelectFolder" />
+      <div v-if="isLoading" class="loading">Yükleniyor...</div>
+      <div v-if="!hasMoreFolders" class="no-more">Tüm klasörler yüklendi.</div>
     </div>
 
     <!-- Orta Panel (Fotoğraflar) -->
@@ -124,22 +126,21 @@ export default {
     const selectedBiradsSag = ref("");
     const folders = ref([]);
     const etiketeHazirData = ref({});
-
-
-
     let currentPhotoList = [];
-    // Klasör bazlı etiketleme verisi
     const folderTagData = ref({});
 
-    onMounted(async () => {
-      const fotoResponse = await getFotos();
-      const etiketResponse = await getEtiketler();
+    // Sayfalama için yeni state'ler
+    const currentPage = ref(1);
+    const isLoading = ref(false);
+    const hasMoreFolders = ref(true);
+    const leftPanelRef = ref(null);
 
-      findings.value = etiketResponse.data?.findingCategories || [];
-      biradsList.value = etiketResponse.data?.breastBirads || [];
-
-      // Kullanınabilir Ağaç Verisine Dönüştürülmesi
-      folders.value = (fotoResponse.data || []).map((folder) => ({
+    // Klasörleri yükle (sayfalı)
+    const loadMoreFolders = async () => {
+      if (isLoading.value || !hasMoreFolders.value) return;
+      isLoading.value = true;
+      const fotoResponse = await getFotos(currentPage.value, 20);
+      const newFolders = (fotoResponse.data || []).map((folder) => ({
         id: folder.folderId,
         name: folder.folderPath,
         expanded: false,
@@ -151,20 +152,39 @@ export default {
           children: [],
         })),
       }));
-
-      // İlk klasörde fotoğraf varsa, onları yükle
-      if (
-        folders.value.length > 0 &&
-        folders.value[0].children &&
-        folders.value[0].children.length > 0
-      ) {
-        const photoItems = folders.value[0].children.map((child) => ({
-          id: child.id,
-          path: child.photoUrl,
-        }));
-        currentPhotoList = photoItems; // currentPhotoList'e atama
-        loadPhotos(photoItems);
+      if (newFolders.length < 20) {
+        hasMoreFolders.value = false;
       }
+      folders.value = folders.value.concat(newFolders);
+      currentPage.value += 1;
+      isLoading.value = false;
+      // Eğer ilk yükleme ise ilk klasörün fotoğraflarını yükle
+      if (folders.value.length > 0 && currentPhotoList.length === 0) {
+        const firstFolder = folders.value[0];
+        if (firstFolder.children && firstFolder.children.length > 0) {
+          const photoItems = firstFolder.children.map((child) => ({
+            id: child.id,
+            path: child.photoUrl,
+          }));
+          currentPhotoList = photoItems;
+          loadPhotos(photoItems);
+        }
+      }
+    };
+
+    // Sol panel scroll event
+    const onLeftPanelScroll = () => {
+      const el = leftPanelRef.value;
+      if (el && el.scrollTop + el.clientHeight >= el.scrollHeight - 10) {
+        loadMoreFolders();
+      }
+    };
+
+    onMounted(async () => {
+      const etiketResponse = await getEtiketler();
+      findings.value = etiketResponse.data?.findingCategories || [];
+      biradsList.value = etiketResponse.data?.breastBirads || [];
+      await loadMoreFolders();
     });
 
     // Fotoğraf verileri ile kaydetme işlemi
@@ -285,6 +305,12 @@ export default {
       onSelectFolder,
       folderTagData,
       veritabaninaGonder,
+      // yeni eklenenler
+      loadMoreFolders,
+      isLoading,
+      hasMoreFolders,
+      leftPanelRef,
+      onLeftPanelScroll,
     };
   },
 };

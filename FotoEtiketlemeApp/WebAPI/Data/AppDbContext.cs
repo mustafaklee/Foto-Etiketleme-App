@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
-using WebAPI.Controllers;
 using WebAPI.Models.Domain;
 
 namespace WebAPI.Data

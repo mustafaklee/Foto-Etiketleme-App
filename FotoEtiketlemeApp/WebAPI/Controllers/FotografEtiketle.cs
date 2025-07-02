@@ -101,29 +101,22 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("GetFoto")]
-        public async Task<IActionResult> GetFoto()
+        public async Task<IActionResult> GetFoto(int page = 1, int pageSize = 1)
         {
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
 
-            //Guid doktorId = User.GetUserId().Value;
             var doktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301");
-            if (doktorId == null)
+            if (doktorId == Guid.Empty)
                 return Unauthorized();
 
             var pullDataFromDb = new PullDataFromDB(appDbContext);
-
-            var result = await pullDataFromDb.GetFoto(doktorId, baseUrl);
+            var result = await pullDataFromDb.GetFoto(doktorId, baseUrl, page, pageSize);
 
             if (result.Success)
-            {
                 return Ok(result);
-            }
             else
-            {
                 return BadRequest(result.Message);
-            }
         }
-
 
         [HttpGet("GetBreastAndFinding")]
         public async Task<IActionResult> GetBreastAndFinding()
