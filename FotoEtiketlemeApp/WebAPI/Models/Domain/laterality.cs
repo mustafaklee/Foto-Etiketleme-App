@@ -4,7 +4,7 @@
     {
         public int id { get; set; }
         public string laterality_name { get; set; }
-        public ICollection<Fotograf> Fotograf { get; set; }
+        public ICollection<Image> Image { get; set; }
 
     }
 }

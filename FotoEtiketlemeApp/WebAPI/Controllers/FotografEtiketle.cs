@@ -18,28 +18,50 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpPost("PostFoto")]
-        public async Task<IActionResult> PostFoto([FromBody] List<EtiketSecimDto> secimler)
+        //[HttpPost("PostFoto")]
+        //public async Task<IActionResult> PostFoto([FromBody] List<EtiketSecimDto> secimler)
+        //{
+        //    string baseUrl = $"{Request.Scheme}://{Request.Host}";
+
+        //    //Guid doktorId = User.GetUserId().Value;
+        //    var doktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301");
+        //    if (doktorId == null)
+        //        return Unauthorized();
+
+        //    var postDataToDb = new PostDataToDB(appDbContext);
+        //    var result = await postDataToDb.PostFoto(secimler, doktorId);
+
+        //    if (result.Success)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    else
+        //    {
+        //        return BadRequest(result);
+        //    }
+        //}
+
+
+        [HttpGet("GetLabeledFotos")]
+        public async Task<IActionResult> GetLabeledFotos()
         {
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
 
-            //Guid doktorId = User.GetUserId().Value;
             var doktorId = new Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301");
-            if (doktorId == null)
+            if (doktorId == Guid.Empty)
                 return Unauthorized();
 
-            var postDataToDb = new PostDataToDB(appDbContext);
-            var result = await postDataToDb.PostFoto(secimler, doktorId);
+            var pullDataFromDb = new PullDataFromDB(appDbContext);
+            var result = await pullDataFromDb.GetLabeledFotos(doktorId, baseUrl);
 
             if (result.Success)
-            {
                 return Ok(result);
-            }
             else
-            {
-                return BadRequest(result);
-            }
+                return BadRequest(result.Message);
         }
+
+
+
 
         //[HttpGet]
         //[Route("GetStats")]
@@ -101,7 +123,7 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("GetFoto")]
-        public async Task<IActionResult> GetFoto(int page = 1, int pageSize = 1)
+        public async Task<IActionResult> GetFoto(int page = 1, int pageSize = 40)
         {
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
 

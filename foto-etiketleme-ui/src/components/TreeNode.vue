@@ -1,6 +1,9 @@
 <template>
   <li>
-    <div class="tree-node-label" @click="selectFolderOnly" @dblclick="toggleNode" :title="node.name">
+    <div class="tree-node-label" @click="selectFolderOnly" @dblclick="toggleNode" :title="node.name" :class="{
+      'labeled-folder': node.sourceType === 'labeled',
+      'unlabeled-folder': node.sourceType === 'unlabeled'
+    }">
       <template v-if="node.photoUrl">
         <a :href="node.photoUrl" target="_blank" @click.stop>{{ node.name }}</a>
       </template>
@@ -25,6 +28,7 @@ export default {
   name: "TreeNode",
   props: {
     node: Object,
+    folderTagData: Object,
   },
   components: {
     TreeNode: () => import("./TreeNode.vue"),
@@ -98,5 +102,13 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+.labeled-folder {
+  background: #ffdddd !important;
+  color: #b71c1c !important;
+}
+.unlabeled-folder {
+  background: #e8f5e9 !important;
+  color: #1b5e20 !important;
 }
 </style>

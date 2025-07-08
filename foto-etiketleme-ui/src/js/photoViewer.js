@@ -1,11 +1,7 @@
-﻿//photoViewer.js
-
-let currentPhotoList = [];
-let currentIndex = 0;
+﻿let currentPhotoList = [];
 
 export function loadPhotos(photoList) {
-    currentPhotoList = photoList;
-    currentIndex = 0;
+    currentPhotoList = photoList
     renderPhotos();
 }
 
@@ -20,7 +16,7 @@ function renderPhotos() {
     const visiblePhotos = currentPhotoList;
     const captions = [];
 
-    visiblePhotos.forEach((photo, index) => {
+    visiblePhotos.forEach((photo) => {
         const wrapper = document.createElement("div");
         wrapper.classList.add("photo-wrapper");
 
@@ -30,14 +26,13 @@ function renderPhotos() {
         const caption = document.createElement("div");
         caption.classList.add("photo-caption");
 
-        const absoluteIndex = currentIndex + index;
         let captionText = "";
 
-        if (absoluteIndex === 0) captionText = "R - CC";
-        else if (absoluteIndex === 1) captionText = "R - MLO";
-        else if (absoluteIndex === 2) captionText = "L - CC";
-        else if (absoluteIndex === 3) captionText = "L - MLO";
-
+        if (photo.view_position === 1) {
+            captionText = photo.laterality_id === 1 ? "R - CC" : "L - CC";
+        } else if (photo.view_position === 2) {
+            captionText = photo.laterality_id === 1 ? "R - MLO" : "L - MLO";
+        }
         caption.textContent = captionText;
         captions.push(captionText);
 

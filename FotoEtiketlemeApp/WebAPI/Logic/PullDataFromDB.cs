@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Repositories.Results;
 using WebAPI.Models.Dtos;
-using WebAPI.Models.Domain;
 namespace WebAPI.Logic
 {
 
@@ -14,45 +13,125 @@ namespace WebAPI.Logic
             this.appDbContext = _appDbContext;
         }
 
-        public async Task<IDataResult<List<FolderFotoDto>>> GetFoto(Guid doktorID, string baseUrl, int page, int pageSize)
+
+
+        public async Task<IDataResult<List<FolderFotoDto>>> GetLabeledFotos(Guid doktorId,string baseUrl)
+        {
+            try
+            {
+               
+                var labeledPhotos = await appDbContext.Image
+                    .Where(img =>
+                        img.Folder.FolderDoctorEntities.Any(fd => fd.DoctorId == doktorId) &&
+                       (img.BreastBiradsEntities.Any() || img.FindingCategoriesEntities.Any()))
+                    .Select(img => new
+                    {
+                        img.Id,
+                        img.FolderId,
+                        img.Folder.FolderPath,
+                        img.FotografPath,
+                        img.laterality_id,
+                        img.view_position_id,
+
+                        Birads = img.BreastBiradsEntities
+                                    .OrderBy(b => b.Id)
+                                    .Select(b => (int?)b.BreastBiradsId)
+                                    .FirstOrDefault(),
+
+                        FindingCats = img.FindingCategoriesEntities
+                                         .Select(fc => fc.FindingCategoriesId)
+                    })
+                    .AsNoTracking()
+                    .ToListAsync();
+
+                var result = labeledPhotos
+                    .GroupBy(p => new { p.FolderId, p.FolderPath })
+                    .Select(g => new FolderFotoDto
+                    {
+                        FolderId = g.Key.FolderId,
+                        FolderPath = g.Key.FolderPath,
+                        Fotograflar = g.Select(p => new FotoDto
+                        {
+                            Id = p.Id,
+                            Path = $"{baseUrl}/{p.FolderPath}/{p.FotografPath}",
+                            laterality_id = p.laterality_id,
+                            view_Position = p.view_position_id,
+                            tags = new Tags
+                            {
+                                breast_birads = p.Birads ?? 0,
+                                finding_categories = p.FindingCats.ToList()
+                            }
+                        })
+                        .ToList()
+                    })
+                    .ToList();
+
+                return new SuccessDataResult<List<FolderFotoDto>>(
+                    result,
+                    "Etiketlenmiş klasör fotoğrafları başarıyla getirildi.");
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDataResult<List<FolderFotoDto>>(
+                    $"Hata: {ex.Message}");
+            }
+        }
+
+
+
+        public async Task<IDataResult<List<FolderFotoDto>>> GetFoto(Guid doktorId,string baseUrl,int page,int pageSize)
         {
             try
             {
                 int skip = (page - 1) * pageSize;
 
-                var folders = await appDbContext.Folder
-                    .Where(f => f.DoktorId == doktorID)
-                    .OrderBy(f => f.Id) // sıralama olmazsa paging çakışabilir
-                    .Skip(skip)
+                var etiketsizFotolar = await appDbContext.Image
+                    .Where(img =>
+                        img.Folder.FolderDoctorEntities.Any(fd => fd.DoctorId == doktorId) &&
+                        !img.FindingCategoriesEntities.Any() &&
+                        !img.BreastBiradsEntities.Any())
+                    .OrderBy(img => img.FolderId)
+                    .Skip((page - 1) * pageSize)
                     .Take(pageSize)
-                    .Include(f => f.Fotograf) // Include Fotograf for each folder
-                    .ThenInclude(f => f.laterality) // Include the laterality relationship
-                    .Include(f => f.Fotograf)
-                    .ThenInclude(f => f.view_Position) // Include the view_position relationship
+                    .Select(img => new
+                    {
+                        FolderId = img.FolderId,
+                        FolderPath = img.Folder.FolderPath,
+                        Foto = new FotoDto
+                        {
+                            Id = img.Id,
+                            Path = $"{baseUrl}/{img.Folder.FolderPath}/{img.FotografPath}",
+                            laterality_id = img.laterality_id,
+                            view_Position = img.view_position_id
+                        }
+                        })
+                    .AsNoTracking()
                     .ToListAsync();
 
-                var folderFotograflar = folders
-                    .Select(folder => new FolderFotoDto
+                var klasorler = etiketsizFotolar
+                    .GroupBy(x => new { x.FolderId, x.FolderPath })
+                    .Select(g => new FolderFotoDto
                     {
-                        FolderId = folder.Id,
-                        FolderPath = folder.FolderPath,
-                        Fotograflar = folder.Fotograf.Select(f => new FotoDto
-                        {
-                            Id = f.Id,
-                            Path = $"{baseUrl}/{folder.FolderPath}/{f.FotografPath}",
-                            laterality_id = f.laterality.id, // Map the laterality ID
-                            view_Position = f.view_position_id, // Map the view_position name
-                        }).ToList()
-                    }).ToList();
+                        FolderId = g.Key.FolderId,
+                        FolderPath = g.Key.FolderPath,
+                        Fotograflar = g.Select(x => x.Foto).ToList()
+                    })
+                    .ToList();
 
-                return new SuccessDataResult<List<FolderFotoDto>>(folderFotograflar, "Klasörler ve fotoğraflar başarıyla getirildi.");
+
+                return new SuccessDataResult<List<FolderFotoDto>>(
+                    klasorler,
+                    "Fotoğraflar başarıyla getirildi.");
             }
             catch (Exception ex)
             {
-                return new ErrorDataResult<List<FolderFotoDto>>($"Bir hata meydana geldi: {ex.Message}");
+                return new ErrorDataResult<List<FolderFotoDto>>(
+                    $"Bir hata meydana geldi: {ex.Message}");
             }
         }
-            
+
+
+
 
 
         public async Task<IDataResult<object>> GetBreastAndFinding()

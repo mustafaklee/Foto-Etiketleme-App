@@ -64,18 +64,12 @@
   },
   {
     "ContainingType": "WebAPI.Controllers.FotografEtiketle",
-    "Method": "PostFoto",
-    "RelativePath": "api/FotografEtiketle/PostFoto",
-    "HttpMethod": "POST",
+    "Method": "GetLabeledFotos",
+    "RelativePath": "api/FotografEtiketle/GetLabeledFotos",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "secimler",
-        "Type": "System.Collections.Generic.List\u00601[[WebAPI.Models.Dtos.EtiketSecimDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

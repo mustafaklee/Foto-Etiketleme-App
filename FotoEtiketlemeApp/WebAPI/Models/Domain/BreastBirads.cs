@@ -8,6 +8,6 @@ namespace WebAPI.Models.Domain
         public int Id { get; set; }
         public string CategoryName { get; set; }
 
-        public ICollection<FotografEtiket> FotografEtiket { get; set; }
+        public ICollection<BreastBiradsEntity> BreastBiradsEntities { get; set; }
     }
 }

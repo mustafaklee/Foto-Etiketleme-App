@@ -7,10 +7,8 @@ namespace WebAPI.Models.Domain
         [Key]
         public int Id { get; set; }
         public string FolderPath { get; set; }
+        public ICollection<Image> Image { get; set; }
 
-        public Guid DoktorId { get; set; }
-        public Doktor Doktor { get; set; }
-        public ICollection<Fotograf> Fotograf { get; set; }
-
+        public ICollection<FolderDoctorEntity> FolderDoctorEntities { get; set; } = new List<FolderDoctorEntity>();
     }
 }

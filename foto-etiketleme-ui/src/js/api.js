@@ -9,6 +9,19 @@
     return await response.json();
 }
 
+
+export async function GetLabeledFotos() {
+    const token = localStorage.getItem('jwtToken');
+    const response = await fetch(`https://localhost:7252/api/FotografEtiketle/GetLabeledFotos`,
+        {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+    return await response.json();
+}
+
+
 export async function getEtiketler() {
     const token = localStorage.getItem('jwtToken');
     const response = await fetch("https://localhost:7252/api/FotografEtiketle/GetBreastAndFinding", {

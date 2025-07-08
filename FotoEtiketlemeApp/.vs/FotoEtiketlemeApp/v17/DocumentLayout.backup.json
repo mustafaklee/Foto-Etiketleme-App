@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\webapi\\wwwroot\\cropped_images\\2.16.840.1.113669.632.25.1.360101.20220214131355383.2\\2.16.840.1.113669.632.25.1.360101.20220214131522961.3.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\wwwroot\\cropped_images\\2.16.840.1.113669.632.25.1.360101.20220214131355383.2\\2.16.840.1.113669.632.25.1.360101.20220214131522961.3.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\webapi\\logic\\pulldatafromdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\logic\\pulldatafromdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\webapi\\controllers\\fotografetiketle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\fotografetiketle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\webapi\\models\\domain\\fotograf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\models\\domain\\fotograf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\webapi\\models\\domain\\view_position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\models\\domain\\view_position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\webapi\\models\\domain\\laterality.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\models\\domain\\laterality.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|c:\\users\\musta\\onedrive\\masa\u00FCst\u00FC\\foto etiketleme app\\fotoetiketlemeapp\\webapi\\models\\domain\\fotografetiket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3FFE410-F5DC-4C0C-8E9B-B39E31F48788}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\models\\domain\\fotografetiket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,76 +38,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "view_position.cs",
-              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Models\\Domain\\view_position.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Models\\Domain\\view_position.cs",
-              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Models\\Domain\\view_position.cs",
-              "RelativeToolTip": "WebAPI\\Models\\Domain\\view_position.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T07:39:59.641Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "laterality.cs",
-              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Models\\Domain\\laterality.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Models\\Domain\\laterality.cs",
-              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Models\\Domain\\laterality.cs",
-              "RelativeToolTip": "WebAPI\\Models\\Domain\\laterality.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T07:39:53.45Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FotografEtiket.cs",
-              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Models\\Domain\\FotografEtiket.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Models\\Domain\\FotografEtiket.cs",
-              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Models\\Domain\\FotografEtiket.cs",
-              "RelativeToolTip": "WebAPI\\Models\\Domain\\FotografEtiket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T07:39:47.35Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Fotograf.cs",
-              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Models\\Domain\\Fotograf.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Models\\Domain\\Fotograf.cs",
-              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Models\\Domain\\Fotograf.cs",
-              "RelativeToolTip": "WebAPI\\Models\\Domain\\Fotograf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T07:37:19.138Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "2.16.840.1.113669.632.25.1.360101.20220214131522961.3.png - PNG [1396x2918, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\cropped_images\\2.16.840.1.113669.632.25.1.360101.20220214131355383.2\\2.16.840.1.113669.632.25.1.360101.20220214131522961.3.png",
+              "RelativeDocumentMoniker": "WebAPI\\wwwroot\\cropped_images\\2.16.840.1.113669.632.25.1.360101.20220214131355383.2\\2.16.840.1.113669.632.25.1.360101.20220214131522961.3.png",
+              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\wwwroot\\cropped_images\\2.16.840.1.113669.632.25.1.360101.20220214131355383.2\\2.16.840.1.113669.632.25.1.360101.20220214131522961.3.png - PNG [1396x2918, 32 bit, PNG]",
+              "RelativeToolTip": "WebAPI\\wwwroot\\cropped_images\\2.16.840.1.113669.632.25.1.360101.20220214131355383.2\\2.16.840.1.113669.632.25.1.360101.20220214131522961.3.png - PNG [1396x2918, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-07-08T05:12:14.803Z",
+              "EditorCaption": " - PNG [1396x2918, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PullDataFromDB.cs",
               "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Logic\\PullDataFromDB.cs",
               "RelativeDocumentMoniker": "WebAPI\\Logic\\PullDataFromDB.cs",
               "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Logic\\PullDataFromDB.cs",
               "RelativeToolTip": "WebAPI\\Logic\\PullDataFromDB.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwCwAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwFAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T04:36:21.167Z",
+              "WhenOpened": "2025-07-07T08:14:36.698Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "FotografEtiketle.cs",
               "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Controllers\\FotografEtiketle.cs",
               "RelativeDocumentMoniker": "WebAPI\\Controllers\\FotografEtiketle.cs",
               "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Controllers\\FotografEtiketle.cs",
               "RelativeToolTip": "WebAPI\\Controllers\\FotografEtiketle.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAYwGgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAQwH4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T06:25:11.399Z"
+              "WhenOpened": "2025-07-04T06:58:42.361Z"
             }
           ]
         }

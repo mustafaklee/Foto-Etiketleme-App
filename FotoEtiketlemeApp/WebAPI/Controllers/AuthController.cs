@@ -40,13 +40,13 @@ namespace WebAPI.Controllers
                 //add roles to this user
                 if (registerRequestDto.Roles != null && registerRequestDto.Roles.Any())
                 {
-                    var doktor = new Models.Domain.Doktor
+                    var doktor = new Models.Domain.Doctor
                     {
                         Id = Guid.Parse(identityUser.Id),
                         Email = identityUser.Email,
                     };
 
-                    await appDbContext.Doktor.AddAsync(doktor);
+                    await appDbContext.Doctor.AddAsync(doktor);
                     await appDbContext.SaveChangesAsync(); 
 
                     identityResult = await userManager.AddToRolesAsync(identityUser, registerRequestDto.Roles);

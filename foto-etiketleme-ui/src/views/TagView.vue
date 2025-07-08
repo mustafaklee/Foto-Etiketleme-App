@@ -1,8 +1,8 @@
 <template>
   <div class="main-container">
     <!-- Sol Panel -->
-    <div class="left-panel" @scroll="onLeftPanelScroll" ref="leftPanelRef" style="overflow-y:auto;max-height:600px;">
-      <TreeView :treeData="folders" @selectFolder="onSelectFolder" />
+    <div class="left-panel" @scroll="onLeftPanelScroll" ref="leftPanelRef" style="overflow-y:auto">
+      <TreeView :treeData="[...labeledFoldersRef, ...folders]" @selectFolder="onSelectFolder" />
       <div v-if="isLoading" class="loading">Yükleniyor...</div>
       <div v-if="!hasMoreFolders" class="no-more">Tüm klasörler yüklendi.</div>
     </div>
@@ -111,20 +111,21 @@
 import { ref, onMounted } from "vue";
 import TreeView from "../components/TreeView.vue";
 import { loadPhotos } from "../js/photoViewer";
-import { getFotos, getEtiketler, postEtiketler } from "../js/api";
+import { getFotos, GetLabeledFotos, getEtiketler, postEtiketler } from "../js/api";
 export default {
   components: {
     TreeView,
   },
   setup() {
-    const activeTab = ref("solMeme");
+    const activeTab = ref("sagMeme");
     const findings = ref([]);
     const biradsList = ref([]);
     const selectedFindings1 = ref([]);
     const selectedFindings2 = ref([]);
     const selectedBiradsSol = ref("");
     const selectedBiradsSag = ref("");
-    const folders = ref([]);
+    const folders = ref([]); // etiketsiz (unlabeled) klasörler
+    const labeledFoldersRef = ref([]); // etiketli (labeled) klasörler
     const etiketeHazirData = ref({});
     let currentPhotoList = [];
     const folderTagData = ref({});
@@ -139,24 +140,29 @@ export default {
     const loadMoreFolders = async () => {
       if (isLoading.value || !hasMoreFolders.value) return;
       isLoading.value = true;
-      const fotoResponse = await getFotos(currentPage.value, 20);
-      const newFolders = (fotoResponse.data || []).map((folder) => ({
-        id: folder.folderId,
-        name: folder.folderPath,
-        expanded: false,
-        children: (folder.fotograflar || []).map((photo) => ({
-          id: photo.id,
-          name: photo.path.split("/").pop(),
-          photoUrl: photo.path,
+      try{
+          const fotoResponse = await getFotos(currentPage.value, 40);
+          const newFolders = (fotoResponse.data || []).map((folder) => ({
+          id: folder.folderId,
+          name: folder.folderPath,
           expanded: false,
-          children: [],
-        })),
+          sourceType: "unlabeled",
+          children: (folder.fotograflar || []).map((photo) => ({
+            id: photo.id,
+            name: photo.path.split("/").pop(),
+            photoUrl: photo.path,
+            view_position: photo.view_Position,
+            laterality_id: photo.laterality_id,
+            expanded: false,
+            children: [],
+          })),
       }));
-      if (newFolders.length < 20) {
+       if (newFolders.length === 0) {
         hasMoreFolders.value = false;
       }
       folders.value = folders.value.concat(newFolders);
       currentPage.value += 1;
+      console.log(currentPage.value)
       isLoading.value = false;
       // Eğer ilk yükleme ise ilk klasörün fotoğraflarını yükle
       if (folders.value.length > 0 && currentPhotoList.length === 0) {
@@ -165,25 +171,74 @@ export default {
           const photoItems = firstFolder.children.map((child) => ({
             id: child.id,
             path: child.photoUrl,
+            laterality_id: child.laterality_id,
+            view_position: child.view_position,
           }));
           currentPhotoList = photoItems;
           loadPhotos(photoItems);
         }
       }
+    }
+      catch (error) {
+        console.error("Klasörler yüklenirken hata:", error);
+        isLoading.value = false;
+      }
+      
     };
 
     // Sol panel scroll event
     const onLeftPanelScroll = () => {
+      console.log("Scroll event tetiklendi");
       const el = leftPanelRef.value;
-      if (el && el.scrollTop + el.clientHeight >= el.scrollHeight - 10) {
+      if (el && el.scrollTop + el.clientHeight >= el.scrollHeight - 50) {
         loadMoreFolders();
       }
     };
+
+    // Klasörleri gruplayan yardımcı fonksiyon
+    function groupPhotosByFolder(photoList, sourceType) {
+      const folderMap = {};
+      photoList.forEach(photo => {
+        // Klasör adını path'ten çıkar
+        const folderPath = photo.path ? photo.path.split('/').slice(0, -1).join('/') : null;
+        if (!folderPath) return; // path yoksa bu fotoğrafı atla
+        if (!folderMap[folderPath]) {
+          folderMap[folderPath] = {
+            id: folderPath + '_' + sourceType,
+            name: folderPath,
+            expanded: false,
+            sourceType,
+            children: []
+          };
+        }
+        folderMap[folderPath].children.push({
+          id: photo.id,
+          name: photo.path.split('/').pop(),
+          photoUrl: photo.path,
+          view_position: photo.view_Position,
+          laterality_id: photo.laterality_id,
+          expanded: false,
+          children: [],
+          tags: photo.tags || null
+        });
+      });
+      return Object.values(folderMap);
+    }
 
     onMounted(async () => {
       const etiketResponse = await getEtiketler();
       findings.value = etiketResponse.data?.findingCategories || [];
       biradsList.value = etiketResponse.data?.breastBirads || [];
+      // Etiketli fotoğrafları çek
+      const labeledResponse = await GetLabeledFotos();
+      // Tüm klasörlerdeki fotoğrafları tek diziye aç
+      const allLabeledPhotos = (labeledResponse.data || []).flatMap(folder => 
+        (folder.fotograflar || []).map(photo => ({
+          ...photo,
+          path: photo.path, // path zaten var
+        }))
+      );
+      labeledFoldersRef.value = groupPhotosByFolder(allLabeledPhotos, "labeled");
       await loadMoreFolders();
     });
 
@@ -241,11 +296,17 @@ export default {
 
     // Klasör seçildiğinde ilgili fotoğrafları yükle
     const onSelectFolder = (folderId) => {
-      const selectedFolder = folders.value.find(f => f.id === folderId);
+      // Hem etiketsiz hem etiketli klasörlerde ara
+      const selectedFolder = 
+        folders.value.find(f => f.id === folderId) ||
+        labeledFoldersRef.value.find(f => f.id === folderId);
+
       if (selectedFolder && selectedFolder.children && selectedFolder.children.length > 0) {
         const photoItems = selectedFolder.children.map(child => ({
           id: child.id,
           path: child.photoUrl,
+          laterality_id: child.laterality_id,
+          view_position: child.view_position,
         }));
         currentPhotoList = photoItems;
         loadPhotos(photoItems);
@@ -267,6 +328,21 @@ export default {
         selectedFindings2.value = [];
         selectedBiradsSol.value = "";
         selectedBiradsSag.value = "";
+      }
+      // Eğer seçilen klasör etiketli ise ve children'larda tags varsa, alanları doldur
+      if (selectedFolder && selectedFolder.sourceType === "labeled" && selectedFolder.children.length > 0) {
+        // Sağ meme (laterality_id: 1)
+        const sagFoto = selectedFolder.children.find(child => child.laterality_id === 1 || child.laterality_id === "1");
+        if (sagFoto && sagFoto.tags) {
+          selectedBiradsSag.value = sagFoto.tags.breast_birads ?? "";
+          selectedFindings1.value = Array.isArray(sagFoto.tags.finding_categories) ? [...sagFoto.tags.finding_categories] : [];
+        }
+        // Sol meme (laterality_id: 2)
+        const solFoto = selectedFolder.children.find(child => child.laterality_id === 2 || child.laterality_id === "2");
+        if (solFoto && solFoto.tags) {
+          selectedBiradsSol.value = solFoto.tags.breast_birads ?? "";
+          selectedFindings2.value = Array.isArray(solFoto.tags.finding_categories) ? [...solFoto.tags.finding_categories] : [];
+        }
       }
     };
 
@@ -305,12 +381,12 @@ export default {
       onSelectFolder,
       folderTagData,
       veritabaninaGonder,
-      // yeni eklenenler
       loadMoreFolders,
       isLoading,
       hasMoreFolders,
       leftPanelRef,
       onLeftPanelScroll,
+      labeledFoldersRef,
     };
   },
 };

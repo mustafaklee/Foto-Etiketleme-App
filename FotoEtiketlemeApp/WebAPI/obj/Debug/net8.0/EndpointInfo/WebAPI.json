@@ -67,39 +67,11 @@
         }
       }
     },
-    "/api/FotografEtiketle/PostFoto": {
-      "post": {
+    "/api/FotografEtiketle/GetLabeledFotos": {
+      "get": {
         "tags": [
           "FotografEtiketle"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/EtiketSecimDto"
-                }
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/EtiketSecimDto"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/EtiketSecimDto"
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -193,28 +165,6 @@
   },
   "components": {
     "schemas": {
-      "EtiketSecimDto": {
-        "type": "object",
-        "properties": {
-          "image_id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "breast_birads": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "finding_categories": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "LoginRequestDto": {
         "required": [
           "password",

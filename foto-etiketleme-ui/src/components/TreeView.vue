@@ -4,6 +4,7 @@
       v-for="node in treeData"
       :key="node.id"
       :node="node"
+      :folderTagData="folderTagData"
       @toggle="handleToggle"
       @selectFolder="$emit('selectFolder', $event)"
     />
@@ -18,6 +19,7 @@ export default {
   components: { TreeNode },
   props: {
     treeData: Array,
+    folderTagData: Object
   },
   methods: {
     handleToggle(node) {
