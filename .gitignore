@@ -23,6 +23,9 @@ obj/
 *.nupkg
 *.snupkg
 
+git rm -r --cached "Foto Etiketleme App/"
+
+
 # ASP.NET Static Assets
 **/wwwroot/img/*.jpg
 
