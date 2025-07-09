@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,6 +35,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FotografEtiketle.cs",
+              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Controllers\\FotografEtiketle.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\FotografEtiketle.cs",
+              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Controllers\\FotografEtiketle.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\FotografEtiketle.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T06:58:42.361Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,19 +73,6 @@
               "ViewState": "AgIAAAcAAAAAAAAAAAA+wBMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-09T04:27:06.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FotografEtiketle.cs",
-              "DocumentMoniker": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Controllers\\FotografEtiketle.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\FotografEtiketle.cs",
-              "ToolTip": "C:\\Users\\musta\\OneDrive\\Masa\u00FCst\u00FC\\Foto Etiketleme App\\FotoEtiketlemeApp\\WebAPI\\Controllers\\FotografEtiketle.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\FotografEtiketle.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T06:58:42.361Z",
               "EditorCaption": ""
             }
           ]
