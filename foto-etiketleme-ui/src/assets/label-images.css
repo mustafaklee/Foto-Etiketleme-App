@@ -1,6 +1,7 @@
 ﻿html, body {
     height: 100vh;
     overflow-y: hidden !important;
+    font-family: "Segoe UI", Roboto, sans-serif;
 }
 
 .main-container {
@@ -311,4 +312,26 @@
     display: block;
     margin-top: .75rem;
     font-weight: 600;
+}
+.btn {
+    background-color: #282828;
+    color: #FFE;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: "inline-flex";
+    align-items: center;
+}
+
+.btn:hover {
+  background-color: #218838;
+  transform: scale(1.03);
+}
+
+.btn:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
 }

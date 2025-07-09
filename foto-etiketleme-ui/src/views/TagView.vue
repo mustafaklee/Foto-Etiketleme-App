@@ -100,8 +100,9 @@
           </div>
         </div>
       </div>
-      <button @click="saveTags">Ekle</button>
-      <button @click="veritabaninaGonder">Veritabanına Gönder</button>
+      <button class="btn" @click="saveTags">{{ saveButtonText }}</button>
+
+      <button class="btn"  @click="veritabaninaGonder">Veritabanına Gönder</button>
     </div>
 
   </div>
@@ -128,8 +129,8 @@ export default {
     const labeledFoldersRef = ref([]); // etiketli (labeled) klasörler
     const etiketeHazirData = ref({});
     let currentPhotoList = [];
-    const folderTagData = ref({});
-
+    const folderTagData = ref({})
+    const saveButtonText = ref("Ekle");
     // Sayfalama için yeni state'ler
     const currentPage = ref(1);
     const isLoading = ref(false);
@@ -162,13 +163,21 @@ export default {
       }
       folders.value = folders.value.concat(newFolders);
       currentPage.value += 1;
-      console.log(currentPage.value)
       isLoading.value = false;
       // Eğer ilk yükleme ise ilk klasörün fotoğraflarını yükle
       if (folders.value.length > 0 && currentPhotoList.length === 0) {
         const firstFolder = folders.value[0];
         if (firstFolder.children && firstFolder.children.length > 0) {
-          const photoItems = firstFolder.children.map((child) => ({
+          const photoItems = firstFolder.children
+          .sort((a, b) => {
+            // Önce laterality_id'ye göre sırala (1=Sağ, 2=Sol)
+            if (a.laterality_id !== b.laterality_id) {
+              return a.laterality_id - b.laterality_id;
+            }
+            // Aynı laterality_id'de view_position'a göre sırala (1=CC, 2=MLO)
+            return a.view_position - b.view_position;
+          })
+          .map(child => ({
             id: child.id,
             path: child.photoUrl,
             laterality_id: child.laterality_id,
@@ -188,7 +197,6 @@ export default {
 
     // Sol panel scroll event
     const onLeftPanelScroll = () => {
-      console.log("Scroll event tetiklendi");
       const el = leftPanelRef.value;
       if (el && el.scrollTop + el.clientHeight >= el.scrollHeight - 50) {
         loadMoreFolders();
@@ -245,33 +253,33 @@ export default {
     // Fotoğraf verileri ile kaydetme işlemi
     const saveTags = () => {
       const photosToSave = [];
-      
-      // Fotoğraflar sırasıyla (R-CC, R-MLO, L-CC, L-MLO) işlem yapıyoruz
-      currentPhotoList.forEach((photo, index) => {
-        let laterality = "";
 
-        // Fotoğraf sırasına göre laterality (Sol veya Sağ meme) ve view_position (CC ya da MLO) ayarlıyoruz
-        if (index === 0) {
-          laterality = "R";  // Sağ meme
-        } else if (index === 1) {
-          laterality = "R";  // Sağ meme
-        } else if (index === 2) {
-          laterality = "L";  // Sol meme
-        } else if (index === 3) {
-          laterality = "L";  // Sol meme
-        }
+      currentPhotoList.forEach((photo) => {
+        const lateralityCode = parseInt(photo.laterality_id) === 1 ? "R" : "L";
 
-        // Sol ve sağ meme için doğru BI-RADS ve finding categories değerini seçiyoruz
-        const biradsValue = laterality === "L" ? selectedBiradsSol.value : selectedBiradsSag.value;
-        const findings = laterality === "L" ? selectedFindings2.value : selectedFindings1.value;
+        // İlgili taraftaki BI-RADS ve finding listesi
+        const biradsValue   = lateralityCode === "L"
+                              ? selectedBiradsSol.value
+                              : selectedBiradsSag.value;
+
+        const findings = lateralityCode === "L"
+                              ? selectedFindings2.value
+                              : selectedFindings1.value;
 
         // Her fotoğraf için veriyi hazırlama
         const photoData = {
-          image_id: photo.id, // Fotoğrafın benzersiz ID'si
-          breast_birads: biradsValue, // BI-RADS değeri
-          finding_categories: findings, // Seçilen finding categories
+          image_id: photo.id,
+          breast_birads: biradsValue, 
+          finding_categories: findings,
         };
+
         photosToSave.push(photoData);
+        saveButtonText.value = "Eklendi";
+
+          // 2 saniye sonra tekrar "Ekle" yap
+          setTimeout(() => {
+            saveButtonText.value = "Ekle";
+          }, 2000);
       });
 
       // Aktif klasörün id'sini bul
@@ -300,9 +308,17 @@ export default {
       const selectedFolder = 
         folders.value.find(f => f.id === folderId) ||
         labeledFoldersRef.value.find(f => f.id === folderId);
-
       if (selectedFolder && selectedFolder.children && selectedFolder.children.length > 0) {
-        const photoItems = selectedFolder.children.map(child => ({
+        const photoItems = selectedFolder.children
+        .sort((a, b) => {
+          // Önce laterality_id'ye göre sırala (1=Sağ, 2=Sol)
+          if (a.laterality_id !== b.laterality_id) {
+            return a.laterality_id - b.laterality_id;
+          }
+          // Aynı laterality_id'de view_position'a göre sırala (1=CC, 2=MLO)
+          return a.view_position - b.view_position;
+        })
+        .map(child => ({
           id: child.id,
           path: child.photoUrl,
           laterality_id: child.laterality_id,
@@ -315,6 +331,7 @@ export default {
         currentPhotoList = [];
         loadPhotos([]);
       }
+      
       // Etiketleme alanını güncelle
       if (folderTagData.value[folderId]) {
         // Daha önce etiketleme yapılmışsa, alanları doldur
@@ -328,20 +345,48 @@ export default {
         selectedFindings2.value = [];
         selectedBiradsSol.value = "";
         selectedBiradsSag.value = "";
-      }
-      // Eğer seçilen klasör etiketli ise ve children'larda tags varsa, alanları doldur
-      if (selectedFolder && selectedFolder.sourceType === "labeled" && selectedFolder.children.length > 0) {
-        // Sağ meme (laterality_id: 1)
-        const sagFoto = selectedFolder.children.find(child => child.laterality_id === 1 || child.laterality_id === "1");
-        if (sagFoto && sagFoto.tags) {
-          selectedBiradsSag.value = sagFoto.tags.breast_birads ?? "";
-          selectedFindings1.value = Array.isArray(sagFoto.tags.finding_categories) ? [...sagFoto.tags.finding_categories] : [];
-        }
-        // Sol meme (laterality_id: 2)
-        const solFoto = selectedFolder.children.find(child => child.laterality_id === 2 || child.laterality_id === "2");
-        if (solFoto && solFoto.tags) {
-          selectedBiradsSol.value = solFoto.tags.breast_birads ?? "";
-          selectedFindings2.value = Array.isArray(solFoto.tags.finding_categories) ? [...solFoto.tags.finding_categories] : [];
+        
+        // Eğer daha önce etiketleme yapılmamışsa, mevcut fotoğraflardan etiketleri al
+        if (selectedFolder && selectedFolder.children) {
+          // Tüm fotoğrafları laterality'ye göre grupla
+          const allPhotos = selectedFolder.children;
+          
+          // Sağ meme findings ve birads - hem sağ fotoğraflardan hem de sağ etiketlerden
+          const sagFindings = [];
+          let sagBirads = "";
+          
+          // Sol meme findings ve birads - hem sol fotoğraflardan hem de sol etiketlerden
+          const solFindings = [];
+          let solBirads = "";
+          
+          allPhotos.forEach(photo => {
+            if (photo.tags) {
+              // Fotoğrafın laterality'si ile etiketlerin laterality'si eşleşmeli
+              if (parseInt(photo.laterality_id) === 1) {
+                // Sağ fotoğraf - sağ etiketleri al
+                if (photo.tags.finding_categories) {
+                  sagFindings.push(...photo.tags.finding_categories);
+                }
+                if (photo.tags.breast_birads != null && sagBirads === "") {
+                  sagBirads = photo.tags.breast_birads;
+                }
+              } else if (parseInt(photo.laterality_id) === 2) {
+                // Sol fotoğraf - sol etiketleri al
+                if (photo.tags.finding_categories) {
+                  solFindings.push(...photo.tags.finding_categories);
+                }
+                if (photo.tags.breast_birads != null && solBirads === "") {
+                  solBirads = photo.tags.breast_birads;
+                }
+              }
+            }
+          });
+          
+          // Benzersiz findings'leri al ve değişkenlere ata
+          selectedFindings1.value = [...new Set(sagFindings)];
+          selectedBiradsSag.value = sagBirads;
+          selectedFindings2.value = [...new Set(solFindings)];
+          selectedBiradsSol.value = solBirads;
         }
       }
     };
@@ -356,7 +401,6 @@ export default {
 
         const cleanList = JSON.parse(JSON.stringify(allPhotoTags));
         const result = await postEtiketler(cleanList);
-        console.log("Veritabanına gönderme sonucu:", result);
         if (result && result.message) {
           alert("Başarılı: " + result.message);
         } else {
@@ -387,6 +431,7 @@ export default {
       leftPanelRef,
       onLeftPanelScroll,
       labeledFoldersRef,
+      saveButtonText
     };
   },
 };
