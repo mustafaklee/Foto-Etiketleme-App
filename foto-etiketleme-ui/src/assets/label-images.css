@@ -1,0 +1,190 @@
+﻿html, body {
+    height: 100vh;
+    overflow-y: hidden !important;
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.main-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.left-panel, .middle-panel, .right-panel {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.left-panel {
+    width: 15%;
+    background: #fff;
+    font-size: medium;
+    border-right: 2px solid #ccc;
+}
+
+.middle-panel {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fafafa;
+    padding: 0;
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+
+.right-panel {
+    width: 17%; /* biraz nefes payı */
+    padding: 32px 5px;
+    background: #ffffff;
+    border-left: 1px solid #e5e7eb; /* daha yumuşak bir çizgi */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10%; /* elemanlar arası boşluk */
+    box-shadow: -4px 0 20px rgba(0,0,0,.05); /* hafif gölge */
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+    /* Bölüm başlıkları */
+    .right-panel label strong {
+        font-size: 15px;
+        color: #111827;
+        letter-spacing: .3px;
+    }
+
+/* Fotoğraflar */
+.photos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 90vh;
+    padding: 0;
+    margin: 0;
+}
+
+    .photos-container img {
+        max-width: 100%;
+        max-height: 600px;
+        object-fit: contain;
+        border: 2px solid #e0e0e0;
+        border-radius: 4px;
+        background: #f8f9fa;
+    }
+
+
+
+.photo-wrapper {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    width: 48%;
+}
+
+.photo-wrapper img {
+    height: 500px;
+    width: auto;
+    max-height: 80vh;
+    max-width: 100%;
+    object-fit: contain;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    background: #f8f9fa;
+    transition: transform .7s;
+}
+
+.photo-wrapper img:hover {
+  -ms-transform: scale(1.4); /* IE 9 */
+  -webkit-transform: scale(1.4); /* Safari 3-8 */
+  transform: scale(1.4); 
+}
+
+
+
+.photo-caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
+.etiket-controls {
+    width: 100%;
+}
+
+
+.etiket-checkbox-group {
+    display: flex;
+    padding: 8px 0;
+    max-height: 180px; /* taşma engeli */
+    flex-direction: column;
+    gap: 6px;
+}
+
+    .etiket-checkbox-group label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: #374151;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .etiket-checkbox-group input[type="checkbox"] {
+        accent-color: #2563eb; /* modern mavi */
+    }
+
+/* BI-RADS açılır menüsü */
+#biradsSelect {
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #374151;
+    background-color: #f9fafb;
+    transition: border .2s ease;
+}
+
+    #biradsSelect:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37,99,235,.2);
+    }
+
+.btn {
+    background-color: #282828;
+    color: #FFE;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: "inline-flex";
+    align-items: center;
+}
+
+.btn:hover {
+  background-color: #218838;
+  transform: scale(1.03);
+}
+
+.btn:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
+}
