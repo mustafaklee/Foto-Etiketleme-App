@@ -64,12 +64,28 @@
   },
   {
     "ContainingType": "WebAPI.Controllers.FotografEtiketle",
-    "Method": "GetLabeledFotos",
-    "RelativePath": "api/FotografEtiketle/GetLabeledFotos",
+    "Method": "GetLabeledFolders",
+    "RelativePath": "api/FotografEtiketle/GetLabeledFolders",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.FotografEtiketle",
+    "Method": "GetLabeledImages",
+    "RelativePath": "api/FotografEtiketle/GetLabeledImages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "folderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -84,6 +100,27 @@
         "Name": "secimler",
         "Type": "System.Collections.Generic.List\u00601[[WebAPI.Models.Dtos.EtiketSecimDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.StatsController",
+    "Method": "getStats",
+    "RelativePath": "api/Stats/getStats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctor1Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "doctor2Id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

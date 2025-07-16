@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Repositories.Results;
 using WebAPI.Models.Dtos;
+using WebAPI.Models.Domain;
 namespace WebAPI.Logic
 {
 
@@ -14,16 +15,49 @@ namespace WebAPI.Logic
         }
 
 
-
-        public async Task<IDataResult<List<FolderFotoDto>>> GetLabeledFotos(int doktorId, string baseUrl)
+        public async Task<IDataResult<List<FolderFotoDto>>> GetLabeledFolders(int doctorId)
         {
             try
             {
-               
+                var labeledFolderInfos = await appDbContext.Image
+                    .Where(img => (img.BreastBiradsEntities.Any() || img.FindingCategoriesEntities.Any()) && (img.Folder.FolderDoctorEntities.Any(fd => fd.DoctorId == doctorId)))
+                    .Select(img => new
+                    {
+                        img.FolderId,
+                        img.Folder.FolderPath
+                    })
+                    .Distinct()
+                    .AsNoTracking()
+                    .ToListAsync();
+
+                var result = labeledFolderInfos
+                    .GroupBy(x => new { x.FolderId, x.FolderPath })
+                    .Select(g => new FolderFotoDto
+                    {
+                        FolderId = g.Key.FolderId,
+                        FolderPath = g.Key.FolderPath
+                    })
+                    .ToList();
+
+                return new SuccessDataResult<List<FolderFotoDto>>(result, "Etiketlenmiş klasörler başarıyla getirildi.");
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDataResult<List<FolderFotoDto>>($"Hata: {ex.Message}");
+            }
+        }
+
+
+
+        public async Task<IDataResult<FolderFotoDto>> GetLabeledImages(int folderId, int doctorId, string baseUrl)
+        {
+            try
+            {
                 var labeledPhotos = await appDbContext.Image
                     .Where(img =>
-                        img.Folder.FolderDoctorEntities.Any(fd => fd.DoctorId == doktorId) &&
-                       (img.BreastBiradsEntities.Any() || img.FindingCategoriesEntities.Any()))
+                        img.FolderId == folderId &&
+                        img.Folder.FolderDoctorEntities.Any(fd => fd.DoctorId == doctorId) && // Doktora aitlik kontrolü
+                        (img.BreastBiradsEntities.Any() || img.FindingCategoriesEntities.Any()))
                     .Select(img => new
                     {
                         img.Id,
@@ -45,39 +79,42 @@ namespace WebAPI.Logic
                     .AsNoTracking()
                     .ToListAsync();
 
-                var result = labeledPhotos
-                    .GroupBy(p => new { p.FolderId, p.FolderPath,p.patient_age })
-                    .Select(g => new FolderFotoDto
-                    {
-                        FolderId = g.Key.FolderId,
-                        FolderPath = g.Key.FolderPath,
-                        PatientAge = g.Key.patient_age, 
-                        Fotograflar = g.Select(p => new FotoDto
-                        {
-                            Id = p.Id,
-                            Path = $"{baseUrl}/{p.FolderPath}/{p.FotografPath}",
-                            laterality_id = p.laterality_id,
-                            view_Position = p.view_position_id,
-                            tags = new Tags
-                            {
-                                breast_birads = p.Birads ?? 0,
-                                finding_categories = p.FindingCats.ToList()
-                            }
-                        })
-                        .ToList()
-                    })
-                    .ToList();
+                if (!labeledPhotos.Any())
+                {
+                    return new ErrorDataResult<FolderFotoDto>("Bu doktor ve folderId için etiketlenmiş fotoğraf bulunamadı.");
+                }
 
-                return new SuccessDataResult<List<FolderFotoDto>>(
-                    result,
-                    "Etiketlenmiş klasör fotoğrafları başarıyla getirildi.");
+                var first = labeledPhotos.First();
+
+                var folderFoto = new FolderFotoDto
+                {
+                    FolderId = first.FolderId,
+                    FolderPath = first.FolderPath,
+                    PatientAge = first.patient_age,
+                    Fotograflar = labeledPhotos.Select(p => new FotoDto
+                    {
+                        Id = p.Id,
+                        Path = $"{baseUrl}/{p.FolderPath}/{p.FotografPath}",
+                        laterality_id = p.laterality_id,
+                        view_Position = p.view_position_id,
+                        tags = new Tags
+                        {
+                            breast_birads = p.Birads ?? 0,
+                            finding_categories = p.FindingCats.ToList()
+                        }
+                    }).ToList()
+                };
+
+                return new SuccessDataResult<FolderFotoDto>(
+                    folderFoto,
+                    "Belirtilen klasör ve doktora ait etiketlenmiş fotoğraflar başarıyla getirildi.");
             }
             catch (Exception ex)
             {
-                return new ErrorDataResult<List<FolderFotoDto>>(
-                    $"Hata: {ex.Message}");
+                return new ErrorDataResult<FolderFotoDto>($"Hata: {ex.Message}");
             }
         }
+
 
 
 
@@ -133,11 +170,6 @@ namespace WebAPI.Logic
                     $"Bir hata meydana geldi: {ex.Message}");
             }
         }
-
-
-
-
-
         public async Task<IDataResult<object>> GetBreastAndFinding()
         {
             try
@@ -169,80 +201,6 @@ namespace WebAPI.Logic
                 return new ErrorDataResult<object>($"Bir hata meydana geldi: {ex.Message}");
             }
         }
-
-
-
-        //public async Task<IDataResult<FotoEtiketDto>> GetFotoByDate(
-        //    Guid doktorID,
-        //    string baseUrl,
-        //    DateOnly startDate,
-        //    DateOnly endDate)
-        //{
-        //    // ileride düzenleme için burda automapper kullanılmalıdır!
-        //    try
-        //    {
-        //        var labeledQuery = appDbContext.FotografEtiket
-        //            .Where(fe =>
-        //                fe.DoktorId == doktorID &&
-        //                fe.EtiketId != null &&
-        //                fe.EtiketTarihi.HasValue &&
-        //                fe.EtiketTarihi.Value >= startDate &&
-        //                fe.EtiketTarihi.Value <= endDate
-        //            );
-
-        //        var fotograflar = await labeledQuery
-        //            .Select(fe => new FotoDto
-        //            {
-        //                Id = fe.Fotograf.Id,
-        //                Path = $"{baseUrl}/{fe.Fotograf.FotografPath}"
-        //            })
-        //            .ToListAsync();
-
-        //        var etiketler = await appDbContext.Etiket
-        //            .Select(f => new EtiketDto
-        //            {
-        //                Id = f.Id,
-        //                EtiketAd = f.EtiketAd
-        //            })
-        //            .ToListAsync();
-
-        //        var hasEtiket = await labeledQuery
-        //            .Select(fe => new EtiketDto
-        //            {
-        //                Id = fe.EtiketId!.Value,
-        //                EtiketAd = fe.Etiket!.EtiketAd
-        //            })
-        //            .ToListAsync();
-
-        //        var resultDto = new FotoEtiketDto
-        //        {
-        //            Fotograflar = fotograflar,
-        //            Etiketler = etiketler,
-        //            hasEtiket = hasEtiket
-        //        };
-
-        //        if (!fotograflar.Any())
-        //        {
-        //            return new SuccessDataResult<FotoEtiketDto>(
-        //                resultDto,
-        //                $"Belirtilen {startDate:yyyy-MM-dd} – {endDate:yyyy-MM-dd} aralığında etiketli fotoğraf bulunamadı."
-        //            );
-        //        }
-
-        //        return new SuccessDataResult<FotoEtiketDto>(
-        //            resultDto,
-        //            $"Belirtilen {startDate:yyyy-MM-dd} – {endDate:yyyy-MM-dd} aralığında {fotograflar.Count} adet etiketli fotoğraf getirildi."
-        //        );
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return new ErrorDataResult<FotoEtiketDto>($"Bir hata meydana geldi: {ex.Message}");
-        //    }
-
-        //}
-
-
-
 
     }
 }

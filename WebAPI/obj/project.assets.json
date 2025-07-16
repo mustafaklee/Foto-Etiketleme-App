@@ -3290,11 +3290,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Memografi Etiketleme\\yedekler\\FotoEtiketlemeApp\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\musta\\OneDrive\\Masaüstü\\FotoEtiketlemeApp\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Memografi Etiketleme\\yedekler\\FotoEtiketlemeApp\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\musta\\OneDrive\\Masaüstü\\FotoEtiketlemeApp\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\musta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Memografi Etiketleme\\yedekler\\FotoEtiketlemeApp\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\musta\\OneDrive\\Masaüstü\\FotoEtiketlemeApp\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

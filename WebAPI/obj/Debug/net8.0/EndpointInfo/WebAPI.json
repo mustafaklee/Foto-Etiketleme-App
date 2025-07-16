@@ -107,10 +107,32 @@
         }
       }
     },
-    "/api/FotografEtiketle/GetLabeledFotos": {
+    "/api/FotografEtiketle/GetLabeledFolders": {
       "get": {
         "tags": [
           "FotografEtiketle"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FotografEtiketle/GetLabeledImages": {
+      "get": {
+        "tags": [
+          "FotografEtiketle"
+        ],
+        "parameters": [
+          {
+            "name": "folderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -155,6 +177,36 @@
       "get": {
         "tags": [
           "FotografEtiketle"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Stats/getStats": {
+      "get": {
+        "tags": [
+          "Stats"
+        ],
+        "parameters": [
+          {
+            "name": "doctor1Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "doctor2Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {

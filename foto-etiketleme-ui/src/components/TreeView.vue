@@ -21,7 +21,7 @@ export default {
   props: {
     treeData: Array,
     folderTagData: Object,
-    selectedFolderId: String,
+    selectedFolderId: Number,
   },
   methods: {
     handleToggle(node) {

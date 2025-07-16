@@ -9,10 +9,22 @@
     return await response.json();
 }
 
-
-export async function GetLabeledFotos() {
+export async function getLabeledFolders() {
     const token = localStorage.getItem('jwtToken');
-    const response = await fetch(`https://localhost:7252/api/FotografEtiketle/GetLabeledFotos`,
+    const response = await fetch(`https://localhost:7252/api/FotografEtiketle/GetLabeledFolders`,
+        {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+    return await response.json();
+}
+
+
+
+export async function GetLabeledFotos(folderId) {
+    const token = localStorage.getItem('jwtToken');
+    const response = await fetch(`https://localhost:7252/api/FotografEtiketle/GetLabeledImages?folderId=${folderId}`,
         {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -45,6 +57,19 @@ export async function postEtiketler(data) {
     });
     return await response.json();
 }
+
+export async function getStats() {
+    const token = localStorage.getItem('jwtToken');
+    const response = await fetch("https://localhost:7252/api/FotografEtiketle/getStats", {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    });
+    return await response.json();
+}
+
+
+
 
 export async function loginUser(credentials) {
     const response = await fetch("https://localhost:7252/api/Auth/Login", {

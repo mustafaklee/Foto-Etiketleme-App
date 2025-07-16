@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using WebAPI.Models.Domain;
 using Microsoft.AspNetCore.Identity;
+using WebAPI.Models.Dtos;
 
 namespace WebAPI.Data
 {

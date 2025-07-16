@@ -37,19 +37,35 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpGet("GetLabeledFotos")]
-        public async Task<IActionResult> GetLabeledFotos()
+        [HttpGet("GetLabeledFolders")]
+        public async Task<IActionResult> GetLabeledFolders()
+        {
+            int doktorId = 2; // örnek, gerçek uygulamada JWT'den çekilecek
+            //if (string.IsNullOrEmpty(doktorId))
+            //    return Unauthorized();
+            var pullDataFromDb = new PullDataFromDB(appDbContext);
+            var result = await pullDataFromDb.GetLabeledFolders(doktorId);
+            if (result.Success)
+                return Ok(result);
+            else
+                return BadRequest(result.Message);
+        }
+
+
+
+        [HttpGet("GetLabeledImages")]
+        public async Task<IActionResult> GetLabeledImages(int folderId)
         {
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
             int doktorId = 2; // örnek, gerçek uygulamada JWT'den çekilecek
             //if (string.IsNullOrEmpty(doktorId))
             //    return Unauthorized();
             var pullDataFromDb = new PullDataFromDB(appDbContext);
-            var result = await pullDataFromDb.GetLabeledFotos(doktorId, baseUrl);
+            var result = await pullDataFromDb.GetLabeledImages(folderId,doktorId, baseUrl);
             if (result.Success)
                 return Ok(result);
             else
-                return BadRequest(result.Message);
+                return BadRequest(result);
         }
 
 

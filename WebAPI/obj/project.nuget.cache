@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v/9O6fOFejY=",
+  "dgSpecHash": "vDLWQmPUVIE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\musta\\OneDrive\\Masaüstü\\Memografi Etiketleme\\yedekler\\FotoEtiketlemeApp\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\musta\\OneDrive\\Masaüstü\\FotoEtiketlemeApp\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\musta\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\musta\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

@@ -13,7 +13,7 @@
         <!-- JS ile fotoğraflar yüklenecek -->
       </div>
       <div v-if="currentPatientAge">
-        <Strong>Hasta Yaşı: {{ currentPatientAge }}</Strong>
+        Hasta Yaşı: {{ currentPatientAge }}
       </div>
     </div>
 
@@ -35,7 +35,7 @@
               aria-selected="activeTab === 'sagMeme'"
               @click="activeTab = 'sagMeme'"
             >
-              Sağ Meme
+              Sağ
             </a>
           </li>
           <li class="nav-item" role="presentation">
@@ -50,7 +50,7 @@
               aria-selected="activeTab === 'solMeme'"
               @click="activeTab = 'solMeme'"
             >
-              Sol Meme
+              Sol
             </a>
           </li>
         </ul>
@@ -115,7 +115,11 @@
 import { ref, onMounted } from "vue";
 import TreeView from "../components/TreeView.vue";
 import { loadPhotos } from "../js/photoViewer";
-import { getFotos, GetLabeledFotos, getEtiketler, postEtiketler } from "../js/api";
+import { getFotos, GetLabeledFotos, getEtiketler, postEtiketler, getLabeledFolders } from "../js/api";
+
+
+
+
 export default {
   components: {
     TreeView,
@@ -131,7 +135,7 @@ export default {
     const folders = ref([]); // etiketsiz (unlabeled) klasörler
     const labeledFoldersRef = ref([]); // etiketli (labeled) klasörler
     const etiketeHazirData = ref({});
-    let currentPhotoList = [];
+    const currentPhotoList = ref([]);
     const folderTagData = ref({})
     const saveButtonText = ref("Ekle");
     // Sayfalama için yeni state'ler
@@ -170,7 +174,7 @@ export default {
       currentPage.value += 1;
       isLoading.value = false;
       // Eğer ilk yükleme ise ilk klasörün fotoğraflarını yükle
-      if (folders.value.length > 0 && currentPhotoList.length === 0) {
+      if (folders.value.length > 0 && currentPhotoList.value.length === 0) {
         const firstFolder = folders.value[0];
         if (firstFolder.children && firstFolder.children.length > 0) {
           const photoItems = firstFolder.children
@@ -189,7 +193,7 @@ export default {
             view_position: child.view_position,
           }));
           currentPatientAge.value = firstFolder.patient_age || "Bilinmiyor";
-          currentPhotoList = photoItems;
+          currentPhotoList.value = photoItems;
           loadPhotos(photoItems);
         }
       }
@@ -209,61 +213,32 @@ export default {
       }
     };
 
-    // Klasörleri gruplayan yardımcı fonksiyon
-    function groupPhotosByFolder(photoList, sourceType) {
-      const folderMap = {};
-      photoList.forEach(photo => {
-        // Klasör adını path'ten çıkar
-        const folderPath = photo.path ? photo.path.split('/').slice(0, -1).join('/') : null;
-        if (!folderPath) return; // path yoksa bu fotoğrafı atla
-        if (!folderMap[folderPath]) {
-          folderMap[folderPath] = {
-            id: folderPath + '_' + sourceType,
-            name: folderPath.split('/').pop(), 
-            expanded: false,
-            sourceType,
-            children: [],
-            patient_age: photo.patient_age || "Bilinmiyor"
-          };
-        }
-        folderMap[folderPath].children.push({
-          id: photo.id,
-          name: photo.path.split('/').pop(),
-          photoUrl: photo.path,
-          view_position: photo.view_Position,
-          laterality_id: photo.laterality_id,
-          expanded: false,
-          children: [],
-          tags: photo.tags || null
-        });
-      });
-      return Object.values(folderMap);
-    }
-
     onMounted(async () => {
       const etiketResponse = await getEtiketler();
       findings.value = etiketResponse.data?.findingCategories || [];
       biradsList.value = etiketResponse.data?.breastBirads || [];
-      // Etiketli fotoğrafları çek
-      const labeledResponse = await GetLabeledFotos();
-      // Tüm klasörlerdeki fotoğrafları tek diziye aç
-      const allLabeledPhotos = (labeledResponse.data || []).flatMap(folder => 
-        (folder.fotograflar || []).map(photo => ({
-          ...photo,
-          path: photo.path, // path zaten var
-          patient_age: folder.patientAge || "Bilinmiyor",
-        }))
-      );
-      
-      labeledFoldersRef.value = groupPhotosByFolder(allLabeledPhotos, "labeled");
+
+      // Etiketli klasörleri sadece ID ve path olarak çek
+      const labeledResponse = await getLabeledFolders();
+      labeledFoldersRef.value = (labeledResponse.data || []).map(folder => ({
+        id: folder.folderId,
+        name: folder.folderPath.split("/").pop(),
+        fullPath: folder.folderPath,
+        expanded: false,
+        sourceType: "labeled",
+        patient_age: null,
+        children: []
+      }));
+
       await loadMoreFolders();
     });
+
 
     // Fotoğraf verileri ile kaydetme işlemi
     const saveTags = () => {
       const photosToSave = [];
 
-      currentPhotoList.forEach((photo) => {
+      currentPhotoList.value.forEach((photo) => {
         const lateralityCode = parseInt(photo.laterality_id) === 1 ? "R" : "L";
 
         // İlgili taraftaki BI-RADS ve finding listesi
@@ -293,8 +268,8 @@ export default {
 
       // Aktif klasörün id'sini bul
       let activeFolderId = null;
-      if (folders.value && folders.value.length > 0 && currentPhotoList.length > 0) {
-        const photoId = currentPhotoList[0].id;
+      if (folders.value && folders.value.length > 0 && currentPhotoList.value.length > 0) {
+        const photoId = currentPhotoList.value[0].id;
         const folder = folders.value.find(f => f.children.some(c => c.id === photoId));
         if (folder) activeFolderId = folder.id;
       }
@@ -312,88 +287,99 @@ export default {
     };
 
     // Klasör seçildiğinde ilgili fotoğrafları yükle
-    const onSelectFolder = (folderId) => {
+    const onSelectFolder = async (folderId) => {
       selectedFolderId.value = folderId;
+
       // Hem etiketsiz hem etiketli klasörlerde ara
-      const selectedFolder = 
+      const selectedFolder =
         folders.value.find(f => f.id === folderId) ||
         labeledFoldersRef.value.find(f => f.id === folderId);
-      if (selectedFolder && selectedFolder.children && selectedFolder.children.length > 0) {
+
+      // 📌 Eğer etiketli klasörse ve fotoğrafları yüklenmemişse
+      if (selectedFolder && selectedFolder.sourceType === "labeled" && selectedFolder.children.length === 0) {
+        try {
+          const response = await GetLabeledFotos(folderId);
+          const photoList = response.data?.fotograflar || [];
+
+          selectedFolder.patient_age = response.data?.patientAge || "Bilinmiyor";
+          selectedFolder.children = photoList.map(photo => ({
+            id: photo.id,
+            name: photo.path.split("/").pop(),
+            photoUrl: photo.path,
+            view_position: photo.view_position,
+            laterality_id: photo.laterality_id,
+            expanded: false,
+            children: [],
+            tags: photo.tags || null
+          }));
+        } catch (err) {
+          console.error("Etiketli klasör fotoğrafları yüklenemedi:", err);
+        }
+      }
+
+      // ✅ Fotoğrafları orta panele gönder
+      if (selectedFolder && selectedFolder.children.length > 0) {
         const photoItems = selectedFolder.children
-        .sort((a, b) => {
-          // Önce laterality_id'ye göre sırala (1=Sağ, 2=Sol)
-          if (a.laterality_id !== b.laterality_id) {
-            return a.laterality_id - b.laterality_id;
-          }
-          // Aynı laterality_id'de view_position'a göre sırala (1=CC, 2=MLO)
-          return a.view_position - b.view_position;
-        })
-        .map(child => ({
-          id: child.id,
-          path: child.photoUrl,
-          laterality_id: child.laterality_id,
-          view_position: child.view_position,
-        }));
+          .sort((a, b) => {
+            if (a.laterality_id !== b.laterality_id) {
+              return a.laterality_id - b.laterality_id;
+            }
+            return a.view_position - b.view_position;
+          })
+          .map(child => ({
+            id: child.id,
+            path: child.photoUrl,
+            laterality_id: child.laterality_id,
+            view_position: child.view_position,
+          }));
+
         currentPatientAge.value = selectedFolder.patient_age || "Bilinmiyor";
-        currentPhotoList = photoItems;
+        currentPhotoList.value = photoItems;
         loadPhotos(photoItems);
       } else {
-        // Fotoğraf yoksa boş göster
-        currentPhotoList = [];
+        currentPhotoList.value = [];
         loadPhotos([]);
       }
-      
-      // Etiketleme alanını güncelle
+
+      // ✅ Daha önce kayıtlı etiketler varsa göster
       if (folderTagData.value[folderId]) {
-        // Daha önce etiketleme yapılmışsa, alanları doldur
         selectedFindings1.value = [...folderTagData.value[folderId].selectedFindings1];
         selectedFindings2.value = [...folderTagData.value[folderId].selectedFindings2];
         selectedBiradsSol.value = folderTagData.value[folderId].selectedBiradsSol;
         selectedBiradsSag.value = folderTagData.value[folderId].selectedBiradsSag;
       } else {
-        // Hiç etiketleme yapılmamışsa, alanları sıfırla
+        // Yeni klasör - sıfırla
         selectedFindings1.value = [];
         selectedFindings2.value = [];
         selectedBiradsSol.value = "";
         selectedBiradsSag.value = "";
-        
-        // Eğer daha önce etiketleme yapılmamışsa, mevcut fotoğraflardan etiketleri al
-        if (selectedFolder && selectedFolder.children) {
-          // Tüm fotoğrafları laterality'ye göre grupla
-          const allPhotos = selectedFolder.children;
-          
-          // Sağ meme findings ve birads - hem sağ fotoğraflardan hem de sağ etiketlerden
+
+        // Eğer fotoğraflar yüklüyse etiketlerinden çek
+        if (selectedFolder?.children?.length > 0) {
           const sagFindings = [];
-          let sagBirads = "";
-          
-          // Sol meme findings ve birads - hem sol fotoğraflardan hem de sol etiketlerden
           const solFindings = [];
+          let sagBirads = "";
           let solBirads = "";
-          
-          allPhotos.forEach(photo => {
+
+          selectedFolder.children.forEach(photo => {
             if (photo.tags) {
-              // Fotoğrafın laterality'si ile etiketlerin laterality'si eşleşmeli
-              if (parseInt(photo.laterality_id) === 1) {
-                // Sağ fotoğraf - sağ etiketleri al
-                if (photo.tags.finding_categories) {
-                  sagFindings.push(...photo.tags.finding_categories);
-                }
+              const isRight = parseInt(photo.laterality_id) === 1;
+              const isLeft = parseInt(photo.laterality_id) === 2;
+
+              if (isRight) {
+                if (photo.tags.finding_categories) sagFindings.push(...photo.tags.finding_categories);
                 if (photo.tags.breast_birads != null && sagBirads === "") {
                   sagBirads = photo.tags.breast_birads;
                 }
-              } else if (parseInt(photo.laterality_id) === 2) {
-                // Sol fotoğraf - sol etiketleri al
-                if (photo.tags.finding_categories) {
-                  solFindings.push(...photo.tags.finding_categories);
-                }
+              } else if (isLeft) {
+                if (photo.tags.finding_categories) solFindings.push(...photo.tags.finding_categories);
                 if (photo.tags.breast_birads != null && solBirads === "") {
                   solBirads = photo.tags.breast_birads;
                 }
               }
             }
           });
-          
-          // Benzersiz findings'leri al ve değişkenlere ata
+
           selectedFindings1.value = [...new Set(sagFindings)];
           selectedBiradsSag.value = sagBirads;
           selectedFindings2.value = [...new Set(solFindings)];

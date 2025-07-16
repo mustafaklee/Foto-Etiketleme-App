@@ -30,7 +30,7 @@ export default {
   props: {
     node: Object,
     folderTagData: Object,
-    selectedFolderId: String,
+    selectedFolderId: Number,
   },
   components: {
     TreeNode: () => import("./TreeNode.vue"),
